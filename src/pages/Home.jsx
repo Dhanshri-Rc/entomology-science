@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import herobg from "../assets/img/bghome.png";
+import herobg from "../assets/img/homebg.png";
 import {
   ArrowRight,
   Atom,
