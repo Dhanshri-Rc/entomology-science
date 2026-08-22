@@ -14,6 +14,8 @@ import {
   Sprout,
   UsersRound,
 } from "lucide-react";
+import aboutBg from "../assets/img/aboutBg.png"
+import aboutCtaBg from "../assets/img/aboutCta2.png";
 
 const glanceItems = [
   { icon: UsersRound, value: "300+", label: "Researchers" },
@@ -129,7 +131,7 @@ function SectionHeading({ children }) {
   return (
     <div className="mb-7 flex items-center justify-center gap-3 sm:gap-4">
       <span className="h-px w-10 bg-[#87a77a] sm:w-14" />
-      <h2 className="whitespace-nowrap text-center text-[20px] font-semibold text-[#153c1c] sm:text-[22px]">
+      <h2 className="whitespace-nowrap text-center text-[20px] font-[550] text-[#153c1c] sm:text-[22px]">
         {children}
       </h2>
       <span className="h-px w-10 bg-[#87a77a] sm:w-14" />
@@ -141,7 +143,7 @@ function OutlineButton({ to, children }) {
   return (
     <Link
       to={to}
-      className="group inline-flex min-h-9 items-center justify-center gap-3 rounded-[4px] border border-[#2d6429] bg-white px-4 py-2 text-[12px] font-semibold text-[#173b1c] transition duration-300 hover:-translate-y-0.5 hover:bg-[#23551d] hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#8ebd4e] focus:ring-offset-2 sm:text-[13px]"
+      className="group inline-flex min-h-9 items-center justify-center gap-3 rounded-[4px] border border-[#2d6429] bg-white px-4 py-2 text-[12px] font-[550] text-[#173b1c] transition duration-300 hover:-translate-y-0.5 hover:bg-[#23551d] hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#8ebd4e] focus:ring-offset-2 sm:text-[13px]"
     >
       {children}
       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -154,19 +156,19 @@ export default function About() {
     <main className="overflow-hidden bg-white font-sans text-[#202820]">
       {/* Hero section */}
       <section
-        className="relative isolate flex min-h-[390px] items-center bg-cover bg-[position:66%_center] sm:min-h-[350px] md:min-h-[295px] md:bg-center"
-        style={{ backgroundImage: "url('/images/aboutBg(2).png')" }}
-      >
+  className="relative isolate flex min-h-[390px] items-center bg-cover bg-[position:66%_center] sm:min-h-[400px] md:min-h-[450px] md:bg-center"
+  style={{ backgroundImage: `url(${aboutBg})` }}
+>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#092416]/95 via-[#0b2d19]/82 to-[#0b2d19]/5 sm:via-[#0b2d19]/68 md:to-transparent" />
 
-        <div className="mx-auto w-full max-w-[1170px] px-4 py-7 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-[1170px] px-4 py-5 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, ease: "easeOut" }}
             className="max-w-[545px] text-white"
           >
-            <nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-2 text-sm">
+            <nav aria-label="Breadcrumb" className="mb-4 mt-4 flex items-center gap-2 text-[12px]">
               <Link to="/" className="transition hover:text-[#b9db74]">
                 Home
               </Link>
@@ -176,23 +178,23 @@ export default function About() {
               <span className="font-medium">About the Conference</span>
             </nav>
 
-            <h1 className="text-[36px] font-bold leading-tight tracking-[-0.02em] sm:text-[42px]">
+            <h1 className="text-[36px] text-white font-[600] leading-tight tracking-[-0.02em] sm:text-[38px]">
               About the Conference
             </h1>
 
-            <div className="my-3 flex items-center gap-2.5 text-[#9bc957]">
+            <div className="my-2 flex items-center gap-2.5 text-[#9bc957]">
               <span className="h-px w-16 bg-[#6e923e]" />
               <Leaf className="h-4 w-4 fill-current" />
               <span className="h-px w-16 bg-[#6e923e]" />
             </div>
 
-            <p className="max-w-[440px] text-[17px] font-medium leading-6 text-[#a9d563] sm:text-[19px] sm:leading-7">
+            <p className="max-w-[440px] text-[16px] font-[550] leading-6 text-[#a9d563] sm:text-[17px] sm:leading-6">
               Exploring. Understanding. Preserving.
               <br />
               Insects, Ecosystems, and Our Future.
             </p>
 
-            <p className="mt-4 max-w-[535px] text-[13px] leading-[1.75] text-white/95 sm:text-sm">
+            <p className="mt-4 max-w-[535px] text-[13px] leading-[1.6] text-white/95 sm:text-[14px] sm:leading-[1.6]">
               The International Conference on Entomology brings together researchers, academicians,
               and industry professionals to exchange knowledge, share innovations, and discuss the
               latest advancements in entomological science and its real-world applications.
@@ -208,7 +210,7 @@ export default function About() {
             <motion.article {...fadeUp}>
               <div className="flex items-center gap-3">
                 <Leaf className="h-5 w-5 fill-[#2f6b28] text-[#2f6b28]" />
-                <h2 className="text-[21px] font-semibold text-[#173b1c] sm:text-[23px]">
+                <h2 className="text-[20px] font-[550] text-[#173b1c] sm:text-[22px]">
                   About the Conference
                 </h2>
               </div>
@@ -279,7 +281,7 @@ export default function About() {
                   <div className="mx-auto flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#eff2eb] text-[#326a28] transition duration-300 group-hover:bg-[#326a28] group-hover:text-white group-hover:shadow-lg">
                     <ValueIcon className="h-8 w-8 stroke-[1.6]" />
                   </div>
-                  <h3 className="mt-2.5 text-[15px] font-semibold text-[#173b1c]">{title}</h3>
+                  <h3 className="mt-2.5 text-[15px] font-[550] text-[#173b1c]">{title}</h3>
                   <p className="mx-auto mt-1 max-w-[175px] text-[12px] leading-[1.55] text-[#343934]">
                     {description}
                   </p>
@@ -297,7 +299,7 @@ export default function About() {
             {...fadeUp}
             className="rounded-xl border border-[#e5e8e1] bg-[#f5f6f3] px-4 py-4 shadow-[0_8px_24px_rgba(24,59,28,0.04)] sm:px-7"
           >
-            <h2 className="text-center text-[20px] font-semibold text-[#173b1c] sm:text-[22px]">
+            <h2 className="text-center text-[20px] font-[550] text-[#173b1c] sm:text-[22px]">
               Organizing Committee
             </h2>
 
@@ -321,7 +323,7 @@ export default function About() {
                   <h3 className="mt-2.5 text-[13px] font-semibold text-[#2d6429] sm:text-sm">
                     {member.name}
                   </h3>
-                  <p className="mt-0.5 text-[11px] text-[#202620] sm:text-xs">{member.role}</p>
+                  <p className="mt-0.5 text-[11px] text-[#202620] sm:text-[12px]">{member.role}</p>
                 </motion.article>
               ))}
             </div>
@@ -357,13 +359,13 @@ export default function About() {
                       loading="lazy"
                       className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                     />
-                    <span className="absolute left-2 top-2 rounded-[2px] bg-[#245a22] px-3 py-1 text-xs font-semibold text-white shadow">
+                    <span className="absolute left-2 top-2 rounded-[2px] bg-[#245a22] px-3 py-1 text-[11px] font-[550] text-white shadow">
                       {edition.year}
                     </span>
                   </div>
                   <div className="px-2 pb-2 pt-2">
-                    <h3 className="text-[15px] font-semibold text-[#3d782c]">{edition.city}</h3>
-                    <p className="mt-0.5 flex items-center gap-1 text-[11px] text-[#333933]">
+                    <h3 className="text-[15px] font-[550] text-[#3d782c]">{edition.city}</h3>
+                    <p className="mt-0.5 flex items-center gap-1 text-[12px] text-[#333933]">
                       <MapPin className="h-3.5 w-3.5 fill-[#326a28] text-[#326a28]" />
                       {edition.country}
                     </p>
@@ -383,15 +385,15 @@ export default function About() {
       <section className="pb-4 sm:pb-5">
         <div className="mx-auto max-w-[1170px] px-4 sm:px-6 lg:px-8">
           <motion.div
-            {...fadeUp}
-            className="relative isolate overflow-hidden rounded-xl bg-[#0b351c] bg-cover bg-[position:34%_center] px-5 py-7 sm:px-8 md:min-h-[100px] md:bg-center md:py-3 lg:px-10"
-            style={{ backgroundImage: "url('/images/aboutCta2(1).png')" }}
-          >
+  {...fadeUp}
+  className="relative isolate overflow-hidden rounded-xl bg-[#0b351c] bg-cover bg-[position:34%_center] px-5 py-7 sm:px-8 md:min-h-[100px] md:bg-center md:py-5 lg:px-10"
+  style={{ backgroundImage: `url(${aboutCtaBg})` }}
+>
             <div className="absolute inset-0 -z-10 bg-[#092d18]/40 sm:bg-gradient-to-r sm:from-transparent sm:via-[#082b17]/45 sm:to-[#082b17]/35" />
 
             <div className="flex min-h-[76px] flex-col items-center justify-center gap-5 text-center text-white md:ml-[29%] md:flex-row md:justify-between md:text-left">
               <div className="max-w-[510px]">
-                <h2 className="text-[19px] font-semibold leading-tight sm:text-[21px]">
+                <h2 className="text-[16px] font-[550] text-white leading-tight sm:text-[18px]">
                   Together, Let&apos;s Advance Entomological Science
                 </h2>
                 <p className="mt-2 text-[12px] leading-[1.55] text-white/95 sm:text-[13px]">
