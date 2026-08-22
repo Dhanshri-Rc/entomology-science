@@ -185,7 +185,7 @@ export default function AimScope() {
     <main className="overflow-hidden bg-white font-sans text-[#202720]">
       {/* HERO */}
       <section
-        className="relative isolate flex min-h-[395px] items-center bg-cover bg-[position:68%_center] sm:min-h-[350px] md:min-h-[300px] md:bg-center"
+        className="relative isolate flex min-h-[395px] items-center bg-cover bg-[position:68%_center] sm:min-h-[400px] md:min-h-[450px] md:bg-center"
         style={{ backgroundImage: `url(${aimsBg})` }}
       >
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#062417]/95 via-[#0a2d19]/78 to-[#0a2d19]/10 sm:via-[#0a2d19]/62 md:to-transparent" />
@@ -197,7 +197,7 @@ export default function AimScope() {
             animate="visible"
             className="max-w-[545px] py-8 text-white"
           >
-            <nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-2 text-[13px] sm:text-sm">
+            <nav aria-label="Breadcrumb" className="mb-5 mt-4 flex items-center gap-2 text-[13px] sm:text-[12px]">
               <Link to="/" className="transition hover:text-[#b8d96b]">
                 Home
               </Link>
@@ -207,18 +207,18 @@ export default function AimScope() {
               <span className="font-[550]">Aims &amp; Scope</span>
             </nav>
 
-            <h1 className="text-[37px] font-semibold leading-tight tracking-[-0.02em] sm:text-[42px]">
+            <h1 className="text-[36px] text-white font-[600] leading-tight tracking-[-0.02em] sm:text-[38px]">
               Aims &amp; Scope
             </h1>
             <span className="my-3 block h-[2px] w-[105px] bg-[#5c8b37]" />
 
-            <p className="max-w-[495px] text-[17px] font-[550] leading-[1.45] text-[#a4cf57] sm:text-[19px]">
+            <p className="max-w-[495px] text-[16px] font-[550] leading-[1.45] text-[#a4cf57] sm:text-[17px]">
               Advancing knowledge. Inspiring innovation.
               <br />
               Building a sustainable future through entomology.
             </p>
 
-            <p className="mt-4 max-w-[535px] text-[13px] leading-[1.8] text-white/95 sm:text-[14px]">
+            <p className="mt-4 max-w-[535px] text-[13px] leading-[1.6] text-white/95 sm:text-[14px]">
               Our aim is to bring together researchers, academicians, students, and industry
               professionals to exchange knowledge and explore cutting-edge advancements in
               entomological science and its real-world applications.
@@ -328,7 +328,7 @@ export default function AimScope() {
                   <Send className="h-8 w-8 -rotate-12" strokeWidth={1.35} />
                 </span>
 
-                <h2 className="max-w-[365px] text-[16px] font-[550] leading-[1.5] sm:text-[18px]">
+                <h2 className="max-w-[365px] text-[16px] text-white font-[550] leading-[1.5] sm:text-[17px]">
                   Join us in shaping the future of entomological science and making a
                   <span className="text-[#9bc852]"> global impact.</span>
                 </h2>
