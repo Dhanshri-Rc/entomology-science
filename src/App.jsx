@@ -16,7 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/aim-scope" element={<AimScope />} />
+        <Route path="/aims-and-scope" element={<AimScope />} />
         <Route path="/call-for-papers" element={<CallForPapers />} />
         <Route path="/submission" element={<Submission />} />
         <Route path="/publication" element={<Publication />} />
