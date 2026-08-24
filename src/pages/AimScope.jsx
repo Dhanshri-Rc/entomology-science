@@ -25,22 +25,26 @@ const leftTopics = [
   {
     icon: Bug,
     title: "Insect Biodiversity & Systematics",
-    description: "Taxonomy, morphology, phylogeny, and biodiversity assessments of insects.",
+    description:
+      "Taxonomy, morphology, phylogeny, and biodiversity assessments of insects.",
   },
   {
     icon: Sprout,
     title: "Agricultural Entomology & Pest Management",
-    description: "Integrated pest management, biocontrol, pest behavior, and crop protection strategies.",
+    description:
+      "Integrated pest management, biocontrol, pest behavior, and crop protection strategies.",
   },
   {
     icon: Earth,
     title: "Insect Ecology & Conservation",
-    description: "Population dynamics, habitat conservation, ecosystem services, and climate change impacts.",
+    description:
+      "Population dynamics, habitat conservation, ecosystem services, and climate change impacts.",
   },
   {
     icon: Microscope,
     title: "Medical & Veterinary Entomology",
-    description: "Vector biology, disease transmission, diagnostics, and control of insect-borne diseases.",
+    description:
+      "Vector biology, disease transmission, diagnostics, and control of insect-borne diseases.",
   },
 ];
 
@@ -48,22 +52,26 @@ const rightTopics = [
   {
     icon: Dna,
     title: "Molecular Entomology & Genomics",
-    description: "Genetics, genomics, transcriptomics, and molecular techniques in entomology.",
+    description:
+      "Genetics, genomics, transcriptomics, and molecular techniques in entomology.",
   },
   {
     icon: Atom,
     title: "Insect Physiology & Biochemistry",
-    description: "Physiology, biochemistry, toxicology, nutrition, and insect development.",
+    description:
+      "Physiology, biochemistry, toxicology, nutrition, and insect development.",
   },
   {
     icon: Flower2,
     title: "Pollinators & Ecosystem Services",
-    description: "Pollinator biology, pollination ecology, and their role in sustainable ecosystems.",
+    description:
+      "Pollinator biology, pollination ecology, and their role in sustainable ecosystems.",
   },
   {
     icon: Cpu,
     title: "Emerging Trends & Technologies",
-    description: "AI, IoT, biotechnology, remote sensing, and innovative technologies in entomological research.",
+    description:
+      "AI, IoT, biotechnology, remote sensing, and innovative technologies in entomological research.",
   },
 ];
 
@@ -87,7 +95,9 @@ const heroMotion = {
 
 function PageContainer({ children, className = "" }) {
   return (
-    <div className={`mx-auto w-[calc(100%-32px)] max-w-[1170px] sm:w-[90%] ${className}`}>
+    <div
+      className={`mx-auto w-[calc(100%-32px)] max-w-[1170px] sm:w-[90%] ${className}`}
+    >
       {children}
     </div>
   );
@@ -100,11 +110,14 @@ function SectionHeading({ children }) {
         <span className="h-px w-8 bg-[#5c7d42] sm:w-10" />
         <Leaf className="h-4 w-4 -rotate-45 fill-current" strokeWidth={1.3} />
       </span>
-      <h2 className="text-center text-[20px] font-[550] leading-tight text-[#163719] sm:text-[22px]">
+      <h2 className="text-center text-[20px] font-[550] leading-tight text-[#163719] sm:text-[21px]">
         {children}
       </h2>
       <span className="flex items-center gap-1 text-[#4d762e]">
-        <Leaf className="h-4 w-4 rotate-[135deg] fill-current" strokeWidth={1.3} />
+        <Leaf
+          className="h-4 w-4 rotate-[135deg] fill-current"
+          strokeWidth={1.3}
+        />
         <span className="h-px w-8 bg-[#5c7d42] sm:w-10" />
       </span>
     </div>
@@ -123,14 +136,16 @@ function AimCard({ icon: CardIcon, title, children, delay = 0 }) {
       className="group relative overflow-hidden rounded-[10px] border border-[#e4e8df] bg-[#f7f8f5] px-5 py-6 shadow-[0_7px_22px_rgba(23,60,26,0.04)] transition-shadow duration-300 hover:shadow-[0_14px_32px_rgba(23,60,26,0.12)] sm:px-6"
     >
       <div className="relative z-10 flex items-start gap-5 sm:gap-6">
-        <span className="flex h-[58px] w-[58px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#376e20] to-[#164d1b] text-white shadow-md transition duration-300 group-hover:scale-105 group-hover:rotate-3">
-          <CardIcon className="h-7 w-7" strokeWidth={1.6} />
+        <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#376e20] to-[#164d1b] text-white shadow-md transition duration-300 group-hover:scale-105 group-hover:rotate-3">
+          <CardIcon className="h-6 w-6" strokeWidth={1.6} />
         </span>
 
         <div>
-          <h2 className="text-[20px] font-[550] text-[#163719] sm:text-[22px]">{title}</h2>
-          <span className="my-2.5 block h-[2px] w-12 bg-[#487b2e] transition-all duration-300 group-hover:w-20" />
-          <p className="max-w-[430px] text-[13px] leading-[1.75] text-[#232a23] sm:text-[14px]">
+          <h2 className="text-[20px] font-[550] text-[#163719] sm:text-[21px]">
+            {title}
+          </h2>
+          <span className="my-1 block h-[2px] w-12 bg-[#487b2e] transition-all duration-300 group-hover:w-20" />
+          <p className="max-w-[430px] text-[12px] leading-[1.75] text-[#232a23] sm:text-[13px]">
             {children}
           </p>
         </div>
@@ -167,7 +182,7 @@ function TopicColumn({ topics, columnDelay = 0 }) {
           </span>
 
           <div>
-            <h3 className="text-[14px] font-[550] leading-snug text-[#152f17] sm:text-[15px]">
+            <h3 className="text-[13px] font-[550] leading-snug text-[#152f17] sm:text-[14px]">
               {title}
             </h3>
             <p className="mt-1 max-w-[430px] text-[12px] leading-[1.55] text-[#303630] sm:text-[13px]">
@@ -197,7 +212,10 @@ export default function AimScope() {
             animate="visible"
             className="max-w-[545px] py-8 text-white"
           >
-            <nav aria-label="Breadcrumb" className="mb-5 mt-4 flex items-center gap-2 text-[13px] sm:text-[12px]">
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-5 mt-12 sm:mt-4 lg:mt-4 flex items-center gap-2 text-[13px] sm:text-[12px]"
+            >
               <Link to="/" className="transition hover:text-[#b8d96b]">
                 Home
               </Link>
@@ -219,9 +237,10 @@ export default function AimScope() {
             </p>
 
             <p className="mt-4 max-w-[535px] text-[13px] leading-[1.6] text-white/95 sm:text-[14px]">
-              Our aim is to bring together researchers, academicians, students, and industry
-              professionals to exchange knowledge and explore cutting-edge advancements in
-              entomological science and its real-world applications.
+              Our aim is to bring together researchers, academicians, students,
+              and industry professionals to exchange knowledge and explore
+              cutting-edge advancements in entomological science and its
+              real-world applications.
             </p>
           </motion.div>
         </PageContainer>
@@ -232,15 +251,17 @@ export default function AimScope() {
         <PageContainer>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
             <AimCard icon={Target} title="Our Aim">
-              To promote and advance entomological research, education, and innovation by providing a
-              global platform for the dissemination of knowledge and fostering collaborations that
-              address challenges related to insects, ecosystems, and human well-being.
+              To promote and advance entomological research, education, and
+              innovation by providing a global platform for the dissemination of
+              knowledge and fostering collaborations that address challenges
+              related to insects, ecosystems, and human well-being.
             </AimCard>
 
             <AimCard icon={Binoculars} title="Our Scope" delay={0.08}>
-              The conference encompasses a wide range of themes in entomology, from fundamental
-              research to applied solutions. We welcome original research, reviews, case studies, and
-              innovative ideas that contribute to the sustainable management of insect-related
+              The conference encompasses a wide range of themes in entomology,
+              from fundamental research to applied solutions. We welcome
+              original research, reviews, case studies, and innovative ideas
+              that contribute to the sustainable management of insect-related
               challenges.
             </AimCard>
           </div>
@@ -258,7 +279,8 @@ export default function AimScope() {
           >
             <SectionHeading>Topics &amp; Focus Areas</SectionHeading>
             <p className="mx-auto mb-4 mt-3 max-w-[720px] text-center text-[12px] leading-relaxed text-[#303630] sm:mb-5 sm:text-[13px]">
-              We invite submissions that align with, but are not limited to, the following key areas:
+              We invite submissions that align with, but are not limited to, the
+              following key areas:
             </p>
           </motion.div>
 
@@ -296,12 +318,16 @@ export default function AimScope() {
               <div>
                 <h2 className="flex flex-wrap items-center gap-2 text-[18px] font-[550] leading-tight text-[#173719] sm:text-[20px]">
                   Interdisciplinary Contributions
-                  <Leaf className="h-4 w-4 fill-[#8bb344] text-[#8bb344]" strokeWidth={1.2} />
+                  <Leaf
+                    className="h-4 w-4 fill-[#8bb344] text-[#8bb344]"
+                    strokeWidth={1.2}
+                  />
                 </h2>
                 <p className="mt-3 max-w-[620px] text-[12px] leading-[1.7] text-[#303630] sm:text-[13px]">
-                  We encourage interdisciplinary research linking entomology with agriculture,
-                  environment, public health, biotechnology, data science, and social sciences to
-                  drive innovative solutions for global challenges.
+                  We encourage interdisciplinary research linking entomology
+                  with agriculture, environment, public health, biotechnology,
+                  data science, and social sciences to drive innovative
+                  solutions for global challenges.
                 </p>
               </div>
             </div>
@@ -329,7 +355,8 @@ export default function AimScope() {
                 </span>
 
                 <h2 className="max-w-[365px] text-[16px] text-white font-[550] leading-[1.5] sm:text-[17px]">
-                  Join us in shaping the future of entomological science and making a
+                  Join us in shaping the future of entomological science and
+                  making a
                   <span className="text-[#9bc852]"> global impact.</span>
                 </h2>
               </div>
