@@ -444,13 +444,13 @@ export default function Publication() {
         <PageContainer>
           <motion.div
             {...fadeUp}
-            className="relative isolate flex min-h-[265px] items-end overflow-hidden rounded-xl bg-[#f4f6ee] bg-cover bg-[position:17%_center] px-5 py-4 shadow-sm sm:min-h-[185px] sm:items-center sm:bg-center sm:px-8 lg:min-h-[150px] lg:px-10"
+            className="relative isolate flex min-h-[265px] items-end overflow-hidden rounded-xl bg-[#f4f6ee] bg-cover bg-[position:17%_center] px-5 py-4 shadow-sm sm:min-h-[100px] sm:items-center sm:bg-center sm:px-8 lg:min-h-[110px] lg:px-10"
             style={{ backgroundImage: `url(${pubCta})` }}
           >
             {/* <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-[#f6f7f1]/40 to-[#f6f7f1] sm:bg-gradient-to-r sm:from-transparent sm:via-[#f6f7f1]/30 sm:to-[#f6f7f1]/90" /> */}
 
             <div className="w-full text-center sm:ml-auto sm:w-[62%] sm:text-left md:w-[58%] lg:mr-[8%] lg:w-[55%]">
-              <h2 className="text-[17px] font-[550] leading-[1.35] text-[#17371d] sm:text-[18px]">
+              <h2 className="text-[16px] font-[550] leading-[1.35] text-[#17371d] sm:text-[17px]">
                 Publish Your Research. Make an Impact.
               </h2>
               <p className="mt-2 text-[12px] leading-5 text-[#405044] sm:text-[13px]">

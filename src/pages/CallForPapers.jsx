@@ -431,12 +431,12 @@ export default function CallForPapers() {
         <PageContainer>
           <motion.div
             {...fadeUp}
-            className="relative isolate flex min-h-[290px] items-end overflow-hidden rounded-lg bg-[#f5f7ef] bg-cover bg-[position:16%_top] px-5 py-4 shadow-sm sm:min-h-[190px] sm:items-center sm:bg-center sm:px-8 lg:min-h-[164px] lg:px-10"
+            className="relative isolate flex min-h-[290px] items-end overflow-hidden rounded-lg bg-[#f5f7ef] bg-cover bg-[position:16%_top] px-5 py-4 lg:py-3 shadow-sm sm:min-h-[110px] sm:items-center sm:bg-center sm:px-8 lg:min-h-[110px] lg:px-10"
             style={{ backgroundImage: `url(${callCtaBg})` }}
           >
             {/* <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-[#f5f7ef]/55 to-[#f5f7ef] sm:bg-gradient-to-r sm:from-transparent sm:via-[#f5f7ef]/35 sm:to-[#f5f7ef]/95" /> */}
             <div className="w-full max-w-[570px] text-center sm:ml-auto sm:w-[58%] sm:text-left md:w-[56%] lg:mr-[9%] lg:w-[53%]">
-              <h2 className="text-[17px] font-[550] leading-[1.4] text-[#17371d] sm:text-[20px] lg:text-[18px]">
+              <h2 className="text-[15px] font-[550] leading-[1.4] text-[#17371d] sm:text-[16px] lg:text-[17px]">
                 Join us in advancing the science of entomology
                 <br className="hidden sm:block" /> for a sustainable future.
               </h2>
