@@ -32,7 +32,7 @@ import {
   submissionProcess,
 } from "../data/siteData";
 
-import bg from "../assets/img/bgsubmission.png";
+import bg from "../assets/img/bghome.png";
 import bgcta from "../assets/img/subcta.png";
 import bg2 from "../assets/img/sub2.png";
 

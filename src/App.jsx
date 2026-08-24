@@ -9,6 +9,7 @@ import Publication from "./pages/Publication";
 import Contact from "./pages/Contact";
 import SubmitPaper from "./pages/SubmitPaper";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/publication" element={<Publication />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/submit-paper" element={<SubmitPaper />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
