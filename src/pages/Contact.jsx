@@ -1313,8 +1313,8 @@ export default function Contact() {
                   <div
                     className="
                       flex
-                      h-[36px]
-                      w-[36px]
+                      h-[40px]
+                      w-[40px]
 
                       items-center
                       justify-center
@@ -1338,8 +1338,8 @@ export default function Contact() {
                     <CardIcon
                       strokeWidth={1.55}
                       className="
-                        h-[19px]
-                        w-[19px]
+                        h-[22px]
+                        w-[22px]
                       "
                     />
                   </div>
@@ -1348,13 +1348,13 @@ export default function Contact() {
                     className="
                       mt-[8px]
 
-                      text-[10px]
+                      text-[12px]
                       font-semibold
                       leading-[1.2]
 
                       text-[#17301c]
 
-                      sm:text-[10.5px]
+                      sm:text-[13.5px]
                     "
                   >
                     {card.title}
@@ -1367,12 +1367,12 @@ export default function Contact() {
 
                       break-all
 
-                      text-[7.5px]
+                      text-[10.5px]
                       font-medium
 
                       text-[#465048]
 
-                      sm:text-[8px]
+                      sm:text-[11px]
                     "
                   >
                     {card.email}
@@ -1559,7 +1559,7 @@ export default function Contact() {
                   text-[#143119]
 
                   sm:text-[16px]
-                  lg:text-[17px]
+                  lg:text-[18px]
 
                   max-[640px]:text-white
                 "
@@ -1585,13 +1585,12 @@ export default function Contact() {
                 }}
                 className="
                   mt-[9px]
-
-                  text-[9px]
+                  text-[11px]
                   font-medium
 
                   text-[#354036]
 
-                  sm:text-[9.5px]
+                  sm:text-[11.5px]
 
                   max-[640px]:text-white/90
                 "
