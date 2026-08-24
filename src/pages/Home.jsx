@@ -215,7 +215,7 @@ const importantDates = [
   },
   {
     icon: Bug,
-    date: "10–12 November 2025",
+    date: "10 November 2025",
     label: "Conference\nDates",
   },
 ];
@@ -417,7 +417,7 @@ function PageContainer({ children, className = "" }) {
       className={`
         mx-auto
         w-full
-        max-w-[1180px]
+        max-w-[1150px]
         px-4
         sm:px-5
         md:px-6
@@ -442,7 +442,7 @@ export default function Home() {
           HERO SECTION
       ===================================================== */}
 
-  <section className="relative isolate overflow-hidden bg-[#06250b] py-4">
+<section className="relative isolate overflow-hidden bg-[#06250b] py-4">
   {/* Background image */}
   <motion.div
     initial={{ scale: 1.05 }}
@@ -450,35 +450,67 @@ export default function Home() {
     transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
     className="
       absolute inset-0 -z-30 bg-cover bg-no-repeat
+
       bg-[position:72%_center]
       sm:bg-[position:69%_center]
       md:bg-[position:67%_center]
       lg:bg-[position:64%_center]
       xl:bg-center
+
+      max-[480px]:bg-[position:70%_center]
+      max-[380px]:bg-[position:68%_center]
     "
     style={{
       backgroundImage: `url(${herobg})`,
     }}
   />
+  <div
+    className="
+      absolute inset-0 -z-20
+      bg-[linear-gradient(90deg,rgba(3,30,8,0.92)_0%,rgba(4,36,10,0.80)_38%,rgba(4,36,10,0.48)_68%,rgba(3,30,8,0.25)_100%)]
 
- 
+      lg:hidden
 
+      max-[640px]:bg-[linear-gradient(90deg,rgba(3,30,8,0.94)_0%,rgba(4,36,10,0.86)_45%,rgba(4,36,10,0.60)_75%,rgba(3,30,8,0.38)_100%)]
 
-
-
+      max-[480px]:bg-[linear-gradient(90deg,rgba(3,30,8,0.95)_0%,rgba(4,36,10,0.88)_52%,rgba(4,36,10,0.68)_78%,rgba(3,30,8,0.45)_100%)]
+    "
+  />
   <div
     className="
       relative mx-auto w-full max-w-[1180px]
-      px-4 sm:px-6 md:px-6 lg:px-6
+      px-4
+      sm:px-6
+      md:px-6
+      lg:px-6
+
+      max-[360px]:px-3
     "
   >
     <div
       className="
-        grid min-h-[640px] grid-cols-1 gap-8
+        grid min-h-[640px] w-full min-w-0 grid-cols-1 gap-8
         pt-10 pb-14
+
         sm:min-h-[600px] sm:pt-11
+
         md:min-h-[560px]
-        lg:min-h-[490px] lg:grid-cols-[minmax(0,1fr)_190px] lg:items-center lg:gap-12 lg:pt-8 lg:pb-16
+
+        lg:min-h-[490px]
+        lg:grid-cols-[minmax(0,1fr)_190px]
+        lg:items-center
+        lg:gap-12
+        lg:pt-8
+        lg:pb-16
+
+        max-[480px]:min-h-0
+        max-[480px]:gap-7
+        max-[480px]:pt-8
+        max-[480px]:pb-10
+
+        max-[360px]:gap-6
+        max-[360px]:pt-7
+        max-[360px]:pb-8
       "
     >
       {/* Left content */}
@@ -486,11 +518,24 @@ export default function Home() {
         variants={heroWrap}
         initial="hidden"
         animate="show"
-        className="relative z-10 max-w-[680px]"
+        className="
+          relative z-10
+          w-full min-w-0 max-w-[680px]
+        "
       >
         <motion.p
           variants={heroItem}
-          className="mb-2 text-[13px] sm:text-[14px] lg:text-[15px] font-medium text-white/95"
+          className="
+            mb-2
+            text-[13px]
+            font-medium
+            text-white/95
+
+            sm:text-[14px]
+            lg:text-[15px]
+
+            max-[360px]:text-[12px]
+          "
         >
           International Conference on
         </motion.p>
@@ -498,43 +543,66 @@ export default function Home() {
         <motion.h1
           variants={heroItem}
           className="
-            text-white font-semibold leading-[1.13] tracking-[-1px]
+            max-w-[680px]
+            break-words
             text-[31px]
-            xs:text-[34px]
+            font-semibold
+            leading-[1.13]
+            tracking-[-1px]
+            text-white
+
             sm:text-[40px]
             md:text-[40px]
             lg:text-[40px]
             xl:text-[42px]
-            max-w-[680px]
+
+            max-[480px]:text-[31px]
+            max-[400px]:text-[29px]
+            max-[360px]:text-[27px]
           "
         >
           Entomology:
-     
         </motion.h1>
-            <motion.h1
+
+        <motion.h1
           variants={heroItem}
           className="
-            text-white font-medium leading-[1.13] tracking-[-1px]
+            mt-1
+            max-w-[680px]
+            break-words
             text-[31px]
-            xs:text-[34px]
+            font-medium
+            leading-[1.13]
+            tracking-[-1px]
+            text-white
+
             sm:text-[34px]
             md:text-[36px]
             lg:text-[38px]
             xl:text-[38px]
-            max-w-[680px]
-            mt-1
+
+            max-[480px]:text-[29px]
+            max-[400px]:text-[27px]
+            max-[360px]:text-[25px]
           "
         >
-          
           Science for a Sustainable Future
-     
         </motion.h1>
 
         <motion.p
           variants={heroItem}
           className="
-            mt-3 text-[15px] sm:text-[16px] lg:text-[18px]
-            font-medium text-[#b7d264]
+            mt-3
+            max-w-full
+            text-[15px]
+            font-medium
+            text-[#b7d264]
+
+            sm:text-[16px]
+            lg:text-[18px]
+
+            max-[400px]:text-[14px]
+            max-[360px]:text-[13.5px]
           "
         >
           Exploring Diversity, Innovation and Impact
@@ -543,50 +611,128 @@ export default function Home() {
         <motion.div
           variants={heroItem}
           className="
-            mt-5 flex flex-wrap items-center gap-y-2 text-white/95
-            text-[11px] sm:text-[12.5px] font-medium
+            mt-5
+            flex
+            min-w-0
+            flex-wrap
+            items-center
+            gap-y-2
+            text-[11px]
+            font-medium
+            text-white/95
+
+            sm:text-[12.5px]
+
+            max-[480px]:gap-x-3
+            max-[400px]:items-start
+            max-[400px]:gap-y-3
           "
         >
-          <div className="flex items-center gap-2 pr-4 sm:pr-3">
-            <CalendarDays className="h-[18px] w-[18px] text-[#b7d264]" strokeWidth={1.8} />
-            <span>10 – 12 November 2025</span>
+          <div
+            className="
+              flex min-w-0 items-center gap-2 pr-4
+              sm:pr-3
+
+              max-[400px]:w-full
+              max-[400px]:pr-0
+            "
+          >
+            <CalendarDays
+              className="h-[18px] w-[18px] shrink-0 text-[#b7d264]"
+              strokeWidth={1.8}
+            />
+            <span className="min-w-0">
+              10 – 12 November 2025
+            </span>
           </div>
 
-          <span className="hidden sm:block h-6 w-px bg-white/40" />
+          <span className="hidden h-6 w-px bg-white/40 sm:block" />
 
-          <div className="flex items-center gap-2 sm:px-3">
-            <MapPin className="h-[18px] w-[18px] text-[#b7d264]" strokeWidth={1.8} />
-            <span>Washington, DC, USA</span>
+          <div
+            className="
+              flex min-w-0 items-center gap-2
+              sm:px-3
+
+              max-[400px]:w-full
+              max-[400px]:px-0
+            "
+          >
+            <MapPin
+              className="h-[18px] w-[18px] shrink-0 text-[#b7d264]"
+              strokeWidth={1.8}
+            />
+            <span className="min-w-0">
+              Washington, DC, USA
+            </span>
           </div>
 
-          <span className="hidden md:block h-6 w-px bg-white/40" />
+          <span className="hidden h-6 w-px bg-white/40 md:block" />
 
-          <div className="flex items-center gap-2 md:pl-3">
-            <Globe2 className="h-[18px] w-[18px] text-[#b7d264]" strokeWidth={1.8} />
-            <span>Hybrid Conference</span>
+          <div
+            className="
+              flex min-w-0 items-center gap-2
+              md:pl-3
+
+              max-[400px]:w-full
+              max-[400px]:pl-0
+            "
+          >
+            <Globe2
+              className="h-[18px] w-[18px] shrink-0 text-[#b7d264]"
+              strokeWidth={1.8}
+            />
+            <span className="min-w-0">
+              Hybrid Conference
+            </span>
           </div>
         </motion.div>
 
         <motion.p
           variants={heroItem}
           className="
-            mt-5 max-w-[480px]
-            text-[13.5px] leading-[1.85] text-white/90
+            mt-5
+            max-w-[480px]
+            text-[13.5px]
+            leading-[1.85]
+            text-white/90
+
+            max-[480px]:max-w-full
+            max-[400px]:text-[13px]
+            max-[360px]:text-[12.5px]
+            max-[360px]:leading-[1.75]
           "
         >
-          A global platform for researchers, academicians and industry professionals
-          to exchange knowledge and advance entomological science for a sustainable world.
+          A global platform for researchers, academicians and industry
+          professionals to exchange knowledge and advance entomological
+          science for a sustainable world.
         </motion.p>
 
         <motion.div
           variants={heroItem}
-          className="mt-6 flex gap-3 xs:items-center"
+          className="
+            mt-6
+            flex
+            w-full
+            min-w-0
+            flex-wrap
+            gap-3
+
+            max-[400px]:gap-2.5
+          "
         >
-          <HeroButton to="/submit-paper" icon={Send} variant="green">
+          <HeroButton
+            to="/submit-paper"
+            icon={Send}
+            variant="green"
+          >
             Submit Your Paper
           </HeroButton>
 
-          <HeroButton to="/call-for-papers" icon={ArrowRight} variant="yellow">
+          <HeroButton
+            to="/call-for-papers"
+            icon={ArrowRight}
+            variant="yellow"
+          >
             View Important Dates
           </HeroButton>
         </motion.div>
@@ -598,13 +744,15 @@ export default function Home() {
         initial="hidden"
         animate="show"
         className="
-          hidden lg:block overflow-hidden
+          hidden overflow-hidden
           rounded-[14px]
           border border-[#7f993d]/35
           bg-[linear-gradient(180deg,rgba(4,42,12,0.88)_0%,rgba(3,35,9,0.82)_100%)]
           px-4 py-3
           backdrop-blur-[8px]
           shadow-[0_18px_40px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.04)]
+
+          lg:block
         "
       >
         {heroStats.map((stat, index) => {
@@ -614,20 +762,42 @@ export default function Home() {
             <motion.div
               key={stat.label}
               whileHover={{ x: 4 }}
-              transition={{ type: "spring", stiffness: 320, damping: 22 }}
+              transition={{
+                type: "spring",
+                stiffness: 320,
+                damping: 22,
+              }}
               className={`
                 group flex min-h-[68px] items-center gap-3 px-[2px]
-                ${index !== heroStats.length - 1 ? "border-b border-white/[0.07]" : ""}
+
+                ${
+                  index !== heroStats.length - 1
+                    ? "border-b border-white/[0.07]"
+                    : ""
+                }
               `}
             >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center text-[#bbd86c] transition-all duration-300 group-hover:scale-110 group-hover:text-[#d5ea87]">
-                <StatIcon className="h-[28px] w-[28px]" strokeWidth={1.5} />
+              <div
+                className="
+                  flex h-9 w-9 shrink-0
+                  items-center justify-center
+                  text-[#bbd86c]
+                  transition-all duration-300
+                  group-hover:scale-110
+                  group-hover:text-[#d5ea87]
+                "
+              >
+                <StatIcon
+                  className="h-[28px] w-[28px]"
+                  strokeWidth={1.5}
+                />
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <p className="text-[18px] font-semibold leading-none text-white">
                   {stat.value}
                 </p>
+
                 <p className="mt-1 text-[10.5px] leading-[1.2] text-white/90">
                   {stat.label}
                 </p>
@@ -643,10 +813,20 @@ export default function Home() {
         initial="hidden"
         animate="show"
         className="
-          relative z-10 grid grid-cols-2 gap-2 rounded-[12px]
-          border border-[#849b46]/25 bg-[#052b0c]/80 p-3
-          backdrop-blur-md shadow-[0_12px_30px_rgba(0,0,0,0.15)]
+          relative z-10
+          grid w-full min-w-0
+          grid-cols-2 gap-2
+          rounded-[12px]
+          border border-[#849b46]/25
+          bg-[#052b0c]/80
+          p-3
+          backdrop-blur-md
+          shadow-[0_12px_30px_rgba(0,0,0,0.15)]
+
           lg:hidden
+
+          max-[360px]:grid-cols-1
+          max-[360px]:p-2.5
         "
       >
         {heroStats.map((stat) => {
@@ -658,15 +838,53 @@ export default function Home() {
               variants={heroItem}
               whileHover={{ y: -2 }}
               className="
-                flex min-h-[64px] items-center gap-2.5 rounded-[9px]
-                border border-white/[0.05] bg-white/[0.04]
-                px-3 py-2 transition-all duration-300 hover:bg-white/[0.07]
+                flex min-h-[64px] min-w-0
+                items-center gap-2.5
+                rounded-[9px]
+                border border-white/[0.05]
+                bg-white/[0.04]
+                px-3 py-2
+                transition-all duration-300
+                hover:bg-white/[0.07]
+
+                max-[400px]:px-2.5
+                max-[380px]:gap-2
               "
             >
-              <StatIcon className="h-6 w-6 shrink-0 text-[#bad56a]" strokeWidth={1.5} />
-              <div>
-                <p className="text-[12px] font-semibold text-white">{stat.value}</p>
-                <p className="mt-[2px] text-[7px] text-white/65">{stat.label}</p>
+              <StatIcon
+                className="
+                  h-6 w-6 shrink-0
+                  text-[#bad56a]
+
+                  max-[380px]:h-5
+                  max-[380px]:w-5
+                "
+                strokeWidth={1.5}
+              />
+
+              <div className="min-w-0">
+                <p
+                  className="
+                    break-words
+                    text-[12px]
+                    font-semibold
+                    text-white
+                  "
+                >
+                  {stat.value}
+                </p>
+
+                <p
+                  className="
+                    mt-[2px]
+                    break-words
+                    text-[7px]
+                    leading-[1.3]
+                    text-white/65
+                  "
+                >
+                  {stat.label}
+                </p>
               </div>
             </motion.div>
           );
@@ -674,8 +892,6 @@ export default function Home() {
       </motion.div>
     </div>
   </div>
-
- 
 </section>
 
     {/* HERO HIGHLIGHTS / FEATURES STRIP */}
@@ -2105,7 +2321,7 @@ mt-12
         <div
           className="
             overflow-hidden
-
+mt-6
             rounded-[7px]
 
             border
@@ -2289,13 +2505,13 @@ mt-12
 
                       whitespace-pre-line
 
-                      text-[8px]
+                      text-[9px]
                       font-normal
                       leading-[1.45]
 
                       text-[#545e54]
 
-                      sm:text-[8px]
+                      sm:text-[10px]
                     "
                   >
                     {item.label}
@@ -2394,8 +2610,8 @@ mt-12
         >
           <BookOpen
             className="
-              h-[22px]
-              w-[22px]
+              h-[24px]
+              w-[24px]
               text-[#456b3c]
             "
             strokeWidth={1.45}
@@ -2409,7 +2625,7 @@ mt-12
               tracking-[-0.2px]
               text-[#1c301f]
 
-              sm:text-[15px]
+              sm:text-[17px]
             "
           >
             Publication Partner
@@ -2437,10 +2653,7 @@ mt-12
           ================================================== */}
 
           <motion.div
-            whileHover={{
-              y: -3,
-              rotate: -0.4,
-            }}
+         
             transition={{
               type: "spring",
               stiffness: 260,
@@ -2481,7 +2694,6 @@ mt-12
                 duration-[750ms]
                 ease-out
 
-                group-hover/cover:scale-[1.045]
 
                 sm:h-[152px]
               "
@@ -2529,7 +2741,7 @@ mt-12
                 delay: 0.18,
               }}
               className="
-                text-[14px]
+                text-[15px]
                 font-semibold
                 leading-[1.28]
                 tracking-[-0.25px]
@@ -2537,8 +2749,8 @@ mt-12
                 text-[#17301c]
 
                 sm:text-[15px]
-                lg:text-[14px]
-                xl:text-[15px]
+                lg:text-[16px]
+                xl:text-[16px]
               "
             >
               Journal of Entomological Research
@@ -2570,7 +2782,7 @@ mt-12
 
                   inline-flex
                   items-center
-                  gap-[5px]
+              
 
                   rounded-[4px]
 
@@ -2580,9 +2792,9 @@ mt-12
                   bg-[linear-gradient(180deg,#426c26_0%,#31581b_100%)]
 
                   px-[9px]
-                  py-[4px]
+                  py-[5px]
 
-                  text-[8px]
+                  text-[10px]
                   font-semibold
                   leading-none
 
@@ -2597,13 +2809,7 @@ mt-12
                   hover:bg-[linear-gradient(180deg,#507d30_0%,#3a6520_100%)]
                 "
               >
-                <Check
-                  className="
-                    h-[9px]
-                    w-[9px]
-                  "
-                  strokeWidth={2.2}
-                />
+              
 
                 Scopus Indexed
               </span>
@@ -2641,7 +2847,7 @@ mt-12
 
                 lg:text-[9px]
 
-                xl:text-[9.5px]
+                xl:text-[11.5px]
               "
             >
               Selected high-quality papers will be recommended for publication
@@ -2667,7 +2873,7 @@ mt-12
                 duration: 0.5,
                 delay: 0.3,
               }}
-              className="mt-[9px]"
+              className="mt-[3px]"
             >
               <Link
                 to="/publication"
@@ -2687,15 +2893,15 @@ mt-12
                   font-medium
                   leading-none
 
-                  text-[#355536]
+                  hover:text-[#355536]
 
                   transition-all
                   duration-300
 
                   hover:border-[#789d55]
-                  hover:text-[#658d49]
+                  text-[#658d49]
 
-                  sm:text-[9px]
+                  sm:text-[11px]
                 "
               >
                 <span>Learn more about publication</span>
@@ -2730,11 +2936,10 @@ mt-12
 <section
   className="
     relative
+    w-full
+    overflow-hidden
     bg-white
- 
     pt-[4px]
-    
-   
   "
 >
   <PageContainer>
@@ -2765,7 +2970,8 @@ mt-12
         relative
         mx-auto
         w-full
-        max-w-[1125px]
+        min-w-0
+        max-w-[1110px]
 
         overflow-hidden
         rounded-[7px]
@@ -2795,24 +3001,7 @@ mt-12
         backgroundImage: `url(${bgcta})`,
       }}
     >
-      {/* =====================================================
-          SUBTLE OVERLAY
-          Keeps text clear without hiding the background image
-      ====================================================== */}
-
-      <div
-        aria-hidden="true"
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-
-          bg-[linear-gradient(90deg,rgba(4,39,10,0.02)_0%,rgba(4,42,10,0.03)_28%,rgba(4,43,10,0.10)_45%,rgba(3,39,9,0.04)_72%,rgba(2,34,8,0.02)_100%)]
-        "
-      />
-
       {/* Mobile overlay */}
-
       <div
         aria-hidden="true"
         className="
@@ -2829,14 +3018,16 @@ mt-12
       {/* =====================================================
           CONTENT
       ====================================================== */}
-<div
+
+      <div
         className="
           relative
           z-10
 
           flex
           min-h-[128px]
-          w-full 
+          w-full
+          min-w-0
           flex-col
           items-center
           justify-center
@@ -2860,6 +3051,11 @@ mt-12
           lg:pr-[18%]
 
           xl:pl-[40.5%]
+
+          max-[480px]:px-[18px]
+          max-[400px]:px-[15px]
+          max-[360px]:px-[12px]
+          max-[340px]:px-[10px]
         "
       >
         {/* TEXT */}
@@ -2879,19 +3075,24 @@ mt-12
             delay: 0.12,
           }}
           className="
+            w-full
+            min-w-0
             max-w-[410px]
 
             text-[11px]
             font-medium
             leading-[1.35]
             tracking-[-0.12px]
-            text-white
+            text-white/90
 
             sm:text-[11px]
 
             md:text-[11.5px]
 
-            lg:text-[12px]
+            lg:text-[14.5px]
+
+            max-[360px]:text-[10.5px]
+            max-[340px]:text-[10px]
           "
         >
           Be a part of advancing entomological science
@@ -2917,16 +3118,26 @@ mt-12
             duration: 0.5,
             delay: 0.2,
           }}
-          className="mt-[8px]"
+          className="
+            mt-[8px]
+            flex
+            w-full
+            min-w-0
+            justify-center
+
+            sm:justify-start
+          "
         >
           <Link
             to="/submit-paper"
             className="
               group/button
               relative
+              mt-1
 
               inline-flex
               min-h-[34px]
+              max-w-full
               items-center
               justify-center
 
@@ -2944,7 +3155,8 @@ mt-12
               px-[17px]
               py-[7px]
 
-              text-[9px]
+              text-center
+              text-[11px]
               font-semibold
               leading-none
               tracking-[-0.04px]
@@ -2968,11 +3180,17 @@ mt-12
               active:translate-y-0
 
               sm:min-w-[213px]
-              sm:text-[9.5px]
+              sm:text-[11.5px]
 
               lg:min-h-[35px]
               lg:px-[18px]
-              lg:text-[10px]
+              lg:text-[12px]
+
+              max-[360px]:gap-[9px]
+              max-[360px]:px-[14px]
+              max-[340px]:gap-[7px]
+              max-[340px]:px-[11px]
+              max-[340px]:text-[10.5px]
             "
           >
             {/* animated shine */}
@@ -3000,7 +3218,7 @@ mt-12
               "
             />
 
-            <span className="relative z-10">
+            <span className="relative z-10 whitespace-nowrap">
               Submit Your Paper Today
             </span>
 
@@ -3022,6 +3240,9 @@ mt-12
 
                 lg:h-[15px]
                 lg:w-[15px]
+
+                max-[340px]:h-[13px]
+                max-[340px]:w-[13px]
               "
               strokeWidth={1.9}
             />
