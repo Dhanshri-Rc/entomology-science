@@ -478,7 +478,7 @@ export default function Home() {
         pt-10 pb-14
         sm:min-h-[600px] sm:pt-11
         md:min-h-[560px]
-        lg:min-h-[460px] lg:grid-cols-[minmax(0,1fr)_190px] lg:items-center lg:gap-12 lg:pt-8 lg:pb-16
+        lg:min-h-[490px] lg:grid-cols-[minmax(0,1fr)_190px] lg:items-center lg:gap-12 lg:pt-8 lg:pb-16
       "
     >
       {/* Left content */}
@@ -1478,7 +1478,7 @@ text-justify
   "
 >
   <PageContainer>
-    <div className="mx-auto w-full max-w-[1125px]">
+    <div className="mx-auto w-full max-w-[1110px]">
 
       {/* =====================================================
           SECTION HEADING
@@ -1608,7 +1608,7 @@ text-justify
           min-[430px]:gap-[12px]
 mt-12
           md:grid-cols-4
-          md:gap-x-[22px]
+          md:gap-x-[12px]
           md:gap-y-[12px]
         "
       >
@@ -1684,7 +1684,7 @@ mt-12
                 md:px-[18px]
 
                 lg:min-h-[88px]
-                lg:px-[20px]
+                lg:px-[16px]
               "
             >
               {/* subtle green hover glow */}
@@ -1730,8 +1730,8 @@ mt-12
 
                   text-[#4f7043]
 
-                  sm:h-[42px]
-                  sm:w-[42px]
+                  sm:h-[48px]
+                  sm:w-[48px]
                 "
               >
                 <ThemeIcon
@@ -1775,9 +1775,9 @@ mt-12
 
                   sm:text-[11.5px]
 
-                  md:text-[11px]
+                  md:text-[12px]
 
-                  lg:text-[12px]
+                  lg:text-[13px]
                 "
               >
                 {theme.title}
@@ -1814,7 +1814,7 @@ mt-12
           VIEW AIMS & SCOPE BUTTON
       ====================================================== */}
 
-      <motion.div
+      {/* <motion.div
         initial={{
           opacity: 0,
           y: 12,
@@ -1833,7 +1833,7 @@ mt-12
           mt-[8px]
           flex
           justify-center
-          sm:mt-[9px]
+          sm:mt-[36px]
         "
       >
         <Link
@@ -1889,7 +1889,7 @@ mt-12
             sm:text-[10.5px]
           "
         >
-          {/* hover shine */}
+         
 
           <span
             aria-hidden="true"
@@ -1917,14 +1917,12 @@ mt-12
             View Aims &amp; Scope
           </span>
         </Link>
-      </motion.div>
+      </motion.div> */}
     </div>
   </PageContainer>
 </section>
 
-      {/* =====================================================
-          DATES AND PUBLICATION
-      ===================================================== */}
+    
 
     {/* =========================================================
     IMPORTANT DATES + PUBLICATION PARTNER
@@ -1937,8 +1935,8 @@ mt-12
     pb-[26px]
     pt-[8px]
     sm:pb-[30px]
-    sm:pt-[10px]
-    lg:pb-[24px]
+    sm:pt-[5px]
+    lg:pb-[20px]
   "
 >
   <PageContainer>
@@ -1947,12 +1945,12 @@ mt-12
         mx-auto
         grid
         w-full
-        max-w-[1125px]
+        max-w-[1110px]
         grid-cols-1
         gap-[14px]
 
         lg:grid-cols-[0.96fr_1.04fr]
-        lg:gap-[46px]
+        lg:gap-[26px]
 
         xl:grid-cols-[0.95fr_1.05fr]
       "
@@ -2031,8 +2029,8 @@ mt-12
           <div className="flex items-center gap-[9px]">
             <CalendarDays
               className="
-                h-[21px]
-                w-[21px]
+                h-[24px]
+                w-[24px]
                 text-[#466b3d]
               "
               strokeWidth={1.5}
@@ -2046,7 +2044,7 @@ mt-12
                 tracking-[-0.2px]
                 text-[#1c301f]
 
-                sm:text-[15px]
+                sm:text-[17px]
               "
             >
               Important Dates
@@ -2072,15 +2070,15 @@ mt-12
               text-[9px]
               font-medium
               leading-none
-              text-[#2d472d]
+               hover:text-[#2d472d]
 
               transition-all
               duration-300
 
               hover:border-[#72944c]
-              hover:text-[#668a44]
+             text-[#668a44]
 
-              sm:text-[9.5px]
+              sm:text-[11.5px]
             "
           >
             <span>View All Dates</span>
@@ -2188,7 +2186,7 @@ mt-12
                     hover:bg-[#f8faf6]
 
                     sm:min-h-[129px]
-                    sm:px-[6px]
+                    sm:px-[4px]
 
                     ${
                       index % 2 !== 0
@@ -2240,8 +2238,8 @@ mt-12
 
                       mb-[11px]
 
-                      h-[27px]
-                      w-[27px]
+                      h-[30px]
+                      w-[30px]
 
                       text-[#547a49]
 
@@ -2274,7 +2272,7 @@ mt-12
 
                       lg:text-[9.5px]
 
-                      xl:text-[10px]
+                      xl:text-[11px]
                     "
                   >
                     {item.date}
