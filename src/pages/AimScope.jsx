@@ -200,7 +200,7 @@ export default function AimScope() {
     <main className="overflow-hidden bg-white font-sans text-[#202720]">
       {/* HERO */}
       <section
-        className="relative isolate flex min-h-[395px] items-center bg-cover bg-[position:68%_center] sm:min-h-[400px] md:min-h-[450px] md:bg-center"
+        className="relative isolate flex min-h-[360px] items-center bg-cover bg-[position:68%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"
         style={{ backgroundImage: `url(${aimsBg})` }}
       >
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#062417]/95 via-[#0a2d19]/78 to-[#0a2d19]/10 sm:via-[#0a2d19]/62 md:to-transparent" />
@@ -214,7 +214,7 @@ export default function AimScope() {
           >
             <nav
               aria-label="Breadcrumb"
-              className="mb-5 mt-12 sm:mt-4 lg:mt-4 flex items-center gap-2 text-[13px] sm:text-[12px]"
+              className="mb-5 mt-20 sm:mt-14 lg:mt-16 flex items-center gap-2 text-[13px] sm:text-[12px]"
             >
               <Link to="/" className="transition hover:text-[#b8d96b]">
                 Home

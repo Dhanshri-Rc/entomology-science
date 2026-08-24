@@ -156,7 +156,7 @@ export default function About() {
     <main className="overflow-hidden bg-white font-sans text-[#202820]">
       {/* Hero section */}
       <section
-        className="relative isolate flex min-h-[390px] items-center bg-cover bg-[position:66%_center] sm:min-h-[400px] md:min-h-[450px] md:bg-center"
+        className="relative isolate flex min-h-[360px] items-center bg-cover bg-[position:66%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"
         style={{ backgroundImage: `url(${aboutBg})` }}
       >
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#092416]/95 via-[#0b2d19]/82 to-[#0b2d19]/5 sm:via-[#0b2d19]/68 md:to-transparent" />
@@ -170,7 +170,7 @@ export default function About() {
           >
             <nav
               aria-label="Breadcrumb"
-              className="mb-5 mt-20 sm:mt-6 lg:mt-10 flex items-center gap-2 text-[13px] sm:text-[12px]"
+              className="mb-5 mt-20 sm:mt-18 lg:mt-20 flex items-center gap-2 text-[13px] sm:text-[12px]"
             >
               <Link to="/" className="transition hover:text-[#b9db74]">
                 Home
