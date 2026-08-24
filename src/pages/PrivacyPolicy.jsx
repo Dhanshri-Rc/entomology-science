@@ -732,12 +732,12 @@ export default function PrivacyPolicy() {
 
                   <h2
                     className="
-                      text-[13px]
+                      text-[15px]
                       font-semibold
 
                       text-[#17301b]
 
-                      sm:text-[14px]
+                      sm:text-[16px]
                     "
                   >
                     Privacy Policy
@@ -747,7 +747,7 @@ export default function PrivacyPolicy() {
                 <div
                   className="
                     ml-[26px]
-                    mt-[7px]
+                    mt-[4px]
 
                     h-[2px]
                     w-[38px]
@@ -820,7 +820,7 @@ export default function PrivacyPolicy() {
 
                           bg-[#e3ecd9]
 
-                          text-[7px]
+                          text-[9px]
                           font-semibold
 
                           text-[#477539]
@@ -834,7 +834,7 @@ export default function PrivacyPolicy() {
                         {section.number}
                       </span>
 
-                      <span className="min-w-0">
+                      <span className="min-w-0 text-[11px]">
                         {section.title}
                       </span>
                     </a>
@@ -1389,7 +1389,7 @@ export default function PrivacyPolicy() {
                 className="
                   mt-[6px]
 
-                  max-w-[430px]
+                  max-w-[480px]
 
                   text-[9px]
                   font-medium
@@ -1397,7 +1397,7 @@ export default function PrivacyPolicy() {
 
                   text-[#435045]
 
-                  sm:text-[9.5px]
+                  sm:text-[11.5px]
 
                   max-[640px]:text-white/90
                 "
@@ -1442,7 +1442,7 @@ export default function PrivacyPolicy() {
                     px-[12px]
                     py-[7px]
 
-                    text-[9px]
+                    text-[12px]
                     font-semibold
 
                     text-white
