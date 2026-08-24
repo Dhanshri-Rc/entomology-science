@@ -145,15 +145,31 @@ function PageContainer({ children, className = "" }) {
 
 function SectionHeading({ children }) {
   return (
-    <h2 className="flex items-center gap-3 text-[20px] font-[550] leading-tight text-[#123819] sm:text-[21px]">
+    <h2 className="flex items-center gap-3 text-[21px] font-[550] leading-tight text-[#123819] sm:text-[23px]">
       <Leaf className="h-5 w-5 shrink-0 -rotate-12 fill-[#8dbd51]/35 text-[#427a29]" />
       {children}
     </h2>
   );
 }
 
-function DarkButton({ children, to, icon: Icon, className = "" }) {
-  const styles = `group inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-[#174d1b] px-5 py-2.5 text-[12px] font-[550] text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-[#0d3914] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#82ad45] focus:ring-offset-2 ${className}`;
+function DarkButton({
+  children,
+  to,
+  href,
+  download,
+  icon: Icon,
+  className = "",
+}) {
+  const styles = `group inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-[#174d1b] px-5 py-2.5 text-sm font-[550] text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-[#0d3914] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#82ad45] focus:ring-offset-2 ${className}`;
+
+  if (href) {
+    return (
+      <a href={href} download={download} className={styles}>
+        {Icon && <Icon className="h-4 w-4" />}
+        {children}
+      </a>
+    );
+  }
 
   if (to) {
     return (
@@ -179,30 +195,30 @@ export default function CallForPapers() {
     <main className="overflow-hidden bg-white font-sans text-[#203426]">
       {/* Hero */}
       <section
-        className="relative isolate flex min-h-[395px] items-center bg-cover bg-[position:68%_center] sm:min-h-[400px] md:min-h-[450px] md:bg-center"
+        className="relative isolate flex min-h-[390px] items-center bg-cover bg-[position:66%_center] sm:min-h-[400px] md:min-h-[450px] md:bg-center"
         style={{ backgroundImage: `url(${callHeroBg})` }}
       >
-        {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#082d16]/[0.98] via-[#103c1d]/80 to-[#123c16]/15 sm:via-[#103c1d]/66 lg:via-[#103c1d]/48" /> */}
+        {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#082d16]/[0.99] via-[#103c1d]/90 to-[#123c16]/55 sm:via-[#103c1d]/76 sm:to-[#123c16]/30 md:via-[#103c1d]/66 md:to-[#123c16]/15 lg:via-[#103c1d]/48 lg:to-transparent" /> */}
 
-        <PageContainer className="relative flex min-h-[520px] items-center py-10 sm:min-h-[440px] lg:min-h-[310px] lg:py-8">
+        <PageContainer className="relative grid min-h-[535px] grid-cols-1 content-center gap-7 py-10 sm:min-h-[500px] sm:py-12 md:min-h-[410px] md:grid-cols-[minmax(0,1fr)_164px] md:items-center md:gap-6 md:py-9 lg:min-h-[310px] lg:grid-cols-[minmax(0,1fr)_190px] lg:gap-8 lg:py-6">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="w-full max-w-[700px] pb-[172px] text-white sm:pb-[150px] lg:pb-0"
+            className="w-full max-w-[660px] text-center text-white md:text-left"
           >
-            <span className="inline-flex rounded-md bg-white/15 px-3 py-1.5 text-[10px] font-[500] uppercase tracking-[0.02em] text-white backdrop-blur-sm sm:text-[11px]">
+            <span className="inline-flex mt-12 sm:mt-4 lg:mt-6 rounded-md bg-white/15 px-3 py-1.5 text-[11px] font-[550] uppercase tracking-[0.02em] text-white backdrop-blur-sm sm:text-[12px]">
               Call for Papers
             </span>
 
-            <h1 className="mt-5 text-[34px] max text-white font-semibold leading-[1.16] tracking-[-0.025em] sm:text-[36px] lg:text-[36px]">
+            <h1 className="mt-5 text-[32px] text-white font-semibold leading-[1.16] tracking-[-0.025em] min-[380px]:text-[35px] sm:text-[40px] md:text-[34px] lg:text-[36px]">
               Share Your Research.
               <br />
               Advance{" "}
               <span className="text-[#acd261]">Entomological Science.</span>
             </h1>
 
-            <p className="mt-4 max-w-[450px] text-[13px] leading-[1.75] text-white/95 sm:text-[14px]">
+            <p className="mx-auto mt-4 max-w-[470px] text-[13px] leading-[1.7] text-white/95 sm:text-[14px] sm:leading-[1.75] md:mx-0 lg:text-[15px]">
               We invite researchers, scientists, academicians and industry
               professionals to contribute their original research and innovative
               ideas to the conference.
@@ -213,22 +229,22 @@ export default function CallForPapers() {
             initial={{ opacity: 0, scale: 0.86 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.55, ease: "easeOut" }}
-            className="absolute bottom-2 left-1/2 flex h-[158px] w-[158px] -translate-x-1/2 flex-col items-center justify-center rounded-full border-[6px] border-[#a8d36b] bg-[#fbfdf8] px-3 text-center shadow-[0_0_0_3px_rgba(255,255,255,.88)] sm:bottom-8 sm:h-[170px] sm:w-[170px] lg:bottom-auto lg:left-auto lg:right-8  lg:h-[180px] lg:w-[180px] lg:-translate-x-0 lg:-translate-y-1/2 xl:right-10"
+            className="mx-auto flex h-[154px] w-[154px] flex-col items-center justify-center rounded-full border-[6px] border-[#a8d36b] bg-[#fbfdf8] px-3 text-center shadow-[0_0_0_3px_rgba(255,255,255,.88)] sm:h-[164px] sm:w-[164px] md:mx-0 md:justify-self-end lg:h-[180px] lg:w-[180px]"
           >
             <CalendarDays className="mb-1 h-6 w-6 text-[#163d1d]" />
-            <h2 className="text-[12px] font-[550] text-[#143719] sm:text-[13px]">
+            <h2 className="text-[13px] font-[550] text-[#143719] sm:text-sm">
               Important Dates
             </h2>
-            <p className="mt-1 text-[10px] leading-tight text-[#3e4d41] sm:text-[11px]">
+            <p className="mt-2 text-[10px] leading-tight text-[#3e4d41] sm:text-[11px]">
               Abstract Submission
             </p>
-            <p className="mt-0.5 text-[11px] font-[550] text-[#174d1b] sm:text-[12px]">
+            <p className="mt-0.5 text-xs font-[550] text-[#174d1b] sm:text-[13px]">
               31 July 2025
             </p>
             <p className="mt-2 text-[10px] leading-tight text-[#3e4d41] sm:text-[11px]">
               Full Paper Submission
             </p>
-            <p className="mt-0.5 text-[11px] font-[550] text-[#174d1b] sm:text-[12px]">
+            <p className="mt-0.5 text-xs font-[550] text-[#174d1b] sm:text-[13px]">
               30 August 2025
             </p>
           </motion.div>
@@ -243,7 +259,7 @@ export default function CallForPapers() {
               {/* Topics */}
               <motion.section {...fadeUp}>
                 <SectionHeading>Topics of Interest</SectionHeading>
-                <p className="mt-2 text-[14px] leading-6 text-[#2c4732]">
+                <p className="mt-4 text-sm leading-6 text-[#2c4732]">
                   We welcome papers (but not limited to) in the following areas:
                 </p>
 
@@ -283,7 +299,7 @@ export default function CallForPapers() {
                         className="group flex min-h-[132px] flex-col items-center justify-center rounded-lg border border-[#edf1e8] bg-[#f4f7f0] p-5 text-center shadow-sm transition-shadow duration-300 hover:shadow-[0_12px_28px_rgba(25,67,28,.13)]"
                       >
                         <TypeIcon className="h-8 w-8 text-[#194b20] transition-transform duration-300 group-hover:scale-110" />
-                        <h3 className="mt-3 text-[14px] font-[550] text-[#17391c]">
+                        <h3 className="mt-3 text-sm font-[550] text-[#17391c]">
                           {title}
                         </h3>
                         <p className="mt-2 text-[13px] leading-5 text-[#344638]">
@@ -310,8 +326,15 @@ export default function CallForPapers() {
                   ))}
                 </ul>
 
-                <div className="mt-7 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                  <DarkButton icon={Download}>Download Templates</DarkButton>
+                <div className="mt-7 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
+                  <a
+                    href={`${import.meta.env.BASE_URL}download/entomology-author-paper-template.pdf`}
+                    download="entomology-author-paper-template.pdf"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#174d1b] px-5 py-2.5 text-sm font-[550] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#0d3914] hover:shadow-lg sm:w-auto"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download Templates
+                  </a>
                   <p className="text-[13px] leading-5 text-[#35483a]">
                     For detailed author instructions, visit the{" "}
                     <Link
@@ -334,7 +357,7 @@ export default function CallForPapers() {
               >
                 <div className="mb-5 flex items-center gap-3">
                   <CalendarDays className="h-6 w-6 text-[#1d5424]" />
-                  <h2 className="text-[18px] font-[550] text-[#153a1b]">
+                  <h2 className="text-lg font-[550] text-[#153a1b]">
                     Important Dates
                   </h2>
                 </div>
@@ -346,7 +369,7 @@ export default function CallForPapers() {
                         <DateIcon className="h-4 w-4" />
                       </span>
                       <div>
-                        <p className="text-[12.5px] leading-4 text-[#4b5d50]">
+                        <p className="text-[12px] leading-4 text-[#4b5d50]">
                           {label}
                         </p>
                         <p className="mt-0.5 text-[13px] font-[550] leading-5 text-[#19451e]">
@@ -362,10 +385,8 @@ export default function CallForPapers() {
                 {...fadeUp}
                 className="rounded-xl bg-gradient-to-br from-[#123f1a] to-[#235b22] p-6 text-white shadow-[0_10px_28px_rgba(14,60,21,.15)] transition-shadow duration-300 hover:shadow-[0_14px_32px_rgba(14,60,21,.25)]"
               >
-                <h2 className="text-[18px] text-white font-[550]">
-                  Why Submit?
-                </h2>
-                <ul className="mt-3 space-y-2">
+                <h2 className="text-lg text-white font-[550]">Why Submit?</h2>
+                <ul className="mt-5 space-y-4">
                   {whySubmit.map((reason) => (
                     <li
                       key={reason}
@@ -384,7 +405,7 @@ export default function CallForPapers() {
               >
                 <div className="flex items-center gap-3">
                   <Send className="h-7 w-7 -rotate-6 text-[#225623]" />
-                  <h2 className="text-[18px] font-[550] text-[#153a1b]">
+                  <h2 className="text-lg font-[550] text-[#153a1b]">
                     Submit Your Paper
                   </h2>
                 </div>
@@ -410,12 +431,12 @@ export default function CallForPapers() {
         <PageContainer>
           <motion.div
             {...fadeUp}
-            className="relative isolate flex min-h-[215px] items-center overflow-hidden rounded-lg bg-[#f5f7ef] bg-cover bg-[position:23%_center] px-5 py-4 shadow-sm sm:min-h-[176px] sm:bg-center sm:px-8 lg:min-h-[164px] lg:px-10"
+            className="relative isolate flex min-h-[290px] items-end overflow-hidden rounded-lg bg-[#f5f7ef] bg-cover bg-[position:16%_top] px-5 py-6 shadow-sm sm:min-h-[190px] sm:items-center sm:bg-center sm:px-8 lg:min-h-[164px] lg:px-10"
             style={{ backgroundImage: `url(${callCtaBg})` }}
           >
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-white/0 via-[#f5f7ef]/55 to-[#f5f7ef]/95 sm:hidden" />
-            <div className="ml-auto w-[68%] max-w-[570px] sm:w-[58%] md:w-[56%] lg:mr-[9%] lg:w-[53%]">
-              <h2 className="text-[16px] font-[550] leading-[1.35] text-[#17371d] sm:text-[17px] lg:text-[18px]">
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-[#f5f7ef]/55 to-[#f5f7ef] sm:bg-gradient-to-r sm:from-transparent sm:via-[#f5f7ef]/35 sm:to-[#f5f7ef]/95" />
+            <div className="w-full max-w-[570px] text-center sm:ml-auto sm:w-[58%] sm:text-left md:w-[56%] lg:mr-[9%] lg:w-[53%]">
+              <h2 className="text-[17px] font-[550] leading-[1.4] text-[#17371d] sm:text-[20px] lg:text-[22px]">
                 Join us in advancing the science of entomology
                 <br className="hidden sm:block" /> for a sustainable future.
               </h2>

@@ -170,7 +170,7 @@ export default function About() {
           >
             <nav
               aria-label="Breadcrumb"
-              className="mb-5 mt-12 sm:mt-4 lg:mt-10 flex items-center gap-2 text-[13px] sm:text-[12px]"
+              className="mb-5 mt-20 sm:mt-6 lg:mt-10 flex items-center gap-2 text-[13px] sm:text-[12px]"
             >
               <Link to="/" className="transition hover:text-[#b9db74]">
                 Home
@@ -181,7 +181,7 @@ export default function About() {
               <span className="font-medium">About the Conference</span>
             </nav>
 
-            <h1 className="text-[36px] text-white font-[600] leading-tight tracking-[-0.02em] sm:text-[38px]">
+            <h1 className="text-[34px] text-white font-[600] leading-tight tracking-[-0.02em] lg:text-[36px] sm:text-[36px]">
               About the Conference
             </h1>
 
@@ -191,7 +191,7 @@ export default function About() {
               <span className="h-px w-16 bg-[#6e923e]" />
             </div>
 
-            <p className="max-w-[440px] text-[16px] font-[550] leading-6 text-[#a9d563] sm:text-[17px] sm:leading-6">
+            <p className="max-w-[440px] text-[15px] font-[550] leading-6 text-[#a9d563] sm:text-[16px] sm:leading-6">
               Exploring. Understanding. Preserving.
               <br />
               Insects, Ecosystems, and Our Future.
@@ -214,12 +214,12 @@ export default function About() {
             <motion.article {...fadeUp}>
               <div className="flex items-center gap-3">
                 <Leaf className="h-5 w-5 fill-[#2f6b28] text-[#2f6b28]" />
-                <h2 className="text-[20px] font-[550] text-[#173b1c] sm:text-[22px]">
+                <h2 className="text-[20px] font-[550] text-[#173b1c] sm:text-[21px]">
                   About the Conference
                 </h2>
               </div>
 
-              <div className="mt-4 space-y-3 text-[14px] leading-[1.7] text-[#252b25]">
+              <div className="mt-4 space-y-3 text-[13px] leading-[1.7] text-[#252b25]">
                 <p>
                   Entomology is central to understanding biodiversity, ensuring
                   food security, protecting public health, and maintaining
@@ -268,7 +268,7 @@ export default function About() {
                       <p className="text-[15px] font-semibold leading-tight text-[#17291a] sm:text-[16px]">
                         {value}
                       </p>
-                      <p className="mt-1 text-[11px] leading-tight text-[#303630]">
+                      <p className="mt-1 text-[12px] leading-tight text-[#303630]">
                         {label}
                       </p>
                     </div>
