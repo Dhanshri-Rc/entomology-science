@@ -231,7 +231,7 @@ export default function Publication() {
     <main className="overflow-hidden bg-white font-sans text-[#25372a]">
       {/* Hero */}
       <section
-        className="relative isolate flex min-h-[390px] items-center bg-cover bg-[position:66%_center] sm:min-h-[400px] md:min-h-[450px] md:bg-center"
+        className="relative isolate flex min-h-[396px] items-center bg-cover bg-[position:66%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"
         style={{ backgroundImage: `url(${pubBg})` }}
       >
         {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#082d16]/[0.99] via-[#103c1d]/82 to-[#123c16]/20 sm:via-[#103c1d]/72 md:via-[#103c1d]/58 lg:to-transparent" /> */}
@@ -243,7 +243,7 @@ export default function Publication() {
             transition={{ duration: 0.65, ease: "easeOut" }}
             className="max-w-[555px] py-10 text-white"
           >
-            <h1 className="text-[32px] text-white font-[600] leading-tight tracking-[-0.025em] sm:text-[34px] lg:text-[36px]">
+            <h1 className="text-[32px] mt-2 text-white font-[600] leading-tight tracking-[-0.025em] sm:text-[34px] lg:text-[36px]">
               Publication
             </h1>
             <p className="mt-3 text-[15px] font-[550] leading-tight text-[#a8d366] sm:text-[16px]">

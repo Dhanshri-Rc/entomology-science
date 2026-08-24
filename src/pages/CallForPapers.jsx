@@ -195,7 +195,7 @@ export default function CallForPapers() {
     <main className="overflow-hidden bg-white font-sans text-[#203426]">
       {/* Hero */}
       <section
-        className="relative isolate flex min-h-[390px] items-center bg-cover bg-[position:66%_center] sm:min-h-[400px] md:min-h-[450px] md:bg-center"
+        className="relative isolate flex min-h-[360px] items-center bg-cover bg-[position:66%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"
         style={{ backgroundImage: `url(${callHeroBg})` }}
       >
         {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#082d16]/[0.99] via-[#103c1d]/90 to-[#123c16]/55 sm:via-[#103c1d]/76 sm:to-[#123c16]/30 md:via-[#103c1d]/66 md:to-[#123c16]/15 lg:via-[#103c1d]/48 lg:to-transparent" /> */}
@@ -207,7 +207,7 @@ export default function CallForPapers() {
             transition={{ duration: 0.65, ease: "easeOut" }}
             className="w-full max-w-[660px] text-center text-white md:text-left"
           >
-            <span className="inline-flex mt-12 sm:mt-4 lg:mt-6 rounded-md bg-white/15 px-3 py-1.5 text-[11px] font-[550] uppercase tracking-[0.02em] text-white backdrop-blur-sm sm:text-[12px]">
+            <span className="inline-flex mt-16 sm:mt-12 lg:mt-14 rounded-md bg-white/15 px-3 py-1.5 text-[11px] font-[550] uppercase tracking-[0.02em] text-white backdrop-blur-sm sm:text-[12px]">
               Call for Papers
             </span>
 
