@@ -18,7 +18,7 @@ import {
    LOGO
 ========================================================= */
 
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/flogo.png";
 
 /* =========================================================
    SOCIAL LINKS
@@ -185,7 +185,7 @@ export default function Footer() {
                   sm:w-[56px]
 
                   lg:h-[58px]
-                  lg:w-[58px]
+                  lg:w-[128px]
 
                   max-[390px]:h-[48px]
                   max-[390px]:w-[48px]
@@ -210,42 +210,14 @@ export default function Footer() {
                 />
               </div>
 
-              {/* Association Name */}
-
-              <div className="min-w-0">
-                <p
-                  className="
-                    max-w-[220px]
-
-                    text-[13px]
-                    font-semibold
-                    leading-[1.3]
-
-                    text-white
-
-                    transition-colors
-                    duration-300
-
-                    group-hover/logo:text-[#d5e78d]
-
-                    sm:text-[13.5px]
-
-                    lg:text-[14px]
-
-                    max-[360px]:text-[12px]
-                  "
-                >
-                  {siteInfo?.name ||
-                    "Entomology Science Association"}
-                </p>
-              </div>
+            
             </Link>
 
             {/* Description */}
 
             <p
               className="
-                mt-[10px]
+                mt-[5px]
 
                 max-w-[275px]
 
@@ -271,7 +243,7 @@ export default function Footer() {
 
             <div
               className="
-                mt-[14px]
+                mt-[10px]
 
                 flex
                 flex-wrap
@@ -366,7 +338,7 @@ export default function Footer() {
                     text-[11px]
                     font-medium
 
-                    text-white/85
+                    text-white/95
 
                     transition-all
                     duration-300
@@ -401,7 +373,7 @@ export default function Footer() {
                     text-[11px]
                     font-medium
 
-                    text-white/85
+                    text-white/95
 
                     transition-all
                     duration-300
@@ -427,15 +399,15 @@ export default function Footer() {
           <div className="min-w-0">
             <h3
               className="
-                text-[13px]
+                text-[15px]
                 font-semibold
                 leading-none
 
                 text-white
 
-                sm:text-[14px]
+                sm:text-[15px]
 
-                lg:text-[15px]
+                lg:text-[16px]
               "
             >
               Contact
@@ -449,7 +421,7 @@ export default function Footer() {
                 min-w-0
                 flex-col
 
-                gap-[10px]
+                gap-[14px]
               "
             >
               {/* =============================================
@@ -471,10 +443,10 @@ export default function Footer() {
 
                     gap-[9px]
 
-                    text-[9.5px]
+                    text-[10.5px]
                     font-medium
 
-                    text-white/85
+                    text-white/95
 
                     transition-all
                     duration-300
@@ -482,9 +454,9 @@ export default function Footer() {
                     hover:translate-x-[2px]
                     hover:text-[#c7dd79]
 
-                    sm:text-[10px]
+                    sm:text-[11px]
 
-                    lg:text-[10.5px]
+                    lg:text-[12px]
                   "
                 >
                   <Mail
@@ -492,8 +464,8 @@ export default function Footer() {
                     className="
                       mt-[1px]
 
-                      h-[13px]
-                      w-[13px]
+                      h-[18px]
+                      w-[18px]
 
                       shrink-0
 
@@ -539,10 +511,10 @@ export default function Footer() {
 
                     gap-[9px]
 
-                    text-[9.5px]
+                    text-[10.5px]
                     font-medium
 
-                    text-white/85
+                    text-white/95
 
                     transition-all
                     duration-300
@@ -550,16 +522,16 @@ export default function Footer() {
                     hover:translate-x-[2px]
                     hover:text-[#c7dd79]
 
-                    sm:text-[10px]
+                    sm:text-[11px]
 
-                    lg:text-[10.5px]
+                    lg:text-[12px]
                   "
                 >
                   <Phone
                     strokeWidth={1.8}
                     className="
-                      h-[13px]
-                      w-[13px]
+                      h-[18px]
+                      w-[18px]
 
                       shrink-0
 
@@ -598,10 +570,10 @@ export default function Footer() {
 
                     gap-[9px]
 
-                    text-[9.5px]
+                    text-[10.5px]
                     font-medium
 
-                    text-white/85
+                    text-white/95
 
                     transition-all
                     duration-300
@@ -609,16 +581,16 @@ export default function Footer() {
                     hover:translate-x-[2px]
                     hover:text-[#c7dd79]
 
-                    sm:text-[10px]
+                    sm:text-[11px]
 
-                    lg:text-[10.5px]
+                    lg:text-[12px]
                   "
                 >
                   <Globe2
                     strokeWidth={1.8}
                     className="
-                      h-[13px]
-                      w-[13px]
+                      h-[18px]
+                      w-[18px]
 
                       shrink-0
 
@@ -647,8 +619,8 @@ export default function Footer() {
                     className="
                       hidden
 
-                      h-[10px]
-                      w-[10px]
+                      h-[18px]
+                      w-[18px]
 
                       shrink-0
 
@@ -681,10 +653,10 @@ export default function Footer() {
 
                   gap-[9px]
 
-                  text-[9.5px]
+                  text-[10.5px]
                   font-medium
 
-                  text-white/85
+                  text-white/95
 
                   transition-all
                   duration-300
@@ -692,9 +664,9 @@ export default function Footer() {
                   hover:translate-x-[2px]
                   hover:text-[#c7dd79]
 
-                  sm:text-[10px]
+                  sm:text-[11px]
 
-                  lg:text-[10.5px]
+                  lg:text-[12px]
                 "
               >
                 <MapPin
@@ -702,8 +674,8 @@ export default function Footer() {
                   className="
                     mt-[1px]
 
-                    h-[13px]
-                    w-[13px]
+                    h-[18px]
+                    w-[18px]
 
                     shrink-0
 
@@ -731,7 +703,7 @@ export default function Footer() {
           COPYRIGHT
       ====================================================== */}
 
-      <div
+      {/* <div
         className="
           relative
           z-10
@@ -823,7 +795,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }
@@ -837,15 +809,15 @@ function FooterColumn({ title, children }) {
     <div className="min-w-0">
       <h3
         className="
-          text-[13px]
+          text-[14px]
           font-semibold
           leading-none
 
           text-white
 
-          sm:text-[14px]
+          sm:text-[15px]
 
-          lg:text-[15px]
+          lg:text-[16px]
         "
       >
         {title}
@@ -858,7 +830,7 @@ function FooterColumn({ title, children }) {
           flex
           flex-col
 
-          gap-[8px]
+          gap-[6px]
         "
       >
         {children}
