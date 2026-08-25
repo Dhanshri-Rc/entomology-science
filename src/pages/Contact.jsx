@@ -58,7 +58,7 @@ const contactCards = [
   {
     icon: MessagesSquare,
     title: "General Inquiries",
-    email: "info@entomologyscience.org",
+    email: "contact@entomologyscience.org",
   },
   {
     icon: FileUp,
@@ -1039,10 +1039,11 @@ export default function Contact() {
                   title="Entomology Science Association"
                 >
                   <p>
-                    1234 Research Way, Suite 500
+                    B-6, DSIDC Packaging Complex, Kirti Nagar,
+
                   </p>
-                  <p>Washington, DC 20005,</p>
-                  <p>United States of America</p>
+                  <p>Kirti Nagar, New Delhi, Delhi, 110015</p>
+                  <p> New Delhi, Delhi, 110015</p>
                 </ContactRow>
 
                 {/* Email */}
@@ -1054,7 +1055,7 @@ export default function Contact() {
                   <a
                     href={`mailto:${
                       siteInfo?.email ||
-                      "info@entomologyscience.org"
+                      "contact@entomologyscience.org"
                     }`}
                     className="
                       font-semibold
@@ -1065,7 +1066,7 @@ export default function Contact() {
                     "
                   >
                     {siteInfo?.email ||
-                      "info@entomologyscience.org"}
+                      "contact@entomologyscience.org"}
                   </a>
                 </ContactRow>
 
@@ -1083,7 +1084,7 @@ export default function Contact() {
                     "
                   >
                     {siteInfo?.phone ||
-                      "+1 (202) 981-1088"}
+                      "+91 81098 09909"}
                   </a>
                 </ContactRow>
 

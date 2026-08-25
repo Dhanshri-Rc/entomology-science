@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import SubmitPaper from "./pages/SubmitPaper";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/submit-paper" element={<SubmitPaper />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsConditions />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

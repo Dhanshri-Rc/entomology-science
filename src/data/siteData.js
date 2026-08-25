@@ -1,11 +1,11 @@
 export const siteInfo = {
   name: "Entomology Science Association",
   tagline: "Advancing Entomological Discoveries",
-  email: "info@entomologyscience.org",
-  phone: "+1 (202) 981-1088",
+  email: "contact@entomologyscience.org",
+  phone: "+91 81098 09909",
   website: "www.entomologyscience.org",
-  address: "1234 Research Way, Suite 500, Washington, DC 20005, United States of America",
-  addressShort: "Washington, DC, USA",
+  address: "B-6, DSIDC Packaging Complex, Kirti Nagar,Kirti Nagar",
+  addressShort: " New Delhi, Delhi, 110015",
 };
 
 export const navigation = [
@@ -370,7 +370,7 @@ export const contactSubjects = [
 ];
 
 export const contactCategories = [
-  { icon: "Users2", title: "General Inquiries", email: "info@entomologyscience.org" },
+  { icon: "Users2", title: "General Inquiries", email: "contact@entomologyscience.org" },
   { icon: "FileUp", title: "Submission Support", email: "submissions@entomologyscience.org" },
   { icon: "BookOpen", title: "Publication Queries", email: "publication@entomologyscience.org" },
   { icon: "Headphones", title: "Conference Support", email: "support@entomologyscience.org" },
