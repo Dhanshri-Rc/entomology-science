@@ -166,7 +166,7 @@ export default function Footer() {
                 className="
                   flex
                   h-[52px]
-                  w-[52px]
+                  w-[122px]
 
                   shrink-0
 
@@ -182,10 +182,10 @@ export default function Footer() {
                   group-hover/logo:scale-[1.06]
 
                   sm:h-[56px]
-                  sm:w-[56px]
+                  sm:w-[126px]
 
                   lg:h-[58px]
-                  lg:w-[128px]
+                  lg:w-[138px]
 
                   max-[390px]:h-[48px]
                   max-[390px]:w-[48px]
