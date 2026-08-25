@@ -154,7 +154,7 @@ const otherJournals = [
   {
     title: "Journal of Forensic and Medicinal Entomology",
     issn: "Applied",
-    focus: "Forensic entomology, public health and disease-vector research.",
+    focus: "Forensic Entomology, Public Health Entomology, Vector Biology, Disease Transmission.",
     image: forensicCover,
     website: "https://entomologyscience.org/",
   },
@@ -162,7 +162,7 @@ const otherJournals = [
     title: "Entomology Research and Reviews",
     issn: "Applied",
     focus:
-      "Research and critical reviews covering different areas of entomology.",
+      "Pest Management, Biological Control and Pollinators & Biodiversity, Molecular & Applied Entomology .",
     image: researchReviewsCover,
     website: "https://entomologyscience.org/",
   },
