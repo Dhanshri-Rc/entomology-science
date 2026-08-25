@@ -28,6 +28,8 @@ import {
 import Icon from "../components/Icon";
 import bg from "../assets/img/subpaperbg.png"
 import bgcta from "../assets/img/subpapercta.png"
+import cover from "../assets/img/home3.png"
+
 
 
 import {
@@ -383,8 +385,8 @@ export default function SubmitPaper() {
           max-width: 1180px;
           margin-left: auto;
           margin-right: auto;
-          padding-left: 32px;
-          padding-right: 32px;
+          padding-left: 28px;
+          padding-right: 28px;
           box-sizing: border-box;
           min-width: 0;
         }
@@ -462,21 +464,7 @@ export default function SubmitPaper() {
               }}
         />
 
-        {/* Overlay */}
-
-        <div
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute
-            inset-0
-            -z-20
-
-            bg-[linear-gradient(90deg,rgba(3,36,9,0.98)_0%,rgba(4,42,10,0.91)_31%,rgba(4,42,10,0.59)_50%,rgba(4,42,10,0.16)_69%,rgba(4,42,10,0)_100%)]
-
-            max-[640px]:bg-[linear-gradient(90deg,rgba(3,33,8,0.98)_0%,rgba(4,39,9,0.92)_48%,rgba(4,39,9,0.72)_76%,rgba(4,39,9,0.51)_100%)]
-          "
-        />
+       
 
         <div className="submit-paper-container">
           <div
@@ -493,7 +481,7 @@ export default function SubmitPaper() {
 
               py-[27px]
 
-              sm:min-h-[220px]
+              sm:min-h-[340px]
               sm:py-[30px]
 
               max-[480px]:min-h-[235px]
@@ -541,12 +529,12 @@ export default function SubmitPaper() {
 
                   gap-[7px]
 
-                  text-[9px]
+                  text-[13px]
                   font-medium
 
                   text-white/90
 
-                  sm:text-[9.5px]
+                  sm:text-[13.5px]
                 "
               >
                 <Link
@@ -629,19 +617,7 @@ export default function SubmitPaper() {
                 "
               >
                 Submit Paper
-                <span
-                  className="
-                    ml-[9px]
-                    align-middle
-
-                    text-[14px]
-                    text-[#c5a842]
-
-                    sm:text-[16px]
-                  "
-                >
-                  ~
-                </span>
+               
               </motion.h1>
 
               {/* Description */}
@@ -660,18 +636,18 @@ export default function SubmitPaper() {
                   delay: 0.23,
                 }}
                 className="
-                  mt-[14px]
+                  mt-[15px]
                   max-w-[435px]
 
-                  text-[10px]
+                  text-[13px]
                   font-medium
                   leading-[1.6]
 
                   text-white/90
 
-                  sm:text-[10.5px]
+                  sm:text-[13.5px]
 
-                  md:text-[11px]
+                 
                 "
               >
                 Share your original research and contribute
@@ -1293,7 +1269,7 @@ export default function SubmitPaper() {
 
               <div
                 className="
-                  mt-[12px]
+                  mt-[10px]
                   border-t
                   border-[#e6e9e1]
                   pt-[11px]
@@ -1306,13 +1282,13 @@ export default function SubmitPaper() {
                     items-start
                     gap-[7px]
 
-                    text-[8px]
+                    text-[11px]
                     font-medium
                     leading-[1.5]
 
                     text-[#40483e]
 
-                    sm:text-[8.5px]
+                    sm:text-[11.5px]
                   "
                 >
                   <input
@@ -1424,10 +1400,10 @@ export default function SubmitPaper() {
 
                     bg-[linear-gradient(180deg,#1e6421_0%,#124c17_100%)]
 
-                    px-[16px]
-                    py-[6px]
+                    px-[26px]
+                    py-[7px]
 
-                    text-[8.5px]
+                    text-[12.5px]
                     font-semibold
 
                     text-white
@@ -1471,8 +1447,8 @@ export default function SubmitPaper() {
                     className="
                       relative
                       z-10
-                      h-[11px]
-                      w-[11px]
+                      h-[16px]
+                      w-[16px]
                     "
                   />
 
@@ -1505,7 +1481,7 @@ export default function SubmitPaper() {
                     px-[13px]
                     py-[6px]
 
-                    text-[8px]
+                    text-[11px]
                     font-semibold
 
                     text-[#344237]
@@ -1524,9 +1500,8 @@ export default function SubmitPaper() {
                 >
                   <Save
                     className="
-                      h-[11px]
-                      w-[11px]
-
+                      h-[15px]
+                      w-[15px]
                       transition-transform
                       duration-300
 
@@ -1555,7 +1530,7 @@ export default function SubmitPaper() {
                     items-center
                     gap-[5px]
 
-                    text-[8px]
+                    text-[10px]
                     font-semibold
 
                     text-[#347331]
@@ -1571,7 +1546,7 @@ export default function SubmitPaper() {
                 className="
                   mt-[9px]
 
-                  text-[7.5px]
+                  text-[10.5px]
                   font-medium
 
                   text-[#7b8178]
@@ -1609,7 +1584,7 @@ export default function SubmitPaper() {
                     flex
                     flex-col
 
-                    gap-[6px]
+                    gap-[8px]
                   "
                 >
                   {submitPaperGuidelines.map(
@@ -1629,15 +1604,15 @@ export default function SubmitPaper() {
 
                           text-[#424b42]
 
-                          sm:text-[8px]
+                          sm:text-[11px]
                         "
                       >
                         <Check
                           strokeWidth={2}
                           className="
                             mt-[1px]
-                            h-[9px]
-                            w-[9px]
+                            h-[11px]
+                            w-[11px]
 
                             shrink-0
 
@@ -1676,10 +1651,10 @@ export default function SubmitPaper() {
 
                     bg-white
 
-                    px-[9px]
-                    py-[5px]
+                    px-[11px]
+                    py-[7px]
 
-                    text-[7px]
+                    text-[11px]
                     font-semibold
 
                     text-[#37533a]
@@ -1694,7 +1669,7 @@ export default function SubmitPaper() {
                     hover:bg-[#eef4e9]
                   "
                 >
-                  <Download className="h-[9px] w-[9px]" />
+                  <Download className="h-[11px] w-[11px]" />
 
                   Download Guidelines
                 </a>
@@ -1728,9 +1703,9 @@ export default function SubmitPaper() {
 
                         gap-[8px]
 
-                        text-[7.5px]
+                        text-[9.5px]
 
-                        sm:text-[8px]
+                        sm:text-[11px]
                       "
                     >
                       <span
@@ -1772,7 +1747,7 @@ export default function SubmitPaper() {
 
                     gap-[5px]
 
-                    text-[7.5px]
+                    text-[11.5px]
                     font-semibold
 
                     text-[#316d2e]
@@ -1786,8 +1761,8 @@ export default function SubmitPaper() {
 
                   <ArrowRight
                     className="
-                      h-[9px]
-                      w-[9px]
+                      h-[11px]
+                      w-[11px]
 
                       transition-transform
                       duration-300
@@ -1824,19 +1799,19 @@ export default function SubmitPaper() {
                           items-start
                           gap-[6px]
 
-                          text-[7.5px]
+                          text-[10.5px]
                           font-medium
 
                           text-[#444d44]
 
-                          sm:text-[8px]
+                          sm:text-[11px]
                         "
                       >
                         <span
                           className="
                             mt-[4px]
-                            h-[3px]
-                            w-[3px]
+                            h-[4px]
+                            w-[4px]
 
                             shrink-0
 
@@ -1856,7 +1831,7 @@ export default function SubmitPaper() {
                   className="
                     mt-[8px]
 
-                    text-[7px]
+                    text-[11px]
                     font-medium
 
                     text-[#788077]
@@ -1912,13 +1887,13 @@ export default function SubmitPaper() {
                   className="
                     flex
                     items-center
-                    gap-[7px]
+                    gap-[9px]
                   "
                 >
                   <Headphones
                     className="
-                      h-[15px]
-                      w-[15px]
+                      h-[18px]
+                      w-[18px]
 
                       text-[#326d31]
                     "
@@ -1926,7 +1901,7 @@ export default function SubmitPaper() {
 
                   <h3
                     className="
-                      text-[10px]
+                      text-[16px]
                       font-semibold
 
                       text-[#1b311d]
@@ -1940,7 +1915,7 @@ export default function SubmitPaper() {
                   className="
                     mt-[7px]
 
-                    text-[7.5px]
+                    text-[11.5px]
                     font-medium
                     leading-[1.45]
 
@@ -1962,7 +1937,7 @@ export default function SubmitPaper() {
                     items-start
                     gap-[5px]
 
-                    text-[7px]
+                    text-[11px]
                     font-medium
 
                     text-[#325f33]
@@ -1973,8 +1948,8 @@ export default function SubmitPaper() {
                   <Mail
                     className="
                       mt-[1px]
-                      h-[9px]
-                      w-[9px]
+                      h-[11px]
+                      w-[11px]
 
                       shrink-0
                     "
@@ -1999,7 +1974,7 @@ export default function SubmitPaper() {
                       items-center
                       gap-[5px]
 
-                      text-[7px]
+                      text-[11px]
                       font-medium
 
                       text-[#325f33]
@@ -2007,7 +1982,7 @@ export default function SubmitPaper() {
                       hover:text-[#174a1a]
                     "
                   >
-                    <Phone className="h-[9px] w-[9px]" />
+                    <Phone className="h-[11px] w-[11px]" />
 
                     {siteInfo.phone}
                   </a>
@@ -2032,10 +2007,10 @@ export default function SubmitPaper() {
 
                     bg-[#164e19]
 
-                    px-[9px]
-                    py-[5px]
+                    px-[11px]
+                    py-[6px]
 
-                    text-[7px]
+                    text-[11px]
                     font-semibold
 
                     text-white
@@ -2052,8 +2027,8 @@ export default function SubmitPaper() {
 
                   <ArrowRight
                     className="
-                      h-[9px]
-                      w-[9px]
+                      h-[11px]
+                      w-[11px]
 
                       transition-transform
                       duration-300
@@ -2075,7 +2050,7 @@ export default function SubmitPaper() {
                   className="
                     mt-[8px]
 
-                    text-[7.5px]
+                    text-[11.5px]
                     font-medium
                     leading-[1.45]
 
@@ -2108,12 +2083,12 @@ export default function SubmitPaper() {
                   "
                 >
                   <img
-                    src="/images/journal-cover.jpg"
+                    src={cover}
                     alt="Journal of Entomological Research cover"
                     loading="lazy"
                     className="
-                      h-[54px]
-                      w-[39px]
+                      h-[124px]
+                      w-[89px]
 
                       shrink-0
 
@@ -2128,7 +2103,7 @@ export default function SubmitPaper() {
                   <div className="min-w-0">
                     <p
                       className="
-                        text-[7.5px]
+                        text-[12.5px]
                         font-semibold
                         leading-[1.25]
 
@@ -2141,7 +2116,7 @@ export default function SubmitPaper() {
 
                     <span
                       className="
-                        mt-[4px]
+                        mt-[7px]
 
                         inline-block
 
@@ -2149,10 +2124,10 @@ export default function SubmitPaper() {
 
                         bg-[#e9f1df]
 
-                        px-[5px]
-                        py-[2px]
+                        px-[11px]
+                        py-[3px]
 
-                        text-[6px]
+                        text-[11px]
                         font-semibold
 
                         text-[#397232]
@@ -2173,7 +2148,7 @@ export default function SubmitPaper() {
 
                         gap-[3px]
 
-                        text-[6.5px]
+                        text-[11.5px]
                         font-semibold
 
                         text-[#347131]
@@ -2185,8 +2160,8 @@ export default function SubmitPaper() {
 
                       <ArrowRight
                         className="
-                          h-[7px]
-                          w-[7px]
+                          h-[11px]
+                          w-[11px]
 
                           transition-transform
                           duration-300
@@ -2201,168 +2176,398 @@ export default function SubmitPaper() {
             </aside>
           </div>
 
-          {/* =====================================================
-              03. SUBMISSION PROCESS
-          ====================================================== */}
 
-          <motion.section
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
-            transition={{
-              duration: 0.6,
-              ease,
-            }}
+       {/* =========================================================
+    SUBMISSION PROCESS
+========================================================= */}
+
+<motion.section
+  initial={{
+    opacity: 0,
+    y: 20,
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.12,
+  }}
+  transition={{
+    duration: 0.65,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="
+    relative
+    mt-[18px]
+    w-full
+    min-w-0
+
+    overflow-hidden
+
+    rounded-[8px]
+
+    border
+    border-[#e7dfcb]
+
+    bg-[#fffdf9]
+
+    px-[14px]
+    py-[14px]
+
+    shadow-[0_2px_10px_rgba(69,66,40,0.035)]
+
+    sm:px-[18px]
+    sm:py-[15px]
+
+    lg:px-[22px]
+    lg:py-[16px]
+  "
+>
+  {/* =====================================================
+      TITLE
+  ====================================================== */}
+
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: -6,
+    }}
+    whileInView={{
+      opacity: 1,
+      y: 0,
+    }}
+    viewport={{ once: true }}
+    transition={{
+      duration: 0.5,
+      delay: 0.05,
+    }}
+    className="
+      flex
+      w-full
+      items-center
+      justify-center
+
+      gap-[8px]
+
+      sm:gap-[10px]
+    "
+  >
+    {/* Left gold ornament */}
+
+    <div
+      aria-hidden="true"
+      className="
+        flex
+        items-center
+
+        gap-[3px]
+
+        text-[#d5ad54]
+      "
+    >
+      <span
+        className="
+          h-[2px]
+          w-[52px]
+
+          rounded-full
+
+          bg-[linear-gradient(90deg,transparent,#d5ad54)]
+
+         
+        "
+      />
+
+      <span className="text-[15px] leading-none">
+        ❧
+      </span>
+    </div>
+
+    <h2
+      className="
+        whitespace-nowrap
+
+        text-[17px]
+        font-semibold
+        leading-none
+
+        tracking-[-0.18px]
+
+        text-[#25382a]
+
+        sm:text-[17px]
+
+        md:text-[18px]
+
+        lg:text-[19px]
+      "
+    >
+      Submission Process
+    </h2>
+
+    {/* Right gold ornament */}
+
+    <div
+      aria-hidden="true"
+      className="
+        flex
+        items-center
+
+        gap-[3px]
+
+        text-[#d5ad54]
+      "
+    >
+      <span className="text-[17px] leading-none">
+        ❧
+      </span>
+
+      <span
+        className="
+          h-[2px]
+          w-[52px]
+
+          rounded-full
+
+          bg-[linear-gradient(90deg,#d5ad54,transparent)]
+
+      
+        "
+      />
+    </div>
+  </motion.div>
+
+  {/* =====================================================
+      STEPS
+  ====================================================== */}
+
+  <div
+    className="
+      relative
+
+      mt-[16px]
+
+      grid
+      w-full
+      min-w-0
+
+      grid-cols-1
+
+      gap-x-[10px]
+      gap-y-[18px]
+
+      min-[430px]:grid-cols-2
+
+      sm:grid-cols-3
+
+      min-[900px]:grid-cols-5
+      min-[900px]:gap-x-0
+
+      lg:mt-[18px]
+    "
+  >
+    {/* ===================================================
+        DESKTOP CONNECTOR LINE
+
+        Visible only when all 5 items are one row.
+    ==================================================== */}
+
+    <div
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute
+
+        left-[10%]
+        right-[10%]
+
+        top-[25px]
+
+        hidden
+
+        border-t-[1.5px]
+        border-dashed
+        border-[#788a62]
+
+        opacity-80
+
+        min-[900px]:block
+      "
+    />
+
+    {/* ===================================================
+        ITEMS
+    ==================================================== */}
+
+    {submitPaperProcess.map((step, index) => (
+      <motion.div
+        key={step.title}
+        initial={{
+          opacity: 0,
+          y: 15,
+          scale: 0.98,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.45,
+          delay: index * 0.06,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        whileHover={{
+          y: -3,
+        }}
+        className="
+          group
+          relative
+          z-10
+
+          flex
+          min-w-0
+          flex-col
+
+          items-center
+
+          px-[6px]
+
+          text-center
+
+          sm:px-[8px]
+        "
+      >
+        {/* =================================================
+            ICON CIRCLE
+        ================================================== */}
+
+        <motion.div
+          whileHover={{
+            scale: 1.08,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+          }}
+          className="
+            relative
+            z-20
+
+            flex
+            h-[50px]
+            w-[50px]
+
+            shrink-0
+
+            items-center
+            justify-center
+
+            rounded-full
+
+            border
+            border-[#b89b49]
+
+            bg-[linear-gradient(145deg,#19551e_0%,#0b4213_100%)]
+
+            text-white
+
+            shadow-[0_3px_8px_rgba(16,65,21,0.17),inset_0_1px_0_rgba(255,255,255,0.06)]
+
+            transition-all
+            duration-300
+
+            group-hover:border-[#d0b45f]
+
+            group-hover:bg-[linear-gradient(145deg,#266b2b_0%,#15551b_100%)]
+
+            group-hover:shadow-[0_6px_14px_rgba(16,65,21,0.23)]
+
+            sm:h-[52px]
+            sm:w-[52px]
+          "
+        >
+          <Icon
+            name={step.icon}
             className="
-              mt-[18px]
+              h-[23px]
+              w-[23px]
 
-              rounded-[8px]
+              text-white
 
-              border
-              border-[#e6e9e0]
+              transition-transform
+              duration-300
 
-              bg-[#fffdf9]
+              group-hover:scale-110
 
-              px-[14px]
-              py-[14px]
-
-              sm:px-[18px]
+              sm:h-[24px]
+              sm:w-[24px]
             "
-          >
-            <CenterTitle>
-              Submission Process
-            </CenterTitle>
+          />
+        </motion.div>
 
-            <div
-              className="
-                mt-[14px]
+        {/* =================================================
+            STEP TITLE
+        ================================================== */}
 
-                grid
-                min-w-0
-                grid-cols-1
+        <p
+          className="
+            mt-[9px]
 
-                gap-[12px]
+            min-w-0
 
-                min-[420px]:grid-cols-2
+            text-[11px]
+            font-semibold
+            leading-[1.25]
 
-                sm:grid-cols-3
+            tracking-[-0.08px]
 
-                min-[950px]:grid-cols-5
-              "
-            >
-              {submitPaperProcess.map(
-                (step, index) => (
-                  <motion.div
-                    key={step.title}
-                    initial={{
-                      opacity: 0,
-                      y: 12,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.05,
-                    }}
-                    whileHover={{
-                      y: -3,
-                    }}
-                    className="
-                      group
-                      relative
+            text-[#263329]
 
-                      flex
-                      min-w-0
-                      flex-col
-                      items-center
+            sm:text-[11.5px]
 
-                      px-[6px]
+            md:text-[12px]
 
-                      text-center
-                    "
-                  >
-                    <div
-                      className="
-                        flex
-                        h-[42px]
-                        w-[42px]
+            lg:text-[12.5px]
+          "
+        >
+          {index + 1}. {step.title}
+        </p>
 
-                        items-center
-                        justify-center
+        {/* =================================================
+            DESCRIPTION
+        ================================================== */}
 
-                        rounded-full
+        <p
+          className="
+            mt-[5px]
 
-                        bg-[#245b24]
+            max-w-[155px]
 
-                        text-white
+            text-[9px]
+            font-medium
+            leading-[1.45]
 
-                        shadow-[0_3px_9px_rgba(13,62,17,0.16)]
+            text-[#596259]
 
-                        transition-all
-                        duration-300
+            sm:text-[10.5px]
 
-                        group-hover:scale-110
-
-                        group-hover:bg-[#337632]
-                      "
-                    >
-                      <Icon
-                        name={step.icon}
-                        className="
-                          h-[18px]
-                          w-[18px]
-                        "
-                      />
-                    </div>
-
-                    <p
-                      className="
-                        mt-[7px]
-
-                        text-[8px]
-                        font-semibold
-
-                        text-[#273428]
-                      "
-                    >
-                      {index + 1}.{" "}
-                      {step.title}
-                    </p>
-
-                    <p
-                      className="
-                        mt-[4px]
-
-                        max-w-[130px]
-
-                        text-[6.5px]
-                        font-medium
-                        leading-[1.4]
-
-                        text-[#677066]
-                      "
-                    >
-                      {step.description}
-                    </p>
-                  </motion.div>
-                )
-              )}
-            </div>
-          </motion.section>
+            lg:max-w-[165px]
+            lg:text-[11px]
+          "
+        >
+          {step.description}
+        </p>
+      </motion.div>
+    ))}
+  </div>
+</motion.section>
 
           {/* =====================================================
               04. CONFERENCE TRACKS
@@ -2448,7 +2653,7 @@ export default function SubmitPaper() {
                       bg-[#fffdf9]
 
                       px-[7px]
-                      py-[10px]
+                      py-[19px]
 
                       text-center
 
@@ -2467,8 +2672,8 @@ export default function SubmitPaper() {
                     <Icon
                       name={track.icon}
                       className="
-                        h-[24px]
-                        w-[24px]
+                        h-[32px]
+                        w-[32px]
 
                         text-[#315f31]
 
@@ -2483,13 +2688,13 @@ export default function SubmitPaper() {
                       className="
                         mt-[7px]
 
-                        text-[7.5px]
+                        text-[12.5px]
                         font-semibold
                         leading-[1.3]
 
                         text-[#263427]
 
-                        sm:text-[8px]
+                        sm:text-[13px]
                       "
                     >
                       {track.label}
@@ -2501,289 +2706,620 @@ export default function SubmitPaper() {
           </motion.section>
         </div>
       </section>
+{/* =========================================================
+    BOTTOM CTA - EXACT REFERENCE STYLE
+========================================================= */}
 
-      {/* =========================================================
-          05. BOTTOM CTA
-      ========================================================== */}
+<section
+  className="
+    w-full
+    overflow-hidden
+    bg-[#f9faf7]
 
-      <section
+    pb-10
+   
+  "
+>
+  <div className="submit-paper-container">
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 18,
+        scale: 0.994,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.15,
+      }}
+      transition={{
+        duration: 0.65,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      whileHover={{
+        y: -2,
+      }}
+      className="
+        group
+        relative
+        mx-auto
+
+        w-full
+        min-w-0
+
+        overflow-hidden
+
+        rounded-[7px]
+
+        border
+        border-[#758a49]/40
+
+        bg-[#0b3b1a]
+
+        shadow-[0_4px_14px_rgba(17,54,21,0.08)]
+
+        transition-all
+        duration-300
+
+        hover:shadow-[0_9px_22px_rgba(17,54,21,0.15)]
+
+        min-h-[118px]
+
+        sm:min-h-[118px]
+
+        lg:aspect-[1516/153]
+        lg:min-h-0
+
+        max-[760px]:min-h-[150px]
+        max-[640px]:min-h-[185px]
+        max-[390px]:min-h-[195px]
+      "
+    >
+      {/* =====================================================
+          BACKGROUND
+
+          Desktop:
+          fills exactly like reference.
+
+          Mobile:
+          switches to cover so butterfly remains visible.
+      ====================================================== */}
+
+      <motion.img
+        src={bgcta}
+        alt=""
+        aria-hidden="true"
+        initial={{
+          scale: 1.015,
+        }}
+        whileInView={{
+          scale: 1,
+        }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 1.2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className="
+          pointer-events-none
+          absolute
+          inset-0
+
+          h-full
           w-full
-          overflow-hidden
 
-          bg-[#f9faf7]
+          object-fill
 
-          pb-10
+          transition-transform
+          duration-700
+          ease-out
 
-          sm:pb-12
-          lg:pb-14
+          group-hover:scale-[1.008]
+
+          max-[760px]:object-cover
+          max-[760px]:object-[22%_center]
+
+          max-[480px]:object-[20%_center]
+        "
+      />
+
+      {/* =====================================================
+          MOBILE/TABLET OVERLAY ONLY
+
+          No overlay on desktop because your bg image
+          already contains the correct green gradient.
+      ====================================================== */}
+
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+
+          hidden
+
+          max-[760px]:block
+
+          max-[760px]:bg-[linear-gradient(90deg,rgba(4,42,11,0.38)_0%,rgba(4,42,11,0.72)_38%,rgba(4,42,11,0.92)_100%)]
+
+          max-[640px]:bg-[linear-gradient(90deg,rgba(4,42,11,0.68)_0%,rgba(4,42,11,0.82)_52%,rgba(4,42,11,0.94)_100%)]
+        "
+      />
+
+      {/* =====================================================
+          DESKTOP CONTENT
+      ====================================================== */}
+
+      <div
+        className="
+          relative
+          z-10
+
+          hidden
+          h-full
+          min-h-[118px]
+          w-full
+
+          grid-cols-[27.5%_46%_26.5%]
+
+          items-center
+
+          md:grid
         "
       >
-        <div className="submit-paper-container">
-          <motion.div
+        {/* Empty left area keeps butterfly clear */}
+
+        <div aria-hidden="true" />
+
+        {/* =================================================
+            CENTER TEXT
+        ================================================== */}
+
+        <div
+          className="
+            min-w-0
+
+            px-[10px]
+
+            lg:px-[14px]
+          "
+        >
+          <motion.h2
             initial={{
               opacity: 0,
-              y: 17,
-              scale: 0.993,
+              y: 8,
             }}
             whileInView={{
               opacity: 1,
               y: 0,
-              scale: 1,
             }}
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
+            viewport={{ once: true }}
             transition={{
-              duration: 0.65,
-              ease,
+              duration: 0.5,
+              delay: 0.08,
+            }}
+            className="
+              max-w-[540px]
+
+              text-[17px]
+              font-semibold
+              leading-[1.2]
+
+              tracking-[-0.2px]
+
+              text-white
+
+              sm:text-[18px]
+              md:text-[18px]
+              lg:text-[19px]
+              xl:text-[20px]
+            "
+          >
+            Ready to Share Your Research with the World?
+          </motion.h2>
+
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 7,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              delay: 0.14,
+            }}
+            className="
+              mt-[9px]
+
+              max-w-[530px]
+
+              text-[10px]
+              font-medium
+              leading-[1.5]
+
+              text-white/90
+
+              md:text-[10px]
+              lg:text-[11px]
+              xl:text-[11.5px]
+            "
+          >
+            Submit your paper today and be part of ICEBIS 2027.
+            Together, let&apos;s advance
+            <br className="hidden lg:block" />
+            entomological science for a better tomorrow.
+          </motion.p>
+        </div>
+
+        {/* =================================================
+            RIGHT BUTTON
+        ================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: 15,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.55,
+            delay: 0.19,
+          }}
+          className="
+            flex
+            min-w-0
+
+            items-center
+            justify-center
+
+            px-[14px]
+
+            lg:px-[20px]
+          "
+        >
+          <motion.button
+            type="button"
+            onClick={() => {
+              document
+                .getElementById("paper-submission-form")
+                ?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
             }}
             whileHover={{
               y: -2,
+              scale: 1.015,
+            }}
+            whileTap={{
+              scale: 0.98,
             }}
             className="
-              group
+              group/button
               relative
 
-              min-h-[105px]
+              inline-flex
+              min-h-[36px]
+
               w-full
+              max-w-[215px]
+
+              items-center
+              justify-center
+
+              gap-[10px]
 
               overflow-hidden
 
-              rounded-[7px]
+              rounded-[6px]
 
               border
-              border-[#dce5d6]
+              border-[#d39f23]
 
-              bg-[#123d17]
+              bg-[linear-gradient(180deg,#f3c747_0%,#e2ad2c_100%)]
 
-              shadow-[0_4px_14px_rgba(20,60,22,0.07)]
+              px-[16px]
+              py-[8px]
+
+              text-[12.5px]
+              font-semibold
+              leading-none
+
+              text-[#173518]
+
+              shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_4px_10px_rgba(0,0,0,0.20)]
 
               transition-all
               duration-300
 
-              hover:shadow-[0_9px_22px_rgba(20,60,22,0.13)]
+              hover:border-[#f0ca56]
 
-              max-[640px]:min-h-[165px]
+              hover:bg-[linear-gradient(180deg,#f8d158_0%,#eeba36_100%)]
+
+              hover:shadow-[0_7px_15px_rgba(0,0,0,0.26)]
+
+              lg:min-h-[39px]
+              lg:text-[12.5px]
+hover:text-white
+              xl:max-w-[230px]
+              xl:text-[13px]
             "
           >
-            {/* CTA image */}
+            {/* shine */}
 
-            <div
+            <span
               aria-hidden="true"
               className="
                 pointer-events-none
                 absolute
-                inset-0
+                inset-y-0
+                -left-[35%]
 
-                bg-cover
-                bg-center
-                bg-no-repeat
+                w-[26%]
 
-                transition-transform
+                -skew-x-[20deg]
+
+                bg-white/20
+
+                transition-all
                 duration-700
 
-                group-hover:scale-[1.012]
-
-                max-[640px]:bg-[position:30%_center]
-              "
-               style={{
-                backgroundImage: `url(${bgcta})`,
-              }}
-            />
-
-            {/* Green overlay */}
-
-            <div
-              aria-hidden="true"
-              className="
-                pointer-events-none
-                absolute
-                inset-0
-
-                bg-[linear-gradient(90deg,rgba(5,53,13,0.12)_0%,rgba(5,53,13,0.16)_29%,rgba(5,53,13,0.82)_55%,rgba(4,46,11,0.96)_100%)]
-
-                max-[640px]:bg-[linear-gradient(90deg,rgba(4,45,10,0.82)_0%,rgba(4,45,10,0.78)_50%,rgba(4,45,10,0.86)_100%)]
+                group-hover/button:left-[120%]
               "
             />
 
-            <div
+            <span className="relative z-10 whitespace-nowrap">
+              Submit Your Paper Now
+            </span>
+
+            <Send
+              strokeWidth={1.8}
               className="
                 relative
                 z-10
 
-                flex
-                min-h-[105px]
-                w-full
+                h-[16px]
+                w-[16px]
 
-                flex-col
+                shrink-0
 
-                justify-center
+                transition-transform
+                duration-300
 
-                pl-[41%]
-                pr-[5%]
-
-                py-[14px]
-
-                max-[640px]:min-h-[165px]
-
-                max-[640px]:items-center
-
-                max-[640px]:px-5
-
-                max-[640px]:text-center
+                group-hover/button:translate-x-[3px]
+                group-hover/button:-translate-y-[1px]
               "
-            >
-              <motion.h2
-                initial={{
-                  opacity: 0,
-                  y: 8,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.08,
-                }}
-                className="
-                  max-w-[450px]
+            />
+          </motion.button>
+        </motion.div>
+      </div>
 
-                  text-[14px]
-                  font-semibold
-                  leading-[1.25]
+      {/* =====================================================
+          MOBILE CONTENT
+      ====================================================== */}
 
-                  text-white
+      <div
+        className="
+          relative
+          z-10
 
-                  sm:text-[15px]
+          flex
+          min-h-[185px]
+          w-full
 
-                  lg:text-[16px]
-                "
-              >
-                Ready to Share Your Research with
-                the World?
-              </motion.h2>
+          flex-col
 
-              <motion.p
-                initial={{
-                  opacity: 0,
-                  y: 7,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.14,
-                }}
-                className="
-                  mt-[5px]
-                  max-w-[475px]
+          items-center
+          justify-center
 
-                  text-[7.5px]
-                  font-medium
-                  leading-[1.45]
+          px-5
+          py-5
 
-                  text-white/85
+          text-center
 
-                  sm:text-[8px]
-                "
-              >
-                Submit your paper today and be
-                part of ICEBIS 2027. Together,
-                let&apos;s advance entomological
-                science for a better tomorrow.
-              </motion.p>
+          md:hidden
 
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 7,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.19,
-                }}
-                className="mt-[8px]"
-              >
-                <button
-                  type="button"
-                  onClick={() =>
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth",
-                    })
-                  }
-                  className="
-                    group/cta
+          max-[390px]:min-h-[195px]
+          max-[390px]:px-4
+        "
+      >
+        <motion.h2
+          initial={{
+            opacity: 0,
+            y: 8,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.08,
+          }}
+          className="
+            max-w-[470px]
 
-                    inline-flex
-                    min-h-[28px]
+            text-[16px]
+            font-semibold
+            leading-[1.25]
 
-                    items-center
-                    justify-center
+            tracking-[-0.15px]
 
-                    gap-[6px]
+            text-white
 
-                    rounded-[4px]
+            sm:text-[17px]
 
-                    bg-[#ddb228]
+            max-[390px]:text-[15px]
+          "
+        >
+          Ready to Share Your Research with the World?
+        </motion.h2>
 
-                    px-[12px]
-                    py-[6px]
+        <motion.p
+          initial={{
+            opacity: 0,
+            y: 7,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.14,
+          }}
+          className="
+            mt-[8px]
 
-                    text-[7.5px]
-                    font-semibold
+            max-w-[470px]
 
-                    text-[#173719]
+            text-[10px]
+            font-medium
+            leading-[1.5]
 
-                    shadow-[0_3px_8px_rgba(0,0,0,0.16)]
+            text-white/90
 
-                    transition-all
-                    duration-300
+            sm:text-[10.5px]
 
-                    hover:-translate-y-[2px]
+            max-[390px]:text-[9.5px]
+          "
+        >
+          Submit your paper today and be part of ICEBIS 2027.
+          Together, let&apos;s advance entomological science for a
+          better tomorrow.
+        </motion.p>
 
-                    hover:bg-[#edc443]
+        <motion.button
+          type="button"
+          initial={{
+            opacity: 0,
+            y: 7,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.19,
+          }}
+          whileHover={{
+            y: -2,
+          }}
+          whileTap={{
+            scale: 0.98,
+          }}
+          onClick={() => {
+            document
+              .getElementById("paper-submission-form")
+              ?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+          }}
+          className="
+            group/button
+            relative
 
-                    hover:shadow-[0_6px_13px_rgba(0,0,0,0.21)]
-                  "
-                >
-                  Submit Your Paper Now
+            mt-[13px]
 
-                  <Send
-                    className="
-                      h-[9px]
-                      w-[9px]
+            inline-flex
+            min-h-[36px]
 
-                      transition-transform
-                      duration-300
+            max-w-full
 
-                      group-hover/cta:translate-x-[2px]
-                    "
-                  />
-                </button>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            items-center
+            justify-center
+
+            gap-[8px]
+
+            overflow-hidden
+
+            rounded-[5px]
+
+            border
+            border-[#d39f23]
+
+            bg-[linear-gradient(180deg,#f3c747_0%,#e2ad2c_100%)]
+
+            px-[16px]
+            py-[8px]
+
+            text-[12px]
+            font-semibold
+
+            text-[#173518]
+
+            shadow-[0_4px_10px_rgba(0,0,0,0.20)]
+
+            transition-all
+            duration-300
+
+            hover:bg-[linear-gradient(180deg,#f8d158_0%,#eeba36_100%)]
+
+            hover:shadow-[0_7px_15px_rgba(0,0,0,0.26)]
+          "
+        >
+          <span
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute
+              inset-y-0
+              -left-[35%]
+
+              w-[25%]
+
+              -skew-x-[20deg]
+
+              bg-white/20
+
+              transition-all
+              duration-700
+   
+              group-hover/button:left-[120%]
+            "
+          />
+
+          <span className="relative z-10">
+            Submit Your Paper Now
+          </span>
+
+          <Send
+            className="
+              relative
+              z-10
+
+              h-[14px]
+              w-[14px]
+
+              transition-transform
+              duration-300
+
+              group-hover/button:translate-x-[3px]
+            "
+          />
+        </motion.button>
+      </div>
+    </motion.div>
+  </div>
+</section>
     </>
   );
 }
@@ -2794,7 +3330,7 @@ export default function SubmitPaper() {
 
 function inputClasses(error = false) {
   return `
-    h-[31px]
+    h-[39px]
     w-full
     min-w-0
 
@@ -2812,7 +3348,7 @@ function inputClasses(error = false) {
 
     px-[9px]
 
-    text-[8px]
+    text-[11px]
     font-medium
 
     text-[#2c362d]
@@ -2824,14 +3360,13 @@ function inputClasses(error = false) {
 
     placeholder:text-[#8c938b]
 
-    hover:border-[#a6b49f]
+   
 
-    focus:border-[#658d58]
+    
 
-    focus:ring-2
-    focus:ring-[#59864f]/10
+   
 
-    sm:text-[8.5px]
+    sm:text-[11.5px]
   `;
 }
 
@@ -2863,8 +3398,8 @@ function FormSection({
         <SectionIcon
           strokeWidth={1.65}
           className="
-            h-[14px]
-            w-[14px]
+            h-[18px]
+            w-[18px]
 
             shrink-0
 
@@ -2874,13 +3409,13 @@ function FormSection({
 
         <h2
           className="
-            text-[10px]
+            text-[15px]
             font-semibold
             leading-none
 
             text-[#253629]
 
-            sm:text-[10.5px]
+            sm:text-[15.5px]
           "
         >
           {title}
@@ -2920,12 +3455,12 @@ function FormField({
           mb-[4px]
           block
 
-          text-[7.5px]
+          text-[10.5px]
           font-semibold
 
           text-[#3f4840]
 
-          sm:text-[8px]
+          sm:text-[11px]
         "
       >
         {label}
@@ -2956,7 +3491,7 @@ function FieldError({ message }) {
       className="
         mt-[3px]
 
-        text-[7px]
+        text-[11px]
         font-medium
         leading-[1.3]
 
@@ -2991,12 +3526,12 @@ function FileUpload({
           block
 
           text-center
-          text-[7.5px]
+          text-[10.5px]
           font-semibold
 
           text-[#3e473e]
 
-          sm:text-[8px]
+          sm:text-[11px]
         "
       >
         {label}
@@ -3076,7 +3611,7 @@ function FileUpload({
             max-w-full
             break-all
 
-            text-[7px]
+            text-[11px]
             font-semibold
 
             text-[#4b574c]
@@ -3089,7 +3624,7 @@ function FileUpload({
 
         <span
           className="
-            text-[6px]
+            text-[10px]
             font-medium
 
             text-[#848b83]
@@ -3100,7 +3635,7 @@ function FileUpload({
 
         <span
           className="
-            text-[6px]
+            text-[10px]
             font-medium
 
             text-[#848b83]
@@ -3166,7 +3701,7 @@ function SidebarCard({
 
         bg-[#f9faf5]
 
-        p-[12px]
+        p-[14px]
 
         shadow-[0_3px_10px_rgba(22,58,23,0.04)]
 
@@ -3184,14 +3719,14 @@ function SidebarCard({
           min-w-0
           items-center
 
-          gap-[7px]
+          gap-[9px]
         "
       >
         <CardIcon
           strokeWidth={1.65}
           className="
-            h-[14px]
-            w-[14px]
+            h-[20px]
+            w-[20px]
 
             shrink-0
 
@@ -3208,13 +3743,13 @@ function SidebarCard({
           className="
             min-w-0
 
-            text-[9.5px]
+            text-[15px]
             font-semibold
             leading-[1.25]
 
             text-[#263628]
 
-            sm:text-[10px]
+            sm:text-[16.5px]
           "
         >
           {title}
@@ -3244,8 +3779,8 @@ function CenterTitle({ children }) {
       <span
         className="
           hidden
-          h-px
-          w-[42px]
+          h-[2px]
+          w-[52px]
 
           bg-[linear-gradient(90deg,transparent,#c6a644)]
 
@@ -3255,7 +3790,7 @@ function CenterTitle({ children }) {
 
       <span
         className="
-          text-[11px]
+          text-[27px]
 
           text-[#c6a644]
         "
@@ -3267,12 +3802,12 @@ function CenterTitle({ children }) {
         className="
           text-center
 
-          text-[11px]
+          text-[18px]
           font-semibold
 
           text-[#2c3c2f]
 
-          sm:text-[12px]
+          sm:text-[19px]
         "
       >
         {children}
@@ -3280,7 +3815,7 @@ function CenterTitle({ children }) {
 
       <span
         className="
-          text-[11px]
+          text-[27px]
           text-[#c6a644]
         "
       >
@@ -3290,8 +3825,8 @@ function CenterTitle({ children }) {
       <span
         className="
           hidden
-          h-px
-          w-[42px]
+          h-[2px]
+          w-[52px]
 
           bg-[linear-gradient(90deg,#c6a644,transparent)]
 
