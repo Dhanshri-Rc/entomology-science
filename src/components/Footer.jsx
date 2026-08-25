@@ -691,7 +691,7 @@ export default function Footer() {
 
                 <span className="min-w-0">
                   {siteInfo?.addressShort ||
-                    "Washington, DC, USA"}
+                    "New Delhi"}
                 </span>
               </li>
             </ul>

@@ -354,7 +354,7 @@ export default function About() {
       </section>
 
       {/* Past editions */}
-      <section className="pb-8 sm:pb-9">
+      {/* <section className="pb-8 sm:pb-9">
         <div className="mx-auto max-w-[1170px] px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp}>
             <SectionHeading>Our Past Editions</SectionHeading>
@@ -394,12 +394,10 @@ export default function About() {
               ))}
             </div>
 
-            {/* <div className="mt-6 flex justify-center">
-              <OutlineButton to="/conferences">View All Past Conferences</OutlineButton>
-            </div> */}
+        
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="pb-4 sm:pb-5">

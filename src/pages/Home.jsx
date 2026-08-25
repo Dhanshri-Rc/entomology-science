@@ -200,22 +200,22 @@ const themes = [
 const importantDates = [
   {
     icon: Bug,
-    date: "31 July 2025",
+    date: "31 July 2026",
     label: "Abstract Submission\nDeadline",
   },
   {
     icon: CalendarDays,
-    date: "10 August 2025",
+    date: "10 August 2026",
     label: "Notification of\nAcceptance",
   },
   {
     icon: FileCheck2,
-    date: "30 August 2025",
+    date: "30 August 2026",
     label: "Full Paper Submission\nDeadline",
   },
   {
     icon: Bug,
-    date: "10 November 2025",
+    date: "10 November 2026",
     label: "Conference\nDates",
   },
 ];
@@ -642,7 +642,7 @@ export default function Home() {
               strokeWidth={1.8}
             />
             <span className="min-w-0">
-              10 – 12 November 2025
+              10 – 12 November 2026
             </span>
           </div>
 
@@ -662,7 +662,7 @@ export default function Home() {
               strokeWidth={1.8}
             />
             <span className="min-w-0">
-              Washington, DC, USA
+              New Delhi
             </span>
           </div>
 

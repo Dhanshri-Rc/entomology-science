@@ -1147,7 +1147,7 @@ export default function Contact() {
               >
                 <iframe
                   title="Entomology Science Association location"
-                  src="https://www.google.com/maps?q=Washington%20DC%20USA&z=13&output=embed"
+                  src="https://www.google.com/maps?q=Delhi%20DC%20USA&z=13&output=embed"
                   loading="lazy"
                   className="
                     h-full

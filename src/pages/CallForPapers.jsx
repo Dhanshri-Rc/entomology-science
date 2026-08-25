@@ -79,30 +79,30 @@ const guidelines = [
 const importantDates = [
   {
     label: "Abstract Submission Deadline",
-    date: "31 July 2025",
+    date: "31 July 2026",
     icon: CalendarDays,
   },
   {
     label: "Notification of Abstract Acceptance",
-    date: "10 August 2025",
+    date: "10 August 2026",
     icon: CalendarCheck2,
   },
   {
     label: "Full Paper Submission Deadline",
-    date: "30 August 2025",
+    date: "30 August 2026",
     icon: FileText,
   },
   {
     label: "Notification of Acceptance",
-    date: "20 September 2025",
+    date: "20 September 2026",
     icon: UserRound,
   },
   {
     label: "Early Bird Registration Deadline",
-    date: "30 September 2025",
+    date: "30 September 2026",
     icon: ClipboardCheck,
   },
-  { label: "Conference Dates", date: "10–12 November 2025", icon: Clock3 },
+  { label: "Conference Dates", date: "10–12 November 2026", icon: Clock3 },
 ];
 
 const whySubmit = [
@@ -239,13 +239,13 @@ export default function CallForPapers() {
               Abstract Submission
             </p>
             <p className="mt-0.5 text-xs font-[550] text-[#174d1b] sm:text-[13px]">
-              31 July 2025
+              31 July 2026
             </p>
             <p className="mt-2 text-[10px] leading-tight text-[#3e4d41] sm:text-[11px]">
               Full Paper Submission
             </p>
             <p className="mt-0.5 text-xs font-[550] text-[#174d1b] sm:text-[13px]">
-              30 August 2025
+              30 August 2026
             </p>
           </motion.div>
         </PageContainer>
