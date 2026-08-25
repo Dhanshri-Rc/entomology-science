@@ -22,7 +22,14 @@ import { Link } from "react-router-dom";
 
 import pubBg from "../assets/img/pubBg.png";
 import pubCta from "../assets/img/pubCta.png";
-import entoResearchImage from "../assets/img/entoRe.png";
+import journalCover from "../assets/img/journalOfEnto.png";
+
+import cropProtectionCover from "../assets/img/j2.png";
+import insectPlantCover from "../assets/img/j3.png";
+import biorationalCover from "../assets/img/j4.png";
+import biotechnologyCover from "../assets/img/j5.png";
+import forensicCover from "../assets/img/j6.png";
+import researchReviewsCover from "../assets/img/j7.png";
 
 const publicationFeatures = [
   {
@@ -59,13 +66,13 @@ const journalDetails = [
     icon: Globe2,
     label: " Key Focus Areas",
     value:
-      "Insect Morphology, Systematics, Ecology, Behaviour, Toxicology, Pest Management, Biological Control, Medical Entomology, Veterinary Entomology, Forest Entomology",
+      "Insect Morphology, Systematics, Ecology, Behaviour, Toxicology, Pest Management, Biological Control",
   },
   {
     icon: BookOpen,
     label: "Indexing",
     value:
-      "SCIMAGO, SCOPUS, National Academy of Agricultural Sciences (NAAS), EBSCO, Google Scholar, CNKI Scholar",
+      "SCIMAGO, SCOPUS, National Academy of Agricultural Sciences (NAAS), EBSCO, Google Scholar",
   },
 ];
 
@@ -115,36 +122,49 @@ const publicationNotes = [
 
 const otherJournals = [
   {
-    title: "Entomologia Generalis",
-    issn: "ISSN: 0171-8177",
-    focus: "Insect diversity, taxonomy, ecology and evolution.",
-    icon: Flower2,
-    cover: "from-[#7a1717] to-[#3b0909]",
-    accent: "text-[#f6d5c4]",
+    title: "Journal of Agricultural Entomology and Crop Protection",
+    issn: "Applied",
+    focus:
+      "Agricultural insects, crop protection and sustainable pest management.",
+    image: cropProtectionCover,
+    website: "https://entomologyscience.org/",
   },
   {
-    title: "International Journal of Tropical Insect Science",
-    issn: "ISSN: 1742-7584",
-    focus: "Tropical insect science and applied entomology.",
-    icon: Bug,
-    cover: "from-[#4d3218] to-[#211208]",
-    accent: "text-[#e2b769]",
+    title: "Journal of Insect-Plant Interactions and Pest Management",
+    issn: "Applied",
+    focus: "Insect-plant relationships, plant defence and pest management.",
+    image: insectPlantCover,
+    website: "https://entomologyscience.org/",
   },
   {
-    title: "Journal of Pest Science",
-    issn: "ISSN: 1612-4758",
-    focus: "Pest management, behavior, control and ecology.",
-    icon: Bug,
-    cover: "from-[#536b5a] to-[#263d31]",
-    accent: "text-[#c7dcb5]",
+    title: "Journal of Biorational Control and Environmental Sustainability",
+    issn: "Applied",
+    focus:
+      "Biological control, biopesticides and environmental sustainability.",
+    image: biorationalCover,
+    website: "https://entomologyscience.org/",
   },
   {
-    title: "Plant Protection Science",
-    issn: "ISSN: 1212-258X",
-    focus: "Crop protection, pest pathology and integrated management.",
-    icon: Sprout,
-    cover: "from-[#31652d] to-[#133c1a]",
-    accent: "text-[#b9d37e]",
+    title: "Journal of Agricultural Biotechnology and Bioinformatics",
+    issn: "Applied",
+    focus: "Agricultural biotechnology, genomics and bioinformatics.",
+    image: biotechnologyCover,
+    website: "https://entomologyscience.org/",
+  },
+  {
+    title: "Journal of Forensic and Medicinal Entomology",
+    issn: "Applied",
+    focus: "Forensic entomology, public health and disease-vector research.",
+    image: forensicCover,
+    website: "https://entomologyscience.org/",
+  },
+  {
+    title: "Entomology Research and Reviews",
+    issn: "Applied",
+    focus:
+      "Research and critical reviews covering different areas of entomology.",
+    image: researchReviewsCover,
+    website: "https://entomologyscience.org/",
   },
 ];
 
@@ -340,16 +360,44 @@ export default function Publication() {
             {...fadeUp}
             className="mt-6 grid gap-7 rounded-xl border border-[#dce5d7] bg-[#fbfcf9] p-5 shadow-[0_8px_26px_rgba(20,55,23,.05)] sm:p-7 lg:grid-cols-[220px_minmax(0,1fr)_280px] lg:items-stretch"
           >
-            <MainJournalCover />
+            {/* Journal cover image */}
+            {/* Journal cover image */}
+            <motion.div
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="
+    mx-auto
+    w-full
+    max-w-[360px]
+    self-start
+    overflow-hidden
+    rounded-xl
+    border border-[#d6e1d2]
+    bg-white
+    shadow-[0_10px_25px_rgba(21,56,25,.12)]
+    lg:mx-0
+    lg:max-w-[320px]
+  "
+            >
+              <img
+                src={journalCover}
+                alt="Journal of Entomological Research"
+                loading="lazy"
+                className="block h-full w-full object-contain"
+              />
+            </motion.div>
 
+            {/* Journal information */}
             <div className="min-w-0">
               <h3 className="text-[20px] font-[550] leading-tight text-[#153819] sm:text-[21px]">
                 Journal of Entomological Research
               </h3>
+
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="rounded bg-[#27652c] px-3 py-1.5 text-[12px] font-[550] text-white">
                   Scopus Indexed
                 </span>
+
                 <span className="rounded bg-[#e7efdd] px-3 py-1.5 text-[12px] font-[550] text-[#31552d]">
                   Peer Reviewed
                 </span>
@@ -372,34 +420,42 @@ export default function Publication() {
                     className="grid grid-cols-[18px_84px_1fr] items-start gap-2 text-[12px] leading-5 sm:text-[13px]"
                   >
                     <DetailIcon className="mt-0.5 h-4 w-4 text-[#2e682d]" />
+
                     <dt className="font-[550] text-[#213b26]">{label}</dt>
+
                     <dd className="min-w-0 text-[#3c493f]">{value}</dd>
                   </div>
                 ))}
+
                 <div className="grid grid-cols-[18px_84px_1fr] items-start gap-2 text-[12px] leading-5 sm:text-[13px]">
                   <Globe2 className="mt-0.5 h-4 w-4 text-[#2e682d]" />
+
                   <dt className="font-[550] text-[#213b26]">Website</dt>
+
                   <dd className="min-w-0 break-all">
                     <a
-                      href="https://www.entomologyscience.org/journal"
+                      href="https://entomologyscience.org"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[#306c31] underline underline-offset-2 transition hover:text-[#74a23d]"
+                      className="text-[#306c31] underline underline-offset-2 transition-colors duration-300 hover:text-[#74a23d]"
                     >
-                      www.entomologyscience.org/journal
+                      www.entomologyscience.org
                     </a>
                   </dd>
                 </div>
               </dl>
             </div>
 
+            {/* Publication benefits */}
             <motion.div
               whileHover={{ y: -3 }}
+              transition={{ duration: 0.3 }}
               className="h-fit rounded-xl bg-[#f4f7f0] p-5 shadow-sm sm:p-6"
             >
               <h3 className="text-[15px] font-[550] text-[#183b1c]">
                 Publication Benefits
               </h3>
+
               <ul className="mt-4 space-y-3">
                 {publicationBenefits.map((benefit) => (
                   <li
@@ -485,34 +541,104 @@ export default function Publication() {
             Other Reputed Entomology Journals
           </SectionHeading>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {otherJournals.map((journal, index) => (
-              <motion.article
+              <motion.a
                 key={journal.title}
+                href={journal.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${journal.title} website`}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.07 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.45,
+                  delay: index * 0.07,
+                }}
                 whileHover={{ y: -5 }}
-                className="group flex min-h-[190px] gap-4 rounded-xl border border-[#dfe6da] bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-[0_13px_30px_rgba(24,62,26,.12)]"
+                whileTap={{ scale: 0.985 }}
+                className="
+            group
+            flex
+            min-h-[210px]
+            cursor-pointer
+            items-start
+            gap-2
+            overflow-hidden
+            rounded-xl
+            border border-[#dfe6da]
+            bg-white
+            p-2
+            shadow-sm
+            outline-none
+            transition-all
+            duration-300
+            hover:border-[#b8cdb0]
+            hover:shadow-[0_13px_30px_rgba(24,62,26,.12)]
+            focus-visible:ring-2
+            focus-visible:ring-[#347333]
+            focus-visible:ring-offset-2
+            sm:p-4
+          "
               >
-                <JournalCover journal={journal} />
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-[13px] font-[550] leading-[1.35] text-[#17381c]">
+                {/* Journal image */}
+                <div
+                  className="
+              w-[105px]
+              shrink-0
+              overflow-hidden
+              rounded-lg
+              border border-[#d7e0d3]
+              bg-[#f4f7f2]
+              shadow-[0_6px_16px_rgba(21,56,25,.12)]
+              sm:w-[110px]
+              xl:w-[120px]
+            "
+                >
+                  <img
+                    src={journal.image}
+                    alt={`${journal.title} journal cover`}
+                    loading="lazy"
+                    className="
+                aspect-[2/3]
+                h-auto
+                w-full
+                object-cover
+                transition-transform
+                duration-500
+                ease-out
+                group-hover:scale-[1.04]
+              "
+                  />
+                </div>
+
+                {/* Journal information */}
+                <div className="min-w-0 flex-1 py-1">
+                  <h3 className="text-[13px] font-[550] leading-[1.35] text-[#17381c] transition-colors duration-300 group-hover:text-[#347333]">
                     {journal.title}
                   </h3>
-                  <p className="mt-2 text-[11px] text-[#4e5a51]">
-                    {journal.issn}
+
+                  <p className="mt-2 text-[11.5px] leading-4 text-[#4e5a51]">
+                    ISSN: {journal.issn}
                   </p>
+
                   <span className="mt-3 inline-flex rounded bg-[#e8f0de] px-2 py-1 text-[10px] font-[550] text-[#31602d]">
                     Scopus Indexed
                   </span>
+
                   <p className="mt-3 text-[11px] leading-[1.55] text-[#4b574e]">
-                    <span className="font-[550] text-[#243d28]">Focus:</span>{" "}
+                    <span className="font-[550] text-[#243d28]">
+                      Key Focus Areas:
+                    </span>{" "}
                     {journal.focus}
                   </p>
+
+                  <span className="mt-3 inline-flex text-[11px] font-[550] text-[#347333]">
+                    Visit Journal →
+                  </span>
                 </div>
-              </motion.article>
+              </motion.a>
             ))}
           </div>
         </PageContainer>
