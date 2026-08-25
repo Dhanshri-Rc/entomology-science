@@ -48,11 +48,25 @@ const publicationFeatures = [
 ];
 
 const journalDetails = [
-  { icon: Award, label: "Publisher", value: "Entomology Science Association" },
-  { icon: Bookmark, label: "ISSN", value: "0254-0256" },
-  { icon: FileText, label: "Frequency", value: "Quarterly (4 issues per year)" },
-  { icon: Globe2, label: "Focus Areas", value: "All fields of entomology" },
-  { icon: BookOpen, label: "Indexing", value: "Scopus, DOAJ, AGRICOLA, Google Scholar" },
+  { icon: Award, label: "Publisher", value: "Malhotra Publishing House" },
+  { icon: Bookmark, label: "ISSN", value: "0378-9519" },
+  {
+    icon: FileText,
+    label: "Frequency",
+    value: "Quarterly (4 issues per year)",
+  },
+  {
+    icon: Globe2,
+    label: " Key Focus Areas",
+    value:
+      "Insect Morphology, Systematics, Ecology, Behaviour, Toxicology, Pest Management, Biological Control, Medical Entomology, Veterinary Entomology, Forest Entomology",
+  },
+  {
+    icon: BookOpen,
+    label: "Indexing",
+    value:
+      "SCIMAGO, SCOPUS, National Academy of Agricultural Sciences (NAAS), EBSCO, Google Scholar, CNKI Scholar",
+  },
 ];
 
 const publicationBenefits = [
@@ -143,15 +157,25 @@ const fadeUp = {
 
 function PageContainer({ children, className = "" }) {
   return (
-    <div className={`mx-auto w-full max-w-[1170px] px-4 sm:px-6 lg:px-8 ${className}`}>
+    <div
+      className={`mx-auto w-full max-w-[1170px] px-4 sm:px-6 lg:px-8 ${className}`}
+    >
       {children}
     </div>
   );
 }
 
-function SectionHeading({ children, description, align = "center", leaf = true }) {
+function SectionHeading({
+  children,
+  description,
+  align = "center",
+  leaf = true,
+}) {
   return (
-    <motion.div {...fadeUp} className={align === "left" ? "text-left" : "text-center"}>
+    <motion.div
+      {...fadeUp}
+      className={align === "left" ? "text-left" : "text-center"}
+    >
       <div
         className={`flex items-center gap-3 ${
           align === "left" ? "justify-start" : "justify-center"
@@ -160,7 +184,10 @@ function SectionHeading({ children, description, align = "center", leaf = true }
         {leaf && align !== "left" && (
           <span className="flex items-center gap-1 text-[#527e34]">
             <span className="h-px w-6 bg-[#73945d] sm:w-8" />
-            <Leaf className="h-4 w-4 -rotate-45 fill-current" strokeWidth={1.3} />
+            <Leaf
+              className="h-4 w-4 -rotate-45 fill-current"
+              strokeWidth={1.3}
+            />
           </span>
         )}
         {leaf && align === "left" && (
@@ -171,7 +198,10 @@ function SectionHeading({ children, description, align = "center", leaf = true }
         </h2>
         {leaf && align !== "left" && (
           <span className="flex items-center gap-1 text-[#527e34]">
-            <Leaf className="h-4 w-4 rotate-[135deg] fill-current" strokeWidth={1.3} />
+            <Leaf
+              className="h-4 w-4 rotate-[135deg] fill-current"
+              strokeWidth={1.3}
+            />
             <span className="h-px w-6 bg-[#73945d] sm:w-8" />
           </span>
         )}
@@ -196,7 +226,9 @@ function MainJournalCover() {
       transition={{ duration: 0.3 }}
       className="mx-auto flex h-[310px] w-full max-w-[220px] flex-col overflow-hidden rounded-[3px] bg-gradient-to-b from-[#123b1b] to-[#062810] p-5 text-white shadow-[8px_8px_0_rgba(10,47,20,.18),0_14px_26px_rgba(14,48,19,.17)] lg:h-full lg:min-h-[300px]"
     >
-      <p className="font-serif text-[17px] leading-5 text-white/95">Journal of</p>
+      <p className="font-serif text-[17px] leading-5 text-white/95">
+        Journal of
+      </p>
       <p className="font-serif text-[24px] leading-[1.05]">Entomological</p>
       <p className="font-serif text-[24px] leading-[1.05]">Research</p>
       <div className="mt-5 flex-1 overflow-hidden rounded-sm border border-white/10">
@@ -206,7 +238,9 @@ function MainJournalCover() {
           className="h-full w-full object-cover transition duration-700 hover:scale-105"
         />
       </div>
-      <p className="mt-3 text-[9px] tracking-wide text-white/85">ISSN: 0254-0256</p>
+      <p className="mt-3 text-[9px] tracking-wide text-white/85">
+        ISSN: 0254-0256
+      </p>
     </motion.div>
   );
 }
@@ -220,7 +254,10 @@ function JournalCover({ journal }) {
     >
       <p className="font-serif text-[11px] leading-[1.15]">{journal.title}</p>
       <span className="my-2 h-px w-full bg-white/20" />
-      <CoverIcon className={`mx-auto mt-auto h-12 w-12 ${journal.accent}`} strokeWidth={1} />
+      <CoverIcon
+        className={`mx-auto mt-auto h-12 w-12 ${journal.accent}`}
+        strokeWidth={1}
+      />
       <p className="mt-auto text-[7px] text-white/70">ENTOMOLOGY JOURNAL</p>
     </div>
   );
@@ -250,8 +287,9 @@ export default function Publication() {
               High Visibility. Global Impact.
             </p>
             <p className="mt-4 max-w-[535px] text-[13px] leading-[1.75] text-white/95 sm:text-[14px]">
-              All accepted and presented papers will be published in Scopus indexed journals and
-              other reputed entomology journals associated with Entomology Science Association.
+              All accepted and presented papers will be published in Scopus
+              indexed journals and other reputed entomology journals associated
+              with Entomology Science Association.
             </p>
           </motion.div>
         </PageContainer>
@@ -261,23 +299,32 @@ export default function Publication() {
       <section className="py-5 sm:py-6">
         <PageContainer>
           <div className="grid gap-4 rounded-xl border border-[#edf1e8] bg-[#f6f8f3] p-5 shadow-sm sm:grid-cols-2 sm:p-6 lg:grid-cols-4 lg:gap-0">
-            {publicationFeatures.map(({ icon: FeatureIcon, title, description }, index) => (
-              <motion.article
-                key={title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.07 }}
-                whileHover={{ y: -4 }}
-                className="group flex items-start gap-4 rounded-lg p-2 transition duration-300 hover:bg-white/80 lg:border-r lg:border-[#dfe6da] lg:px-5 lg:last:border-r-0"
-              >
-                <FeatureIcon className="h-10 w-10 shrink-0 text-[#17481e] transition-transform duration-300 group-hover:scale-110" strokeWidth={1.45} />
-                <div>
-                  <h2 className="text-[13px] font-[550] text-[#17381c] sm:text-[14px]">{title}</h2>
-                  <p className="mt-1.5 text-[13px] leading-5 text-[#3f4c42]">{description}</p>
-                </div>
-              </motion.article>
-            ))}
+            {publicationFeatures.map(
+              ({ icon: FeatureIcon, title, description }, index) => (
+                <motion.article
+                  key={title}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: index * 0.07 }}
+                  whileHover={{ y: -4 }}
+                  className="group flex items-start gap-4 rounded-lg p-2 transition duration-300 hover:bg-white/80 lg:border-r lg:border-[#dfe6da] lg:px-5 lg:last:border-r-0"
+                >
+                  <FeatureIcon
+                    className="h-10 w-10 shrink-0 text-[#17481e] transition-transform duration-300 group-hover:scale-110"
+                    strokeWidth={1.45}
+                  />
+                  <div>
+                    <h2 className="text-[13px] font-[550] text-[#17381c] sm:text-[14px]">
+                      {title}
+                    </h2>
+                    <p className="mt-1.5 text-[13px] leading-5 text-[#3f4c42]">
+                      {description}
+                    </p>
+                  </div>
+                </motion.article>
+              ),
+            )}
           </div>
         </PageContainer>
       </section>
@@ -309,13 +356,21 @@ export default function Publication() {
               </div>
 
               <p className="mt-4 text-[13px] leading-[1.65] text-[#39483d]">
-                The Journal of Entomological Research publishes original research articles,
-                reviews, and short communications covering all aspects of entomology.
+                The journal encompasses all the varied aspects of entomological
+                research. This has become the felt-need in scientific research
+                due to emphasis on intra-inter, and multi-disciplinary approach.
+                Broadly the journal covers research work on insect morphology,
+                systematics, physiology, biochemistry, genetics, ecology,
+                behavior, toxicology, biological control and application of
+                biotechnology in entomology.
               </p>
 
               <dl className="mt-5 space-y-2.5">
                 {journalDetails.map(({ icon: DetailIcon, label, value }) => (
-                  <div key={label} className="grid grid-cols-[18px_84px_1fr] items-start gap-2 text-[12px] leading-5 sm:text-[13px]">
+                  <div
+                    key={label}
+                    className="grid grid-cols-[18px_84px_1fr] items-start gap-2 text-[12px] leading-5 sm:text-[13px]"
+                  >
                     <DetailIcon className="mt-0.5 h-4 w-4 text-[#2e682d]" />
                     <dt className="font-[550] text-[#213b26]">{label}</dt>
                     <dd className="min-w-0 text-[#3c493f]">{value}</dd>
@@ -342,10 +397,15 @@ export default function Publication() {
               whileHover={{ y: -3 }}
               className="h-fit rounded-xl bg-[#f4f7f0] p-5 shadow-sm sm:p-6"
             >
-              <h3 className="text-[15px] font-[550] text-[#183b1c]">Publication Benefits</h3>
+              <h3 className="text-[15px] font-[550] text-[#183b1c]">
+                Publication Benefits
+              </h3>
               <ul className="mt-4 space-y-3">
                 {publicationBenefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-2.5 text-[12px] leading-5 text-[#344438] sm:text-[13px]">
+                  <li
+                    key={benefit}
+                    className="flex items-start gap-2.5 text-[12px] leading-5 text-[#344438] sm:text-[13px]"
+                  >
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 fill-[#31732f] text-white" />
                     <span>{benefit}</span>
                   </li>
@@ -364,25 +424,31 @@ export default function Publication() {
               <SectionHeading align="left">Publication Process</SectionHeading>
 
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
-                {publicationProcess.map(({ icon: ProcessIcon, title, description }, index) => (
-                  <motion.article
-                    key={title}
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.42, delay: index * 0.06 }}
-                    className="group relative text-center"
-                  >
-                    <span className="mx-auto flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#f1f5ec] text-[#153f1b] shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:bg-[#e7efdd] group-hover:shadow-md">
-                      <ProcessIcon className="h-7 w-7" strokeWidth={1.45} />
-                    </span>
-                    {index < publicationProcess.length - 1 && (
-                      <span className="absolute left-[calc(50%+37px)] top-[30px] hidden w-[calc(100%-74px)] border-t border-dashed border-[#8dac79] lg:block" />
-                    )}
-                    <h3 className="mt-3 text-[13px] font-[550] leading-5 text-[#18391d]">{title}</h3>
-                    <p className="mt-2 text-[12px] leading-[1.55] text-[#4b574e] sm:text-[13px]">{description}</p>
-                  </motion.article>
-                ))}
+                {publicationProcess.map(
+                  ({ icon: ProcessIcon, title, description }, index) => (
+                    <motion.article
+                      key={title}
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.42, delay: index * 0.06 }}
+                      className="group relative text-center"
+                    >
+                      <span className="mx-auto flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#f1f5ec] text-[#153f1b] shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:bg-[#e7efdd] group-hover:shadow-md">
+                        <ProcessIcon className="h-7 w-7" strokeWidth={1.45} />
+                      </span>
+                      {index < publicationProcess.length - 1 && (
+                        <span className="absolute left-[calc(50%+37px)] top-[30px] hidden w-[calc(100%-74px)] border-t border-dashed border-[#8dac79] lg:block" />
+                      )}
+                      <h3 className="mt-3 text-[13px] font-[550] leading-5 text-[#18391d]">
+                        {title}
+                      </h3>
+                      <p className="mt-2 text-[12px] leading-[1.55] text-[#4b574e] sm:text-[13px]">
+                        {description}
+                      </p>
+                    </motion.article>
+                  ),
+                )}
               </div>
             </motion.div>
 
@@ -390,10 +456,15 @@ export default function Publication() {
               {...fadeUp}
               className="rounded-xl bg-gradient-to-br from-[#123f1a] to-[#0b3516] p-6 text-white shadow-[0_12px_28px_rgba(9,50,19,.17)]"
             >
-              <h2 className="text-[16px] text-white font-[550]">Important Notes</h2>
+              <h2 className="text-[16px] text-white font-[550]">
+                Important Notes
+              </h2>
               <ul className="mt-5 space-y-4">
                 {publicationNotes.map((note) => (
-                  <li key={note} className="flex items-start gap-3 text-[12px] leading-[1.65] text-white/95">
+                  <li
+                    key={note}
+                    className="flex items-start gap-3 text-[12px] leading-[1.65] text-white/95"
+                  >
                     <Leaf className="mt-0.5 h-3.5 w-3.5 shrink-0 -rotate-12 fill-[#b4d86c] text-[#b4d86c]" />
                     <span>{note}</span>
                   </li>
@@ -407,7 +478,10 @@ export default function Publication() {
       {/* Other journals */}
       <section className="pb-7 sm:pb-9">
         <PageContainer>
-          <SectionHeading description="In addition to the Journal of Entomological Research, authors may also consider the following Scopus indexed journals from our partner publishers and societies." leaf={false}>
+          <SectionHeading
+            description="In addition to the Journal of Entomological Research, authors may also consider the following Scopus indexed journals from our partner publishers and societies."
+            leaf={false}
+          >
             Other Reputed Entomology Journals
           </SectionHeading>
 
@@ -424,13 +498,18 @@ export default function Publication() {
               >
                 <JournalCover journal={journal} />
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-[13px] font-[550] leading-[1.35] text-[#17381c]">{journal.title}</h3>
-                  <p className="mt-2 text-[11px] text-[#4e5a51]">{journal.issn}</p>
+                  <h3 className="text-[13px] font-[550] leading-[1.35] text-[#17381c]">
+                    {journal.title}
+                  </h3>
+                  <p className="mt-2 text-[11px] text-[#4e5a51]">
+                    {journal.issn}
+                  </p>
                   <span className="mt-3 inline-flex rounded bg-[#e8f0de] px-2 py-1 text-[10px] font-[550] text-[#31602d]">
                     Scopus Indexed
                   </span>
                   <p className="mt-3 text-[11px] leading-[1.55] text-[#4b574e]">
-                    <span className="font-[550] text-[#243d28]">Focus:</span> {journal.focus}
+                    <span className="font-[550] text-[#243d28]">Focus:</span>{" "}
+                    {journal.focus}
                   </p>
                 </div>
               </motion.article>
@@ -454,7 +533,8 @@ export default function Publication() {
                 Publish Your Research. Make an Impact.
               </h2>
               <p className="mt-2 text-[12px] leading-5 text-[#405044] sm:text-[13px]">
-                Join us in advancing entomological science through high-quality publications.
+                Join us in advancing entomological science through high-quality
+                publications.
               </p>
               <Link
                 to="/submit-paper"
