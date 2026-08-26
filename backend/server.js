@@ -88,12 +88,12 @@ app.use(errorHandler);
 async function start() {
   await connectDB();
 
-  const server = app.listen(env.PORT, () => {
-    console.log(
-      `[server] Entomology Science API running on port ${env.PORT} (${env.NODE_ENV})`
-    );
-    console.log(`[server] Allowed client origins: ${allowedOrigins.join(", ")}`);
-  });
+const server = app.listen(env.PORT, "0.0.0.0", () => {
+  console.log(
+    `[server] Entomology Science API running on port ${env.PORT} (${env.NODE_ENV})`
+  );
+  console.log(`[server] Allowed client origins: ${allowedOrigins.join(", ")}`);
+});
 
   const shutdown = async (signal) => {
     console.log(`\n[server] Received ${signal}. Shutting down gracefully...`);
