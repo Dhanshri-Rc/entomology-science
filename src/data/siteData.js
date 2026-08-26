@@ -417,6 +417,6 @@ export const footerResourceLinks = [
   { label: "Submission", path: "/submission" },
  
   { label: "Contact Us", path: "/contact" },
-  { label: "Privacy-Policy", path: "/privacy-policy"}
+  { label: "Privacy-Policy", path: "/privacy-policy"},
    { label: "Terms & Conditions", path: "/terms"}
 ];
