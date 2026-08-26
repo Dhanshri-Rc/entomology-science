@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import SEO from "../components/SEO";
 import {
   ArrowRight,
@@ -17,6 +19,10 @@ import {
 } from "lucide-react";
 import aboutBg from "../assets/img/aboutBg.png";
 import aboutCtaBg from "../assets/img/aboutCta2.png";
+import profile from "../assets/img/images.jpg"
+
+
+
 
 const glanceItems = [
   { icon: UsersRound, value: "300+", label: "Researchers" },
@@ -57,29 +63,54 @@ const coreValues = [
 
 const committee = [
   {
-    name: "Dr. Alan Rodriguez",
-    role: "Conference Chair",
-    image: "https://i.pravatar.cc/240?img=12",
+    name: "Dr. Prem Kishore",
+    role: "Former Principal Scientist & Ex Prof. & Head (Acting)",
+    image: profile ,
   },
   {
-    name: "Dr. Meera Krishnan",
-    role: "Co-Chair",
-    image: "https://i.pravatar.cc/240?img=47",
+    name: "Dr. (Ms.) Chandish R. Ballal",
+    role: "Former Director",
+     image: profile ,
   },
   {
-    name: "Dr. Wei Zhang",
-    role: "Program Chair",
-    image: "https://i.pravatar.cc/240?img=11",
+    name: "Dr. R.A. Balikai",
+    role: "Former Dean (Agri.)",
+     image: profile ,
   },
   {
-    name: "Dr. Aisha Karim",
-    role: "Publication Chair",
-    image: "https://i.pravatar.cc/240?img=44",
+    name: "Dr. Badal Bhattacharya",
+    role: "Principal Scientist and Principal Investigator",
+    image: profile ,
   },
   {
-    name: "Dr. James Peterson",
-    role: "Finance Chair",
-    image: "https://i.pravatar.cc/240?img=13",
+    name: "Dr. R.S. Chandel",
+    role: "Professor and Head",
+     image: profile ,
+  },
+    {
+    name: "Dr. Pradeep Kumar Chhuneja",
+    role: "Professor & Dean",
+    image: profile ,
+  },
+   {
+    name: "Dr. S. Davanesan ",
+    role: "Former Dean",
+     image: profile ,
+  },
+  {
+    name: "Dr. Debjani Dey",
+    role: "Former Head",
+     image: profile ,
+  },
+  {
+    name: "Dr. H.C.L. Gupta",
+    role: "Former Dean, Prof. & Head",
+   image: profile ,
+  },
+  {
+    name: "Dr. Dipak Hazra",
+    role: "Assistant Professor in Agricultural Chemicals",
+     image: profile ,
   },
 ];
 
@@ -128,6 +159,8 @@ const fadeUp = {
   transition: { duration: 0.55, ease: "easeOut" },
 };
 
+
+
 function SectionHeading({ children }) {
   return (
     <div className="mb-7 flex items-center justify-center gap-3 sm:gap-4">
@@ -152,7 +185,118 @@ function OutlineButton({ to, children }) {
   );
 }
 
+const committeeCarouselVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 70 : -70,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => ({
+    x: direction > 0 ? -70 : 70,
+    opacity: 0,
+  }),
+};
+
 export default function About() {
+
+  const [committeePage, setCommitteePage] = useState(0);
+const [committeeVisible, setCommitteeVisible] = useState(5);
+const [committeeDirection, setCommitteeDirection] = useState(1);
+const [committeePaused, setCommitteePaused] = useState(false);
+
+useEffect(() => {
+  const updateVisibleMembers = () => {
+    if (window.innerWidth < 640) {
+      setCommitteeVisible(2);
+    } else if (window.innerWidth < 1024) {
+      setCommitteeVisible(3);
+    } else {
+      setCommitteeVisible(5);
+    }
+  };
+
+  updateVisibleMembers();
+  window.addEventListener("resize", updateVisibleMembers);
+
+  return () => {
+    window.removeEventListener("resize", updateVisibleMembers);
+  };
+}, []);
+
+const totalCommitteePages = Math.max(
+  1,
+  Math.ceil(committee.length / committeeVisible)
+);
+
+const committeeGroups = Array.from(
+  { length: totalCommitteePages },
+  (_, pageIndex) => {
+    const startIndex = pageIndex * committeeVisible;
+    const members = committee.slice(
+      startIndex,
+      startIndex + committeeVisible
+    );
+
+    // Fill the final slide when members do not divide evenly
+    if (members.length < committeeVisible && committee.length > 0) {
+      return [
+        ...members,
+        ...committee.slice(0, committeeVisible - members.length),
+      ];
+    }
+
+    return members;
+  }
+);
+
+const visibleCommittee =
+  committeeGroups[committeePage] || committeeGroups[0] || [];
+
+useEffect(() => {
+  setCommitteePage(0);
+}, [committeeVisible]);
+
+useEffect(() => {
+  if (committeePaused || totalCommitteePages <= 1) return;
+
+  const interval = setInterval(() => {
+    setCommitteeDirection(1);
+    setCommitteePage(
+      (previousPage) =>
+        (previousPage + 1) % totalCommitteePages
+    );
+  }, 4500);
+
+  return () => clearInterval(interval);
+}, [committeePaused, totalCommitteePages]);
+
+const nextCommitteeSlide = () => {
+  setCommitteeDirection(1);
+  setCommitteePage(
+    (previousPage) =>
+      (previousPage + 1) % totalCommitteePages
+  );
+};
+
+const previousCommitteeSlide = () => {
+  setCommitteeDirection(-1);
+  setCommitteePage(
+    (previousPage) =>
+      (previousPage - 1 + totalCommitteePages) %
+      totalCommitteePages
+  );
+};
+
+const openCommitteeSlide = (pageIndex) => {
+  setCommitteeDirection(
+    pageIndex > committeePage ? 1 : -1
+  );
+  setCommitteePage(pageIndex);
+};
+
   return (
     <main className="overflow-hidden bg-white font-sans text-[#202820]">
       <SEO
@@ -314,50 +458,184 @@ export default function About() {
         </div>
       </section>
 
-      {/* Organizing committee */}
-      <section className="pb-8 sm:pb-10">
-        <div className="mx-auto max-w-[1170px] px-4 sm:px-6 lg:px-8">
+      {/* Organizing Committee */}
+<section className="pb-8 sm:pb-10">
+  <div className="mx-auto max-w-[1170px] px-4 sm:px-6 lg:px-8">
+    <motion.div
+      {...fadeUp}
+      onMouseEnter={() => setCommitteePaused(true)}
+      onMouseLeave={() => setCommitteePaused(false)}
+      className="
+        relative overflow-hidden rounded-xl
+        border border-[#e5e8e1] bg-[#f5f6f3]
+        px-4 py-5
+        shadow-[0_8px_24px_rgba(24,59,28,0.04)]
+        sm:px-7
+      "
+    >
+      <div className="text-center">
+        <h2 className="text-[20px] font-[550] text-[#173b1c] sm:text-[21px]">
+          Organizing Committee
+        </h2>
+
+        <p className="mt-1 text-[11px] text-[#687568] sm:text-xs">
+          Meet the experts guiding our conference
+        </p>
+      </div>
+
+      {/* Previous button */}
+      {totalCommitteePages > 1 && (
+        <button
+          type="button"
+          onClick={previousCommitteeSlide}
+          aria-label="Previous committee members"
+          className="
+            absolute left-2 top-1/2 z-20
+            flex h-9 w-9 -translate-y-1/2
+            items-center justify-center rounded-full
+            border border-[#d8e0d4] bg-white
+            text-[#2d6429]
+            shadow-[0_5px_15px_rgba(28,69,30,0.14)]
+            transition duration-300
+            hover:border-[#477b3f] hover:bg-[#2d6429]
+            hover:text-white hover:shadow-lg
+            active:scale-95
+            sm:left-4 sm:h-10 sm:w-10
+          "
+        >
+          <ChevronLeft className="h-5 w-5" strokeWidth={2} />
+        </button>
+      )}
+
+      {/* Carousel content */}
+      <div className="relative mt-5 min-h-[130px] overflow-hidden px-9 sm:px-11">
+        <AnimatePresence
+          initial={false}
+          custom={committeeDirection}
+          mode="wait"
+        >
           <motion.div
-            {...fadeUp}
-            className="rounded-xl border border-[#e5e8e1] bg-[#f5f6f3] px-4 py-4 shadow-[0_8px_24px_rgba(24,59,28,0.04)] sm:px-7"
+            key={`${committeeVisible}-${committeePage}`}
+            custom={committeeDirection}
+            variants={committeeCarouselVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: {
+                type: "spring",
+                stiffness: 260,
+                damping: 28,
+              },
+              opacity: {
+                duration: 0.25,
+              },
+            }}
+            className="grid items-start"
+            style={{
+              gridTemplateColumns: `repeat(${visibleCommittee.length}, minmax(0, 1fr))`,
+            }}
           >
-            <h2 className="text-center text-[20px] font-[550] text-[#173b1c] sm:text-[21px]">
-              Organizing Committee
-            </h2>
-
-            <div className="mt-3 grid grid-cols-2 gap-y-6 sm:grid-cols-3 lg:grid-cols-5 lg:gap-y-0">
-              {committee.map((member, index) => (
-                <motion.article
-                  key={member.name}
-                  whileHover={{ y: -5 }}
-                  className={`group px-2 text-center sm:px-4 ${
-                    index > 0 ? "lg:border-l lg:border-[#d9ded5]" : ""
-                  } ${index === committee.length - 1 ? "max-sm:col-span-2" : ""}`}
+            {visibleCommittee.map((member, index) => (
+              <motion.article
+                key={`${committeePage}-${member.name}-${index}`}
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.25 }}
+                className={`
+                  group px-2 text-center sm:px-4
+                  ${
+                    index > 0
+                      ? "border-l border-[#d9ded5]"
+                      : ""
+                  }
+                `}
+              >
+                <div
+                  className="
+                    mx-auto h-[76px] w-[76px] overflow-hidden
+                    rounded-full border-[3px] border-white
+                    bg-[#e3e7df]
+                    shadow-[0_6px_15px_rgba(31,74,33,0.15)]
+                    transition duration-300
+                    group-hover:border-[#cbd9c5]
+                    group-hover:shadow-[0_9px_20px_rgba(31,74,33,0.22)]
+                    sm:h-[82px] sm:w-[82px]
+                  "
                 >
-                  <div className="mx-auto h-[78px] w-[78px] overflow-hidden rounded-full border-[3px] border-white bg-[#e3e7df] shadow-md">
-                    <img
-                      src={member.image}
-                      alt={`${member.name}, ${member.role}`}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <h3 className="mt-2.5 text-[13px] font-semibold text-[#2d6429] sm:text-sm">
-                    {member.name}
-                  </h3>
-                  <p className="mt-0.5 text-[11px] text-[#202620] sm:text-[12px]">
-                    {member.role}
-                  </p>
-                </motion.article>
-              ))}
-            </div>
+                  <img
+                    src={member.image}
+                    alt={`${member.name}, ${member.role}`}
+                    loading="lazy"
+                    className="
+                      h-full w-full object-cover
+                      transition duration-500
+                      group-hover:scale-110
+                    "
+                  />
+                </div>
 
-            {/* <div className="mt-4 flex justify-center">
-              <OutlineButton to="/contact">View Full Committee</OutlineButton>
-            </div> */}
+                <h3 className="mt-2.5 line-clamp-1 text-[12px] font-semibold text-[#2d6429] sm:text-sm">
+                  {member.name}
+                </h3>
+
+                <p className="mt-0.5 line-clamp-2 text-[10px] leading-4 text-[#4d594e] sm:text-[12px]">
+                  {member.role}
+                </p>
+              </motion.article>
+            ))}
           </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Next button */}
+      {totalCommitteePages > 1 && (
+        <button
+          type="button"
+          onClick={nextCommitteeSlide}
+          aria-label="Next committee members"
+          className="
+            absolute right-2 top-1/2 z-20
+            flex h-9 w-9 -translate-y-1/2
+            items-center justify-center rounded-full
+            border border-[#d8e0d4] bg-white
+            text-[#2d6429]
+            shadow-[0_5px_15px_rgba(28,69,30,0.14)]
+            transition duration-300
+            hover:border-[#477b3f] hover:bg-[#2d6429]
+            hover:text-white hover:shadow-lg
+            active:scale-95
+            sm:right-4 sm:h-10 sm:w-10
+          "
+        >
+          <ChevronRight className="h-5 w-5" strokeWidth={2} />
+        </button>
+      )}
+
+      {/* Pagination dots */}
+      {totalCommitteePages > 1 && (
+        <div className="mt-5 flex items-center justify-center gap-2">
+          {Array.from({ length: totalCommitteePages }).map(
+            (_, pageIndex) => (
+              <button
+                key={pageIndex}
+                type="button"
+                onClick={() => openCommitteeSlide(pageIndex)}
+                aria-label={`Open committee slide ${
+                  pageIndex + 1
+                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  committeePage === pageIndex
+                    ? "w-7 bg-[#3d7135]"
+                    : "w-2 bg-[#c8d2c4] hover:bg-[#789b70]"
+                }`}
+              />
+            )
+          )}
         </div>
-      </section>
+      )}
+    </motion.div>
+  </div>
+</section>
 
       {/* Past editions */}
       {/* <section className="pb-8 sm:pb-9">
