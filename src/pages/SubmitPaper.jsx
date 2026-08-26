@@ -23,9 +23,12 @@ import {
   Check,
   Leaf,
   ChevronRight,
+  AlertCircle,
 } from "lucide-react";
 
 import Icon from "../components/Icon";
+import SEO from "../components/SEO";
+import api, { ApiRequestError } from "../lib/api";
 import bg from "../assets/img/subpaperbg.png"
 import bgcta from "../assets/img/subpapercta.png"
 import cover from "../assets/img/home3.png"
@@ -86,6 +89,9 @@ export default function SubmitPaper() {
 
   const [submitted, setSubmitted] = useState(false);
   const [draftSaved, setDraftSaved] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submittedId, setSubmittedId] = useState("");
 
   /* =======================================================
      LOAD SAVED DRAFT
@@ -313,12 +319,15 @@ export default function SubmitPaper() {
      SUBMIT
   ======================================================== */
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (submitting) return;
 
     const newErrors = validate();
 
     setErrors(newErrors);
+    setSubmitError("");
 
     if (Object.keys(newErrors).length) {
       const firstInvalid =
@@ -334,37 +343,74 @@ export default function SubmitPaper() {
       return;
     }
 
-    /*
-      ================================================
-      CONNECT YOUR BACKEND API HERE.
+    setSubmitting(true);
 
-      Example:
-
+    try {
       const formData = new FormData();
 
-      Object.entries(form).forEach(([key, value]) => {
-        formData.append(key, value);
+      formData.append("fullName", form.fullName);
+      formData.append("email", form.email);
+      formData.append("affiliation", form.affiliation);
+      formData.append("country", form.country);
+
+      formData.append("corrFullName", form.corrFullName);
+      formData.append("corrEmail", form.corrEmail);
+      formData.append("corrPhone", form.corrPhone || "");
+      formData.append("corrAddress", form.corrAddress || "");
+
+      formData.append("paperTitle", form.paperTitle);
+      formData.append("researchArea", form.researchArea);
+      formData.append("abstract", form.abstract);
+      formData.append("keywords", form.keywords);
+      formData.append("presentationType", form.presentationType);
+
+      formData.append("notes", form.notes || "");
+      formData.append("agree", form.agree ? "true" : "false");
+
+      if (form.paperFile) {
+        formData.append("manuscriptFile", form.paperFile);
+      }
+
+      if (form.coverLetterFile) {
+        formData.append("coverLetterFile", form.coverLetterFile);
+      }
+
+      const response = await api.postForm(
+        "/submissions",
+        formData
+      );
+
+      // Only clear the form and draft AFTER the backend confirms success.
+      localStorage.removeItem(DRAFT_KEY);
+
+      setSubmittedId(response?.submissionId || "");
+      setSubmitted(true);
+      setDraftSaved(false);
+      setErrors({});
+      setForm(initialForm);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
       });
+    } catch (error) {
+      setSubmitted(false);
 
-      await fetch("/api/submissions", {
-        method: "POST",
-        body: formData,
+      if (error instanceof ApiRequestError) {
+        setSubmitError(error.message);
+      } else {
+        setSubmitError(
+          "Unable to reach the server. Please check your connection and try again."
+        );
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
       });
-
-      ================================================
-    */
-
-    localStorage.removeItem(DRAFT_KEY);
-
-    setSubmitted(true);
-    setDraftSaved(false);
-    setErrors({});
-    setForm(initialForm);
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const cleanPhone =
@@ -375,6 +421,12 @@ export default function SubmitPaper() {
 
   return (
     <>
+      <SEO
+        title="Submit Your Paper | International Conference on Entomology"
+        description="Submit your original research paper to ICEBIS. Complete the author, corresponding author and manuscript details to begin your submission."
+        canonical="/submit-paper"
+      />
+
       {/* =====================================================
           EXACT WIDTH SYSTEM
       ====================================================== */}
@@ -706,8 +758,53 @@ export default function SubmitPaper() {
                 "
               />
 
-              Your paper has been submitted successfully.
+              Thank you. Your paper has been submitted successfully.
+              {submittedId
+                ? ` Your Submission ID is ${submittedId}.`
+                : ""}{" "}
               You will receive a confirmation email shortly.
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {submitError && (
+        <section className="bg-[#f9faf7] pt-5">
+          <div className="submit-paper-container">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="
+                flex
+                items-start
+                gap-[10px]
+
+                rounded-[7px]
+
+                border
+                border-red-300
+
+                bg-red-50
+
+                px-4
+                py-3
+
+                text-[10.5px]
+                font-medium
+                leading-[1.5]
+
+                text-red-600
+              "
+            >
+              <AlertCircle
+                className="
+                  mt-[1px]
+                  h-[16px]
+                  w-[16px]
+                  shrink-0
+                "
+              />
+              {submitError}
             </motion.div>
           </div>
         </section>
@@ -1373,10 +1470,11 @@ export default function SubmitPaper() {
               >
                 <motion.button
                   type="submit"
-                  whileHover={{
+                  disabled={submitting}
+                  whileHover={submitting ? {} : {
                     y: -2,
                   }}
-                  whileTap={{
+                  whileTap={submitting ? {} : {
                     scale: 0.98,
                   }}
                   className="
@@ -1419,6 +1517,9 @@ export default function SubmitPaper() {
 
                     hover:shadow-[0_6px_13px_rgba(9,52,14,0.22)]
 
+                    disabled:cursor-not-allowed
+                    disabled:opacity-70
+
                     sm:min-w-[124px]
                   "
                 >
@@ -1443,22 +1544,39 @@ export default function SubmitPaper() {
                     "
                   />
 
-                  <Send
-                    className="
-                      relative
-                      z-10
-                      h-[16px]
-                      w-[16px]
-                    "
-                  />
+                  {submitting ? (
+                    <span
+                      className="
+                        relative
+                        z-10
+                        h-[15px]
+                        w-[15px]
+                        animate-spin
+                        rounded-full
+                        border-2
+                        border-white/40
+                        border-t-white
+                      "
+                    />
+                  ) : (
+                    <Send
+                      className="
+                        relative
+                        z-10
+                        h-[16px]
+                        w-[16px]
+                      "
+                    />
+                  )}
 
                   <span className="relative z-10">
-                    Submit Paper
+                    {submitting ? "Submitting..." : "Submit Paper"}
                   </span>
                 </motion.button>
 
                 <button
                   type="button"
+                  disabled={submitting}
                   onClick={handleSaveDraft}
                   className="
                     group/draft

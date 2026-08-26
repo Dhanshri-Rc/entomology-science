@@ -406,17 +406,17 @@ export const acceptedFileFormats = [
 ];
 
 export const footerQuickLinks = [
- 
+  
   { label: "About Conference", path: "/about" },
   { label: "Aims & Scope", path: "/aims-and-scope" },
-  { label: "Call for Papers", path: "/call-for-papers" },
    { label: "Publication", path: "/publication" },
+  { label: "Call for Papers", path: "/call-for-papers" },
 ];
 
 export const footerResourceLinks = [
   { label: "Submission", path: "/submission" },
  
   { label: "Contact Us", path: "/contact" },
-  { label: "Privacy-Policy", path: "/privacy-policy"},
-  { label: "Terms & Conditions", path: "/terms"}
+  { label: "Privacy-Policy", path: "/privacy-policy"}
+   { label: "Terms & Conditions", path: "/terms"}
 ];

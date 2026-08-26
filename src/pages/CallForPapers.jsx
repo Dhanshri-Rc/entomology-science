@@ -1,3 +1,4 @@
+import SEO from "../components/SEO";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -193,6 +194,11 @@ function DarkButton({
 export default function CallForPapers() {
   return (
     <main className="overflow-hidden bg-white font-sans text-[#203426]">
+      <SEO
+        title="Call for Papers | International Conference on Entomology"
+        description="Submit your original research to ICEBIS. Review key tracks, important dates, and paper submission guidelines for the conference."
+        canonical="/call-for-papers"
+      />
       {/* Hero */}
       <section
         className="relative isolate flex min-h-[360px] items-center bg-cover bg-[position:66%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"

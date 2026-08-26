@@ -12,7 +12,17 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 
-export default function App() {
+import { AuthProvider } from "./context/AuthContext";
+import { SiteSettingsProvider } from "./context/SiteSettingsContext";
+import AdminProtectedRoute from "./components/admin/AdminProtectedRoute";
+
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminSubmissions from "./pages/admin/AdminSubmissions";
+import AdminInquiries from "./pages/admin/AdminInquiries";
+import AdminSettings from "./pages/admin/AdminSettings";
+
+function PublicSite() {
   return (
     <Layout>
       <Routes>
@@ -30,5 +40,55 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
+  );
+}
+
+export default function App() {
+  return (
+    <SiteSettingsProvider>
+      <AuthProvider>
+        <Routes>
+          {/* Admin auth */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+
+          {/* Protected admin area */}
+          <Route
+            path="/admin/dashboard"
+            element={
+              <AdminProtectedRoute>
+                <AdminDashboard />
+              </AdminProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/submissions"
+            element={
+              <AdminProtectedRoute>
+                <AdminSubmissions />
+              </AdminProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/inquiries"
+            element={
+              <AdminProtectedRoute>
+                <AdminInquiries />
+              </AdminProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/settings"
+            element={
+              <AdminProtectedRoute>
+                <AdminSettings />
+              </AdminProtectedRoute>
+            }
+          />
+
+          {/* Public site (existing UI, untouched) */}
+          <Route path="/*" element={<PublicSite />} />
+        </Routes>
+      </AuthProvider>
+    </SiteSettingsProvider>
   );
 }

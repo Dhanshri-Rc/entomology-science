@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO";
 import {
   ArrowRight,
   Atom,
@@ -198,6 +199,11 @@ function TopicColumn({ topics, columnDelay = 0 }) {
 export default function AimScope() {
   return (
     <main className="overflow-hidden bg-white font-sans text-[#202720]">
+      <SEO
+        title="Aims & Scope | International Conference on Entomology"
+        description="Explore the aims and scope of ICEBIS, covering insect biology, ecology, pest management, and applied entomological research."
+        canonical="/aims-and-scope"
+      />
       {/* HERO */}
       <section
         className="relative isolate flex min-h-[360px] items-center bg-cover bg-[position:68%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"

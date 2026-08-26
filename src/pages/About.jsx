@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO";
 import {
   ArrowRight,
   BookOpen,
@@ -154,6 +155,11 @@ function OutlineButton({ to, children }) {
 export default function About() {
   return (
     <main className="overflow-hidden bg-white font-sans text-[#202820]">
+      <SEO
+        title="About the Conference | Entomology Science Association"
+        description="Learn about the mission, vision and history of the Entomology Science Association and the International Conference on Entomology."
+        canonical="/about"
+      />
       {/* Hero section */}
       <section
         className="relative isolate flex min-h-[360px] items-center bg-cover bg-[position:66%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"

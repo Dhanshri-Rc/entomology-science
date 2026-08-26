@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import herobg from "../assets/img/homebg.png";
 import {
   ArrowRight,
@@ -438,6 +439,18 @@ function PageContainer({ children, className = "" }) {
 export default function Home() {
   return (
     <main className="w-full overflow-hidden bg-white lg:py-16 md:py-14 sm:py-12 py-10">
+      <SEO
+        title="International Conference on Entomology | Entomology Science Association"
+        description="Join the International Conference on Entomology and Biological Insect Sciences (ICEBIS) — connecting researchers, scholars and students in entomology worldwide."
+        canonical="/"
+        keywords="entomology conference, insect science, ICEBIS, biological sciences"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Entomology Science Association",
+          url: "https://www.entomologyscience.org",
+        }}
+      />
       {/* =====================================================
           HERO SECTION
       ===================================================== */}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 import {
   Leaf,
@@ -75,6 +76,11 @@ const ease = [0.22, 1, 0.36, 1];
 export default function Submission() {
   return (
     <>
+      <SEO
+        title="Submission Guidelines | International Conference on Entomology"
+        description="Review manuscript formatting, peer-review, and submission guidelines for authors presenting at ICEBIS."
+        canonical="/submission"
+      />
       {/* =====================================================
           ONE WIDTH SYSTEM FOR ALL 3 SECTIONS
 

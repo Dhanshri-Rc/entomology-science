@@ -1,3 +1,4 @@
+import SEO from "../components/SEO";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -286,6 +287,11 @@ function JournalCover({ journal }) {
 export default function Publication() {
   return (
     <main className="overflow-hidden bg-white font-sans text-[#25372a]">
+      <SEO
+        title="Publication Opportunities | International Conference on Entomology"
+        description="Discover journal partnerships and publication opportunities for accepted papers presented at ICEBIS."
+        canonical="/publication"
+      />
       {/* Hero */}
       <section
         className="relative isolate flex min-h-[396px] items-center bg-cover bg-[position:66%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"
