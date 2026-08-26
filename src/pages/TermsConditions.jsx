@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 import {
   Leaf,
@@ -297,6 +298,11 @@ export default function TermsConditions() {
 
   return (
     <>
+      <SEO
+        title="Terms & Conditions | Entomology Science Association"
+        description="Review the terms and conditions governing use of the Entomology Science Association website and conference services."
+        canonical="/terms"
+      />
       {/* =====================================================
           PAGE WIDTH
       ====================================================== */}

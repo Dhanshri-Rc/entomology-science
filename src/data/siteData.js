@@ -100,19 +100,19 @@ export const topicsFocusAreas = [
 ];
 
 export const importantDates = [
-  { icon: "FileSignature", label: "Abstract Submission Deadline", date: "31 July 2025" },
-  { icon: "BadgeCheck", label: "Notification of Acceptance", date: "10 August 2025" },
-  { icon: "FileUp", label: "Full Paper Submission Deadline", date: "30 August 2025" },
-  { icon: "Users", label: "Notification of Acceptance", date: "20 September 2025" },
-  { icon: "CalendarCheck", label: "Early Bird Registration Deadline", date: "30 September 2025" },
-  { icon: "Clock", label: "Conference Dates", date: "10–12 November 2025" },
+  { icon: "FileSignature", label: "Abstract Submission Deadline", date: "31 July 2026" },
+  { icon: "BadgeCheck", label: "Notification of Acceptance", date: "10 August 2026" },
+  { icon: "FileUp", label: "Full Paper Submission Deadline", date: "30 August 2026" },
+  { icon: "Users", label: "Notification of Acceptance", date: "20 September 2026" },
+  { icon: "CalendarCheck", label: "Early Bird Registration Deadline", date: "30 September 2026" },
+  { icon: "Clock", label: "Conference Dates", date: "10–12 November 2026" },
 ];
 
 export const homeImportantDates = [
-  { icon: "FileSignature", label: "Abstract Submission Deadline", date: "31 July 2025" },
-  { icon: "BadgeCheck", label: "Notification of Acceptance", date: "10 August 2025" },
-  { icon: "FileUp", label: "Full Paper Submission Deadline", date: "30 August 2025" },
-  { icon: "CalendarCheck", label: "Conference Dates", date: "10-12 November 2025" },
+  { icon: "FileSignature", label: "Abstract Submission Deadline", date: "31 July 2026" },
+  { icon: "BadgeCheck", label: "Notification of Acceptance", date: "10 August 2026" },
+  { icon: "FileUp", label: "Full Paper Submission Deadline", date: "30 August 2026" },
+  { icon: "CalendarCheck", label: "Conference Dates", date: "10-12 November 2026" },
 ];
 
 export const researchTopics = [
@@ -406,15 +406,17 @@ export const acceptedFileFormats = [
 ];
 
 export const footerQuickLinks = [
-  { label: "Home", path: "/" },
+  
   { label: "About Conference", path: "/about" },
   { label: "Aims & Scope", path: "/aims-and-scope" },
+   { label: "Publication", path: "/publication" },
   { label: "Call for Papers", path: "/call-for-papers" },
 ];
 
 export const footerResourceLinks = [
   { label: "Submission", path: "/submission" },
-  { label: "Publication", path: "/publication" },
+ 
   { label: "Contact Us", path: "/contact" },
-  { label: "Privacy-Policy", path: "/privacy-policy"}
+  { label: "Privacy-Policy", path: "/privacy-policy"},
+   { label: "Terms & Conditions", path: "/terms"}
 ];

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 import {
   Leaf,
@@ -251,6 +252,11 @@ const privacySections = [
 export default function PrivacyPolicy() {
   return (
     <>
+      <SEO
+        title="Privacy Policy | Entomology Science Association"
+        description="Read the Entomology Science Association privacy policy covering how personal data is collected, used and protected."
+        canonical="/privacy-policy"
+      />
       {/* =====================================================
           SAME WIDTH SYSTEM AS YOUR OTHER PAGES
       ====================================================== */}

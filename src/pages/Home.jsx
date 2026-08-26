@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import herobg from "../assets/img/homebg.png";
 import {
   ArrowRight,
@@ -200,22 +201,22 @@ const themes = [
 const importantDates = [
   {
     icon: Bug,
-    date: "31 July 2025",
+    date: "31 July 2026",
     label: "Abstract Submission\nDeadline",
   },
   {
     icon: CalendarDays,
-    date: "10 August 2025",
+    date: "10 August 2026",
     label: "Notification of\nAcceptance",
   },
   {
     icon: FileCheck2,
-    date: "30 August 2025",
+    date: "30 August 2026",
     label: "Full Paper Submission\nDeadline",
   },
   {
     icon: Bug,
-    date: "10 November 2025",
+    date: "10 November 2026",
     label: "Conference\nDates",
   },
 ];
@@ -438,6 +439,18 @@ function PageContainer({ children, className = "" }) {
 export default function Home() {
   return (
     <main className="w-full overflow-hidden bg-white lg:py-16 md:py-14 sm:py-12 py-10">
+      <SEO
+        title="International Conference on Entomology | Entomology Science Association"
+        description="Join the International Conference on Entomology and Biological Insect Sciences (ICEBIS) — connecting researchers, scholars and students in entomology worldwide."
+        canonical="/"
+        keywords="entomology conference, insect science, ICEBIS, biological sciences"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Entomology Science Association",
+          url: "https://www.entomologyscience.org",
+        }}
+      />
       {/* =====================================================
           HERO SECTION
       ===================================================== */}
@@ -642,7 +655,7 @@ export default function Home() {
               strokeWidth={1.8}
             />
             <span className="min-w-0">
-              10 – 12 November 2025
+              10 – 12 November 2026
             </span>
           </div>
 
@@ -662,7 +675,7 @@ export default function Home() {
               strokeWidth={1.8}
             />
             <span className="min-w-0">
-              Washington, DC, USA
+              New Delhi
             </span>
           </div>
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO";
 import {
   ArrowRight,
   BookOpen,
@@ -154,6 +155,11 @@ function OutlineButton({ to, children }) {
 export default function About() {
   return (
     <main className="overflow-hidden bg-white font-sans text-[#202820]">
+      <SEO
+        title="About the Conference | Entomology Science Association"
+        description="Learn about the mission, vision and history of the Entomology Science Association and the International Conference on Entomology."
+        canonical="/about"
+      />
       {/* Hero section */}
       <section
         className="relative isolate flex min-h-[360px] items-center bg-cover bg-[position:66%_center] sm:min-h-[380px] md:min-h-[400px] md:bg-center"
@@ -354,7 +360,7 @@ export default function About() {
       </section>
 
       {/* Past editions */}
-      <section className="pb-8 sm:pb-9">
+      {/* <section className="pb-8 sm:pb-9">
         <div className="mx-auto max-w-[1170px] px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp}>
             <SectionHeading>Our Past Editions</SectionHeading>
@@ -394,12 +400,10 @@ export default function About() {
               ))}
             </div>
 
-            {/* <div className="mt-6 flex justify-center">
-              <OutlineButton to="/conferences">View All Past Conferences</OutlineButton>
-            </div> */}
+        
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="pb-4 sm:pb-5">

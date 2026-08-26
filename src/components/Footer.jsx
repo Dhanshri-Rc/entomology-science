@@ -9,10 +9,10 @@ import {
 } from "lucide-react";
 
 import {
-  siteInfo,
   footerQuickLinks,
   footerResourceLinks,
 } from "../data/siteData";
+import { useSiteSettings } from "../context/SiteSettingsContext";
 
 /* =========================================================
    LOGO
@@ -25,29 +25,36 @@ import logo from "../assets/img/flogo.png";
    Direct links = guaranteed working
 ========================================================= */
 
-const footerSocialLinks = [
-  {
-    label: "Facebook",
-    url: "https://www.facebook.com/EntomologyScienceAssoc/",
-    icon: FacebookIcon,
-  },
-  {
-    label: "Instagram",
-    url: "https://www.instagram.com/entomology_science_association/",
-    icon: InstagramIcon,
-  },
-  {
-    label: "X",
-    url: "https://x.com/EntoSciAssoc",
-    icon: XIcon,
-  },
-];
+function buildFooterSocialLinks(socialLinks) {
+  return [
+    {
+      label: "Facebook",
+      url: socialLinks?.facebook || "https://www.facebook.com/EntomologyScienceAssoc/",
+      icon: FacebookIcon,
+    },
+    {
+      label: "Instagram",
+      url:
+        socialLinks?.instagram ||
+        "https://www.instagram.com/entomology_science_association/",
+      icon: InstagramIcon,
+    },
+    {
+      label: "X",
+      url: socialLinks?.x || "https://x.com/EntoSciAssoc",
+      icon: XIcon,
+    },
+  ];
+}
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 export default function Footer() {
+  const { siteInfo, socialLinks } = useSiteSettings();
+  const footerSocialLinks = buildFooterSocialLinks(socialLinks);
+
   const websiteUrl =
     siteInfo?.website?.startsWith("http")
       ? siteInfo.website
@@ -691,7 +698,7 @@ export default function Footer() {
 
                 <span className="min-w-0">
                   {siteInfo?.addressShort ||
-                    "Washington, DC, USA"}
+                    "New Delhi"}
                 </span>
               </li>
             </ul>

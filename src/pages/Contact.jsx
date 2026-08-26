@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import bg from "../assets/img/contactbg.png"
 import cta from "../assets/img/subcta.png"
 
@@ -18,12 +19,14 @@ import {
   FileUp,
   MessagesSquare,
   ArrowRight,
+  AlertCircle,
 } from "lucide-react";
 
 import {
-  siteInfo,
   contactSubjects,
 } from "../data/siteData";
+import { useSiteSettings } from "../context/SiteSettingsContext";
+import api, { ApiRequestError } from "../lib/api";
 
 /* =========================================================
    ANIMATION
@@ -82,6 +85,8 @@ const contactCards = [
 ========================================================= */
 
 export default function Contact() {
+  const { siteInfo } = useSiteSettings();
+
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -92,6 +97,8 @@ export default function Contact() {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (field) => (event) => {
     const value =
@@ -145,14 +152,32 @@ export default function Contact() {
     return newErrors;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (submitting) return;
 
     const newErrors = validate();
 
     setErrors(newErrors);
+    setSubmitError("");
 
-    if (Object.keys(newErrors).length === 0) {
+    if (Object.keys(newErrors).length !== 0) {
+      return;
+    }
+
+    setSubmitting(true);
+
+    try {
+      await api.post("/inquiries", {
+        fullName: form.fullName.trim(),
+        email: form.email.trim(),
+        subject: form.subject,
+        message: form.message.trim(),
+        agree: form.agree,
+      });
+
+      // Only reset the form after the backend confirms success.
       setSubmitted(true);
 
       setForm({
@@ -162,11 +187,37 @@ export default function Contact() {
         message: "",
         agree: false,
       });
+    } catch (error) {
+      setSubmitted(false);
+
+      if (error instanceof ApiRequestError) {
+        setSubmitError(error.message);
+      } else {
+        setSubmitError(
+          "Unable to reach the server. Please check your connection and try again."
+        );
+      }
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
     <>
+      <SEO
+        title="Contact Us | Entomology Science Association"
+        description="Get in touch with the Entomology Science Association for questions about ICEBIS, submissions, sponsorships or general inquiries."
+        canonical="/contact"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Entomology Science Association",
+          email: siteInfo?.email,
+          telephone: siteInfo?.phone,
+          url: "https://www.entomologyscience.org",
+        }}
+      />
+
       {/* =====================================================
           GLOBAL PAGE WIDTH
       ====================================================== */}
@@ -571,6 +622,53 @@ export default function Contact() {
                 </motion.div>
               )}
 
+              {/* Error */}
+
+              {submitError && (
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: -6,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  className="
+                    mt-4
+
+                    flex
+                    items-start
+                    gap-2
+
+                    rounded-[5px]
+
+                    border
+                    border-red-300
+
+                    bg-red-50
+
+                    px-3
+                    py-2.5
+
+                    text-[11px]
+                    font-medium
+                    text-red-600
+                  "
+                >
+                  <AlertCircle
+                    className="
+                      mt-[1px]
+                      h-[14px]
+                      w-[14px]
+                      shrink-0
+                    "
+                  />
+
+                  {submitError}
+                </motion.div>
+              )}
+
               {/* FORM */}
 
               <form
@@ -890,10 +988,11 @@ export default function Contact() {
 
                 <motion.button
                   type="submit"
-                  whileHover={{
+                  disabled={submitting}
+                  whileHover={submitting ? {} : {
                     y: -2,
                   }}
-                  whileTap={{
+                  whileTap={submitting ? {} : {
                     scale: 0.99,
                   }}
                   className="
@@ -933,6 +1032,9 @@ export default function Contact() {
                     hover:bg-[linear-gradient(180deg,#216d27_0%,#15531b_100%)]
 
                     hover:shadow-[0_7px_15px_rgba(10,52,14,0.22)]
+
+                    disabled:cursor-not-allowed
+                    disabled:opacity-70
                   "
                 >
                   {/* shine */}
@@ -958,24 +1060,40 @@ export default function Contact() {
                   />
 
                   <span className="relative z-10">
-                    Send Message
+                    {submitting ? "Sending..." : "Send Message"}
                   </span>
 
-                  <Send
-                    strokeWidth={1.8}
-                    className="
-                      relative
-                      z-10
+                  {submitting ? (
+                    <span
+                      className="
+                        relative
+                        z-10
+                        h-[13px]
+                        w-[13px]
+                        animate-spin
+                        rounded-full
+                        border-2
+                        border-white/40
+                        border-t-white
+                      "
+                    />
+                  ) : (
+                    <Send
+                      strokeWidth={1.8}
+                      className="
+                        relative
+                        z-10
 
-                      h-[13px]
-                      w-[13px]
+                        h-[13px]
+                        w-[13px]
 
-                      transition-transform
-                      duration-300
+                        transition-transform
+                        duration-300
 
-                      group-hover/button:translate-x-[3px]
-                    "
-                  />
+                        group-hover/button:translate-x-[3px]
+                      "
+                    />
+                  )}
                 </motion.button>
               </form>
             </motion.div>
@@ -1147,7 +1265,7 @@ export default function Contact() {
               >
                 <iframe
                   title="Entomology Science Association location"
-                  src="https://www.google.com/maps?q=Washington%20DC%20USA&z=13&output=embed"
+                  src="https://www.google.com/maps?q=Delhi%20DC%20USA&z=13&output=embed"
                   loading="lazy"
                   className="
                     h-full
