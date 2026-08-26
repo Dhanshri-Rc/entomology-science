@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import bg from "../assets/img/contactbg.png"
-import cta from "../assets/img/subcta.png"
+import bg from "../assets/img/entomology-conference-contact-butterfly-hero.webp"
+import cta from "../assets/img/entomology-submission-ladybug-cta.webp";
 
 import {
   Leaf,

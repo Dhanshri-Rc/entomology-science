@@ -29,9 +29,9 @@ import {
 import Icon from "../components/Icon";
 import SEO from "../components/SEO";
 import api, { ApiRequestError } from "../lib/api";
-import bg from "../assets/img/subpaperbg.png"
-import bgcta from "../assets/img/subpapercta.png"
-import cover from "../assets/img/home3.png"
+import bg from "../assets/img/entomology-submit-paper-caterpillar-hero.webp"
+import bgcta from "../assets/img/entomology-submit-paper-butterfly-cta.webp"
+import cover from "../assets/img/journal-of-entomological-research-cover.webp"
 
 
 

@@ -18,7 +18,7 @@ import { useSiteSettings } from "../context/SiteSettingsContext";
    LOGO
 ========================================================= */
 
-import logo from "../assets/img/flogo.png";
+import logo from "../assets/img/entomology-science-association-footer-logo.webp";
 
 /* =========================================================
    SOCIAL LINKS

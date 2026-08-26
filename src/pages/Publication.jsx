@@ -21,16 +21,16 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import pubBg from "../assets/img/pubBg.png";
-import pubCta from "../assets/img/pubCta.png";
-import journalCover from "../assets/img/journalOfEnto.png";
+import pubBg from "../assets/img/entomology-science-beetle-hero-background.webp";
+import pubCta from "../assets/img/entomology-publication-butterfly-cta.webp";
+import journalCover from "../assets/img/journal-of-entomological-research-insect-cover.webp";
 
-import cropProtectionCover from "../assets/img/j2.png";
-import insectPlantCover from "../assets/img/j3.png";
-import biorationalCover from "../assets/img/j4.png";
-import biotechnologyCover from "../assets/img/j5.png";
-import forensicCover from "../assets/img/j6.png";
-import researchReviewsCover from "../assets/img/j7.png";
+import cropProtectionCover from "../assets/img/journal-of-agricultural-entomology-crop-protection-cover.webp";
+import insectPlantCover from "../assets/img/journal-of-insect-plant-interactions-pest-management-cover.webp";
+import biorationalCover from "../assets/img/journal-of-biorational-control-environmental-sustainability-cover.webp";
+import biotechnologyCover from "../assets/img/journal-of-agricultural-biotechnology-bioinformatics-cover.webp";
+import forensicCover from "../assets/img/journal-of-forensic-medicinal-entomology-cover.webp";
+import researchReviewsCover from "../assets/img/entomology-research-and-reviews-journal-cover.webp";
 
 const publicationFeatures = [
   {

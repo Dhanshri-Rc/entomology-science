@@ -20,8 +20,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import callHeroBg from "../assets/img/callBG.png";
-import callCtaBg from "../assets/img/callCta.png";
+import callHeroBg from "../assets/img/entomology-conference-call-for-papers-beetle-hero.webp";
+import callCtaBg from "../assets/img/entomology-conference-call-for-papers-insect-cta.webp";
 
 const topics = [
   "Insect Biodiversity & Systematics",

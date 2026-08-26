@@ -18,9 +18,9 @@ import {
   Target,
 } from "lucide-react";
 
-import aimsBg from "../assets/img/aimsBg.png";
-import interdisciplinaryImage from "../assets/img/aims.png";
-import aimsCtaBg from "../assets/img/aimsCta.png";
+import aimsBg from "../assets/img/entomology-conference-aims-scope-butterfly-hero.webp";
+import interdisciplinaryImage from "../assets/img/entomology-research-aims-scope-green-beetle.webp";
+import aimsCtaBg from "../assets/img/entomology-conference-aims-scope-ladybug-cta.webp";
 
 const leftTopics = [
   {

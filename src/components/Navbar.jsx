@@ -17,7 +17,7 @@ import {
   Mail,
 } from "lucide-react";
 
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/journal-of-entomological-research-logo.webp";
 
 /* =====================================================
    NAVIGATION

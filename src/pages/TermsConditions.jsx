@@ -20,8 +20,8 @@ import {
 } from "lucide-react";
 
 import { siteInfo } from "../data/siteData";
-import bg from "../assets/img/contactbg.png"
-import bgcta from "../assets/img/subcta.png"
+import bg from "../assets/img/entomology-conference-contact-butterfly-hero.webp"
+import bgcta from "../assets/img/entomology-submission-ladybug-cta.webp"
 
 
 /* =========================================================

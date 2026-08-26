@@ -18,8 +18,8 @@ import {
 } from "lucide-react";
 
 import { siteInfo } from "../data/siteData";
-import bg from "../assets/img/bghome.png"
-import bgcta from "../assets/img/subcta.png"
+import bg from "../assets/img/entomology-science-beetle-hero-background.webp"
+import bgcta from "../assets/img/entomology-submission-ladybug-cta.webp"
 
 
 /* =========================================================
