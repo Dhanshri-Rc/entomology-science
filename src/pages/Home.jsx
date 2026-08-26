@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import herobg from "../assets/img/homebg.png";
+import herobg from "../assets/img/international-entomology-conference-butterfly-hero.webp";
 import {
   ArrowRight,
   Atom,
@@ -39,11 +39,11 @@ import {
   FileText,
   Microscope,
 } from "lucide-react";
-import aboutButterfly from "../assets/img/home2.png";
+import aboutButterfly from "../assets/img/entomology-conference-monarch-butterfly.webp";
 
-import coverimg from "../assets/img/home3.png";
+import coverimg from "../assets/img/journal-of-entomological-research-cover.webp";
 
-import bgcta from "../assets/img/homecta.png";
+import bgcta from "../assets/img/entomology-conference-ladybug-cta.webp";
 
 /* =========================================================
    COLORS USED TO MATCH REFERENCE

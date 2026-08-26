@@ -17,8 +17,8 @@ import {
   Sprout,
   UsersRound,
 } from "lucide-react";
-import aboutBg from "../assets/img/aboutBg.png";
-import aboutCtaBg from "../assets/img/aboutCta2.png";
+import aboutBg from "../assets/img/entomology-conference-about-beetle-hero.webp";
+import aboutCtaBg from "../assets/img/entomology-conference-about-caterpillar-cta.webp";
 import profile from "../assets/img/images.jpg"
 
 
